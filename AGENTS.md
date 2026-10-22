@@ -60,6 +60,7 @@ Players connect using unmodded vanilla clients, standard launchers, or offline a
 * **Subsystems**:
   * `datapacks/cannabis_smoke`: Right-clickable joint items, smoke particle puffs, campfire audio, and status effects.
   * `datapacks/ore_xray`: Host only spectator and night vision toggle.
+  * `datapacks/server_guide`: Written guide book auto-delivered to players on login and via `/trigger guide`.
   * `configs/polymer`: Protocol translation layer for vanilla clients.
   * `custompaintings`: Painting pack mod. Its Modrinth page lists it as required on the client, so check `docs/KNOWN_ISSUES.md` before relying on it.
 

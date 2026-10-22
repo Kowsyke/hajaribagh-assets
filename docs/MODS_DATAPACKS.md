@@ -59,6 +59,12 @@ This document catalogs every active modification, server datapack, and asset pac
 * **Who can use it**: the trigger is enabled only for the player named `Kowsyke`. Everyone else's `xray` score is reset every tick.
 * **Unused file**: `deny.mcfunction` (fake "Unknown or incomplete command" message) is not called by anything.
 
+### `server_guide`
+* **Path**: `datapacks/server_guide/`
+* **What it does**: Delivers an official written book to all connecting players on their first login, containing welcome information, server hardware specifications, connection IPs, feature overview, contact emails, and the GitHub repository link.
+* **On-demand access**: Any player can run `/trigger guide` at any time to receive a replacement copy of the book.
+* **Files**: `pack.mcmeta`, `tags/function/load.json`, `tags/function/tick.json`, `function/load.mcfunction`, `function/tick.mcfunction`, `function/give_book.mcfunction`.
+
 ---
 
 ## 3. Custom Paintings Asset Pack

@@ -52,7 +52,8 @@ The server has been migrated from local laptop hosting to a dedicated cloud node
 ├── README.md                  # This manifest
 ├── datapacks/
 │   ├── cannabis_smoke/        # Right-clickable joints, smoke animations, sound effects
-│   └── ore_xray/              # Host only spectator and night vision toggle for inspecting ore
+│   ├── ore_xray/              # Host only spectator and night vision toggle for inspecting ore
+│   └── server_guide/          # Official written guide book auto-delivered to players on login
 ├── configs/
 │   ├── server.properties      # Production server properties with offline mode and pack delivery
 │   ├── custompaintings.toml   # Custom paintings loader configuration
@@ -129,6 +130,7 @@ ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26 "sudo journalctl -u minecraft -f"
 
 ## 6. Installed Subsystems and Features
 
+* **Server Guide Book**: Auto-delivers a custom written book to all connecting players on first login. Contains welcome notes, hardware specifications, connection IPs, feature guides, contact details for Kowsyke and exacyyv, and the GitHub repository URL. Any player can run `/trigger guide` at any time to receive a replacement copy.
 * **Custom Paintings**: Replaces the artwork of all 46 vanilla paintings with six custom images (Sheikh Hasina, President Chuppu, Sarjis Alam, a Dhaka scene, Nahid Islam and Asif Mahmud, and a Bengal meme). The images reach vanilla clients through a server resource pack that overrides the vanilla painting textures. See [`docs/MODS_DATAPACKS.md`](./docs/MODS_DATAPACKS.md) for how the pack and the `custompaintings` mod fit together.
 * **Cannabis and Joints**: Craftable right-clickable joints (1 Paper + 1 Dried Kelp = 3 Joints). Each use plays campfire crackle sounds, puffs smoke particles in front of the player for 3 seconds, and applies Regeneration II, Resistance II, Slow Falling, Saturation and Nausea.
 * **Brewery**: Patbox's Brewery mod. Cauldron cooking over a fire, barrel aging, and alcoholic drinks, delivered server-side via Polymer. Craft a Book of Brewery (1 Glass Bottle + 1 Book) to browse the recipes in game.
