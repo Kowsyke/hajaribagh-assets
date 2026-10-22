@@ -32,6 +32,3 @@ team modify first_lady color light_purple
 team add citizen "Citizen"
 team modify citizen prefix [{"text":"[Citizen] ","color":"gray"}]
 team modify citizen color gray
-
-# Unlock all recipes for all players
-recipe give @a *

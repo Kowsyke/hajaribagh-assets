@@ -4,7 +4,3 @@ execute as @a unless score @s has_starter_kit matches 1.. run scoreboard players
 execute as @a unless score @s guide_version matches 10.. at @s run function server_guide:update_player_guide
 execute as @a[scores={guide=1..}] at @s run function server_guide:give_book
 scoreboard players set @a[scores={guide=1..}] guide 0
-
-# Unlock all crafting recipes for any player who joins
-execute as @a[tag=!all_recipes_given] run recipe give @s *
-tag @a[tag=!all_recipes_given] add all_recipes_given
