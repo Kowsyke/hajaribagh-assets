@@ -1,3 +1,2 @@
 #!/bin/bash
-cd "$(dirname "$0")"
-exec /usr/bin/java -Xms1536M -Xmx2560M -XX:+UseZGC -jar fabric-server-launch.jar nogui
+exec /opt/jdk-25/bin/java -Xms4096M -Xmx8192M -XX:+UseZGC -jar fabric-server-launch.jar nogui

@@ -15,7 +15,21 @@
 
 ---
 
-## 2. Invariants for AI Agents (Do Not Violate)
+## 2. Live 24/7 Production Deployment
+
+The server has been migrated from local laptop hosting to a dedicated cloud node running 24/7:
+
+* **Host Provider**: Oracle Cloud Infrastructure (Always Free Tier)
+* **Architecture**: Ampere Altra ARM64 (4 OCPUs, 24 GB RAM)
+* **Java Runtime**: Oracle JDK 25 LTS (build 25.0.5.0.2)
+* **Memory Allocation**: 8 GB Dedicated Heap with Z Garbage Collector (`-Xms4096M -Xmx8192M -XX:+UseZGC`)
+* **Process Supervisor**: Managed via `systemd` (`minecraft.service` and `playit.service`)
+* **Direct Public Endpoint**: `132.226.135.26:25565` (or simply `132.226.135.26`)
+* **Legacy Tunnel Endpoint**: `cairo-temptation.tun.ply.gg:47309`
+
+---
+
+## 3. Invariants for AI Agents (Do Not Violate)
 
 1. **Zero Client Mod Requirement (Strict)**:
    * Friends connect using unmodified vanilla clients and offline launchers.
@@ -24,12 +38,12 @@
 2. **Punctuation and Syntax Constraints**:
    * Never use em dashes, en dashes, double hyphens, or single hyphens as sentence punctuation in code comments, commit messages, or markdown documents. Use periods, commas, colons, or parentheses instead.
 3. **Performance Envelope**:
-   * Hardware memory ceiling is 2560 MB (2.5 GB) with Z Garbage Collector.
+   * Hardware memory ceiling on the cloud node is 8 GB for Minecraft.
    * Do not introduce 3D terrain noise generators that cause chunk generation lag. Keep world generation lightweight and structure-based.
 
 ---
 
-## 3. Repository Structure
+## 4. Repository Structure
 
 ```
 .
@@ -46,29 +60,51 @@
 │   └── polymer/               # Polymer protocol virtualization rules
 ├── custompaintings/           # Source photos, metadata, and block dimensions
 ├── docs/
-│   ├── ARCHITECTURE.md        # Deep dive into JVM, Fabric, and Playit network tunnels
-│   ├── HOSTING_ROADMAP.md     # Dual-node handoff, 24/7 VPS deployment, Vercel/Neon guide
+│   ├── ARCHITECTURE.md        # Cloud VM specs, systemd supervision, network topology
+│   ├── HOSTING_ROADMAP.md     # Production deployment history and operational runbook
 │   ├── MEMBERS_ROLES.md       # Comprehensive registry of all players, developers, and locations
 │   └── MODS_DATAPACKS.md      # Detailed catalog of all installed mods and datapacks
 ├── scripts/
-│   └── start-server.sh        # Optimized server startup script with ZGC flags
+│   ├── start-server.sh        # Production startup script with 8GB ZGC flags
+│   ├── deploy-to-cloud.sh     # Synchronization script to deploy local changes to cloud
+│   └── view-cloud-logs.sh     # Real-time remote log stream utility
 └── Hajaribagh-Paintings.zip   # Quantized server-side custom paintings resource pack
 ```
 
 ---
 
-## 4. Installed Subsystems and Features
+## 5. Developer Guide: How exacyyv and Her Agent Can Work
 
-* **Custom Paintings**: Replaces vanilla paintings with custom artwork featuring Sheikh Hasina, President Chuppu, Sarjis Alam, historic Dhaka scenes, Nahid Islam, and Asif Mahmud.
-* **Cannabis and Joints**: Craftable right-clickable joints (1 Paper + 1 Dried Kelp = 3 Joints). Emits 3D camp smoke columns, campfire crackle sounds, and status buffs.
-* **Brewery**: Cauldron fermenting, barrel aging, and custom alcoholic drinks delivered server-side via Polymer.
-* **Reverse Tunnel**: Public routing provided by `playit.gg` to `cairo-temptation.tun.ply.gg:47309` (internal port 25565).
+Any collaborator with access to this repository can write code, create new features, and deploy them to the live 24/7 server:
 
----
+### A. Developing Features
+1. Clone this repository locally.
+2. Build new mechanics inside `datapacks/` (such as custom recipes, mini-games, or interactive items using vanilla triggers and loot tables).
+3. Test syntax and verify that no client-side mods are introduced.
 
-## 5. Collaboration and Vibe-Coding Protocol
+### B. Deploying to the Production Cloud Server
+To push changes to the live 24/7 server:
+```bash
+./scripts/deploy-to-cloud.sh
+```
+Or manually via SSH:
+```bash
+scp -i ~/.ssh/id_ed25519 -r datapacks/* ubuntu@132.226.135.26:~/minecraft-server/world/datapacks/
+```
 
-Both developers (Kowsyke and exacyyv) collaborate on this repository using their respective AI agents:
-* **Feature Branches**: Branch off `main` for new mini-games or datapack mechanics.
-* **Validation**: Verify all datapack JSON syntax and scoreboard commands prior to merging.
-* **World State**: The `world/` directory is intentionally decoupled from git. Refer to [`docs/HOSTING_ROADMAP.md`](./docs/HOSTING_ROADMAP.md) for world state synchronization procedures between Node A and Node B.
+### C. Reloading in Game
+Most datapack changes do not require a server restart. If you have operator permissions in game, simply type:
+```
+/reload
+```
+The server will instantly compile the new functions, tags, and recipes.
+
+### D. Viewing Live Logs
+To monitor server activity, player connections, or debugging output in real time:
+```bash
+./scripts/view-cloud-logs.sh
+```
+Or via SSH:
+```bash
+ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26 "sudo journalctl -u minecraft -f"
+```

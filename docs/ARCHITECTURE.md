@@ -1,63 +1,87 @@
-# Server Architecture and Subsystems
+# Server Architecture and Cloud Infrastructure
 
-This document describes the runtime environment, network topology, protocol translation layers, and custom subsystems powering Project Hajaribagh.
+This document details the live production architecture, cloud network topology, process supervisors, and custom subsystems powering Project Hajaribagh.
 
 ---
 
-## 1. Runtime Environment
+## 1. Production Compute Infrastructure
 
-* **Game Version**: Minecraft 26.3
-* **Mod Loader**: Fabric Loader 0.19.5
-* **Java Runtime**: OpenJDK 25 (64-bit)
+* **Host Provider**: Oracle Cloud Infrastructure (OCI, Always Free Tier)
+* **Compute Shape**: `VM.Standard.A1.Flex`
+* **CPU Architecture**: 3.0 GHz Ampere Altra ARM64 (4 OCPUs / 4 vCPUs)
+* **Total System Memory**: 24 GB RAM
+* **Operating System**: Canonical Ubuntu 24.04 LTS aarch64 (Linux kernel 6.17)
+* **Public IPv4 Address**: `132.226.135.26`
+* **Private Subnet Address**: `10.0.0.7`
+
+---
+
+## 2. Java Runtime and Performance Configuration
+
+* **Runtime**: Oracle JDK 25 LTS (build 25.0.5.0.2+1-LTS-2)
+* **Bytecode Target**: Class file version 69.0 (native Minecraft 26.3 requirement)
 * **Garbage Collector**: Z Garbage Collector (`-XX:+UseZGC`)
-* **Allocated Heap**: Minimum 1536 MB, Maximum 2560 MB (`-Xms1536M -Xmx2560M`)
-* **Startup Command**:
+* **Allocated Heap**: Minimum 4096 MB, Maximum 8192 MB (`-Xms4096M -Xmx8192M`)
+* **Execution Wrapper**:
   ```bash
-  exec java -Xms1536M -Xmx2560M -XX:+UseZGC -jar fabric-server-launch.jar nogui
+  /opt/jdk-25/bin/java -Xms4096M -Xmx8192M -XX:+UseZGC -jar fabric-server-launch.jar nogui
   ```
 
 ---
 
-## 2. Core Mods and Optimization Stack
+## 3. Cloud Network and Security Architecture
 
-All active mods in `mods/` are purely server-side or protocol-level:
+The server operates within a dedicated Virtual Cloud Network configured via the OCI CLI:
 
-| Mod Name | Version | Function |
-| :--- | :--- | :--- |
-| `fabric-api` | 0.162.0+26.3 | Base hooks and event bus for Fabric |
-| `lithium` | 0.26.2+mc26.3 | Physics, chunk, and AI tick optimization |
-| `ferritecore` | 9.0.0 | Memory footprint reduction and data structure deduplication |
-| `krypton` | 0.3.2 | Optimized network stack with Netty and libdeflate compression |
-| `polymer-bundled` | 0.18.4+26.3 | Server-side model, item, and block translation into vanilla display entities |
-| `brewery` | 0.17.1+26.3 | Fermentation, cauldrons, aging barrels, and alcoholic beverages |
-| `custompaintings` | 4.0.2+26.3 | Dynamic painting registration and motive replacements |
-
----
-
-## 3. Network and Tunnel Architecture
-
-To allow friends in Canada and Bangladesh to connect without requiring port forwarding on home routers:
-* The Minecraft server binds locally to `0.0.0.0:25565`.
-* The `playit.gg` background daemon creates a TLS tunnel to nearest Anycast edge nodes.
-* External endpoint: `cairo-temptation.tun.ply.gg:47309` (or direct IP alias `215.ip.gl.ply.gg:47309`).
-* All external packets route over TCP through the tunnel directly into local port 25565.
+1. **Virtual Cloud Network (VCN)**: `hajaribagh-vcn` (`10.0.0.0/16`)
+2. **Internet Gateway**: `hajaribagh-igw` enabling bi-directional external traffic
+3. **Route Table**: `hajaribagh-public-rt` routing destination `0.0.0.0/0` to the gateway
+4. **Public Subnet**: `hajaribagh-subnet` (`10.0.0.0/24`)
+5. **Security List Rules (`hajaribagh-sec-list`)**:
+   * Port 22 (SSH): Open to `0.0.0.0/0`
+   * Port 25565 (TCP, Minecraft): Open to `0.0.0.0/0`
+   * Port 25565 (UDP, Minecraft): Open to `0.0.0.0/0`
+6. **Host Firewall (iptables)**: Port 25565 is explicitly allowed before the default drop rule.
 
 ---
 
-## 4. Custom Subsystems
+## 4. Dual Routing Paths
 
-### A. Cannabis and Smoking (`datapacks/cannabis_smoke`)
-* **Item**: Right-clickable Cannabis Joints.
-* **Recipe**: 1 Paper + 1 Dried Kelp yields 3 Cannabis Joints.
-* **Mechanics**:
-  * Consuming or right-clicking triggers a scoreboard increment.
-  * Plays a sizzling campfire audio effect (`block.campfire.crackle`).
-  * Spawns a 3D animated column of camp smoke particles above the player head.
-  * Applies brief status effects (Nausea, Speed, Regeneration).
-  * Also supports manual triggering via `/trigger smoke`.
+Players can connect through two distinct paths:
 
-### B. Custom Paintings System
-* Source images stored under `custompaintings/ServerPaintings/images/`.
-* Includes Bengali cultural figures, political memes, and historical scenes (Hasina, Chuppu, Sarjis Alam, Dhaka scene, Nahid & Asif, Bengal meme).
-* Quantized into standard square and rectangular ratios: 1x2, 2x2, 3x2, 2x3, and 4x3 blocks.
-* Overrides vanilla painting motives so unmodded clients see them automatically.
+1. **Direct Public IP (Recommended, lowest latency)**:
+   * Endpoint: `132.226.135.26:25565`
+   * Direct connection to cloud VM network interface with zero tunnel overhead.
+2. **Reverse Tunnel (Legacy domain)**:
+   * Endpoint: `cairo-temptation.tun.ply.gg:47309`
+   * Provided by the `playit` daemon for players who prefer domain-based routing.
+
+---
+
+## 5. Systemd Supervision
+
+Both critical services are supervised by systemd on the cloud node:
+
+### `minecraft.service`
+* Working Directory: `/home/ubuntu/minecraft-server`
+* Command: `/bin/bash /home/ubuntu/minecraft-server/start-server.sh`
+* Policy: Automatically starts on boot, restarts after 10 seconds on failure.
+* Log Access: `sudo journalctl -u minecraft -f`
+
+### `playit.service`
+* Working Directory: `/run/playit`
+* Policy: Automatically connects to the tunnel network on boot.
+* Log Access: `sudo journalctl -u playit -f`
+
+---
+
+## 6. Active Mods and Subsystems
+
+* `fabric-api`: Standard Fabric hooks.
+* `lithium`: Chunk and entity tick performance optimization.
+* `ferritecore`: Memory deduplication and footprint reduction.
+* `krypton`: Libdeflate network compression.
+* `polymer-bundled`: Server-side model, item, and block translation into vanilla display entities.
+* `brewery`: Cauldron fermenting, barrel aging, and drinks.
+* `custompaintings`: Server-side painting motive replacements.
+* `cannabis_smoke` datapack: Craftable joints, 3D animated smoke particles, sound effects, and status buffs.

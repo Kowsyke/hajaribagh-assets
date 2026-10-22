@@ -1,58 +1,58 @@
-# Hosting Roadmap: Dual-Node and 24/7 Infrastructure
+# Hosting Roadmap and Production Operations
 
-This document analyzes infrastructure strategies for Project Hajaribagh, covering dual-developer hosting, 24/7 cloud deployment, and the roles of Vercel and Neon.
-
----
-
-## 1. Reality Check on Vercel and Neon
-
-The project stack includes accounts on Vercel and Neon. Here is what they can and cannot do for a Minecraft server:
-
-### Vercel
-* **Architecture**: Serverless HTTP edge network.
-* **Limitations**: Every request has a strict 10 to 60 second execution ceiling. It does not provide persistent background execution, open raw TCP sockets (port 25565), or long-lived RAM state.
-* **What Vercel is great for**: Hosting a companion web application, an interactive server status dashboard, a live web map (Bluemap/Dynmap export), or an asset CDN delivering `Hajaribagh-Paintings.zip` to clients at high speed.
-
-### Neon
-* **Architecture**: Serverless PostgreSQL with branching and connection pooling.
-* **Limitations**: Neon is a relational SQL database. It cannot execute Java runtime binaries or host the Minecraft game loop.
-* **What Neon is great for**: Storing persistent relational data outside the game files. Examples include cross-server leaderboards, Discord linked player accounts, economy balances, chat logs, or analytics.
+This document records the evolution of the hosting infrastructure for Project Hajaribagh and establishes the operational runbook for live cloud deployment.
 
 ---
 
-## 2. Model 1: Dual-Developer Handoff (Kowsyke Node A and exacyyv Node B)
+## 1. Evolution and Milestones
 
-If you and your girlfriend want to share hosting duties so either of you can spin up the server from your respective laptops:
+### Phase 1: Local Single Node (Completed)
+* Hosted on Kowsyke's laptop in the United Kingdom.
+* Routed to players in Canada and Bangladesh using the Playit.gg reverse tunnel.
+* Limitations: When the host laptop was closed or powered down, the server stopped. Memory was capped at 2.5 GB.
 
-### The Synchronization Challenge
-Minecraft stores world blocks, player inventories, and ender chests in local region files inside `world/`. If Node A and Node B run simultaneously on separate copies, the worlds will diverge and create desynchronization.
+### Phase 2: Dedicated Cloud Migration (Completed)
+* Infrastructure provisioned via OCI CLI in `uk-london-1`.
+* Virtual Cloud Network, subnets, route tables, and security lists created.
+* Ampere Altra ARM64 instance launched with 4 OCPUs and 24 GB RAM.
+* Upgraded to Oracle JDK 25 LTS and 8 GB dedicated heap.
+* Configured systemd background daemons for 24/7 autonomous uptime.
+* Direct public IP `132.226.135.26` activated alongside the Playit tunnel fallback.
 
-### The Turn-Based Handoff Workflow
-1. **Repository Synchronization**: All configs, datapacks, and scripts are synced via this GitHub repository (`Kowsyke/hajaribagh-assets`).
-2. **World State Sync**: Before Node B boots the server, Node A pushes the latest `world/` folder (or compressed archive) to shared cloud storage (such as Cloudflare R2, AWS S3, or Google Drive via Rclone).
-3. **Tunnel Routing**: Both nodes can share the same Playit.gg account. When Node A is offline, Node B launches the Playit tunnel using the same secret. Friends continue using `cairo-temptation.tun.ply.gg:47309` without needing a new IP address.
-
----
-
-## 3. Model 2: 24/7 Always-On Cloud Hosting
-
-To allow friends in Canada and Bangladesh to log in at any hour without keeping either laptop powered on:
-
-### Option A: Oracle Cloud Free Tier (Recommended)
-* **Specs**: 4 ARM Neoverse cores, 24 GB RAM, 200 GB SSD storage.
-* **Cost**: Zero dollars permanently free.
-* **Capability**: Easily handles 15 to 20 concurrent players with Lithium and FerriteCore.
-* **Setup**: Launch an Ubuntu instance, install OpenJDK 25, clone this repository, copy the `world/` directory, and run the server inside a tmux session or systemd daemon.
-
-### Option B: Budget Linux VPS
-* **Providers**: Hetzner Cloud (CX22/CX32), OVH, or Linode.
-* **Cost**: Approximately 4 to 6 USD per month.
-* **Capability**: Dedicated static IPv4, high uptime, and low network latency.
+### Phase 3: Collaborative Agent Vibe-Coding (Active)
+* Git repository configured as the central source of truth for both developers (Kowsyke and exacyyv).
+* Automated synchronization scripts enabled to push datapack updates and configurations directly to the live cloud node.
 
 ---
 
-## 4. Next Implementation Steps
+## 2. Production Server Runbook
 
-1. Select between the Turn-Based Handoff workflow (free, using existing hardware) and Oracle Cloud 24/7 (dedicated cloud node).
-2. Create automated backup scripts in `scripts/sync-world.sh` to package and transfer world saves smoothly between Node A and Node B.
-3. Configure companion status endpoints if Vercel or Neon integration is desired.
+### Accessing the Cloud Node
+To open a secure shell session on the production server:
+```bash
+ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26
+```
+
+### Checking Server Health and Status
+```bash
+ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26 "sudo systemctl status minecraft.service"
+```
+
+### Streaming Live Server Logs
+To watch chat messages, player joins, and console output in real time:
+```bash
+ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26 "sudo journalctl -u minecraft -f"
+```
+
+### Restarting the Server Cleanly
+If a configuration change or mod update requires a restart:
+```bash
+ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26 "sudo systemctl restart minecraft.service"
+```
+
+### Deploying Datapacks Without Restarting
+To push a new datapack or function edit to the live server:
+```bash
+scp -i ~/.ssh/id_ed25519 -r datapacks/<pack_name> ubuntu@132.226.135.26:~/minecraft-server/world/datapacks/
+```
+Then run `/reload` in the game console or in game as an operator.
