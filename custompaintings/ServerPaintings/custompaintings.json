@@ -1,0 +1,50 @@
+{
+  "format": 1,
+  "id": "server_paintings",
+  "name": "Server Custom Paintings",
+  "description": "Custom paintings for Hajaribagh server",
+  "paintings": [
+    {
+      "id": "bengal_meme",
+      "name": "Hajaribagh Special",
+      "artist": "Hajaribagh",
+      "width": 2,
+      "height": 2
+    },
+    {
+      "id": "asd",
+      "name": "Dhaka Scene",
+      "artist": "Hajaribagh",
+      "width": 4,
+      "height": 3
+    },
+    {
+      "id": "awda",
+      "name": "Nahid & Asif",
+      "artist": "Hajaribagh",
+      "width": 2,
+      "height": 3
+    },
+    {
+      "id": "chuppu",
+      "name": "President Chuppu",
+      "artist": "Hajaribagh",
+      "width": 1,
+      "height": 2
+    },
+    {
+      "id": "hasina",
+      "name": "Sheikh Hasina",
+      "artist": "Hajaribagh",
+      "width": 2,
+      "height": 3
+    },
+    {
+      "id": "sarjis",
+      "name": "Sarjis Alam",
+      "artist": "Hajaribagh",
+      "width": 3,
+      "height": 2
+    }
+  ]
+}

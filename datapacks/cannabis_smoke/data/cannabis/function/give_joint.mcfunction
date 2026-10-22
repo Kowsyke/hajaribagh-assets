@@ -1,0 +1,1 @@
+give @s minecraft:warped_fungus_on_a_stick[item_name='"Cannabis Joint"',custom_name='{"text":"Cannabis Joint","color":"green","bold":true,"italic":false}',lore=['{"text":"Right-click to take a fat puff","color":"gray","italic":true}','{"text":"Pass it to your friends","color":"dark_green","italic":true}']] 3
