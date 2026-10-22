@@ -21,8 +21,9 @@ The server blends humor, Bangladeshi cultural references, survival gameplay, and
 
 ### Players and Parliament
 * **Ahsane (ahsane)**: Honorable President (Rashtrapati), Vice Captain, and Chief Advisor. Connects from Canada.
-* **GothHunterJamal**: Minister of Tourism, Wildlife, and Hunting. Primary survival companion and roommate.
+* **GothHunterJamal (Safwan)**: Minister of Tourism, Wildlife, and Hunting. Primary survival companion and roommate.
 * **Rohit ATB (GREAT-RED-DRAGO)**: Minister of Agriculture and Tannery. Hajaribagh local living in Dhaka.
+* **First Lady and Citizens**: King Abir's girlfriend and all new citizens hold equal standing beneath King Abir, who holds exclusive sovereign authority.
 
 ---
 

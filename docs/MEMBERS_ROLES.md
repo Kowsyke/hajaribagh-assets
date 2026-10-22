@@ -6,6 +6,25 @@ The server operates as a satirical representation of a Bangladesh parliamentary 
 
 ---
 
+## Authors of the Parliamentary Gazette
+
+The official authors recognized by parliamentary decree are:
+1. King Abir (Prime Minister & Sovereign)
+2. Ahsan (President & Chief Advisor)
+3. Dip (Minister of Communication & Moderator)
+4. Safwan / Goth Hunter (Minister of Tourism & Hunting)
+5. Rohit ATB (Minister of Agriculture & Tannery)
+
+---
+
+## Hierarchy Principle
+
+King Abir alone retains supreme sovereign authority across the server, infrastructure, and parliament.
+
+All other members, including cabinet ministers, the First Lady, and incoming citizens, share equal standing beneath King Abir. No citizen or minister outranks another without royal decree.
+
+---
+
 ## Executive Cabinet and Parliament
 
 ### 1. King Abir (Kowsyke)
@@ -37,8 +56,9 @@ The server operates as a satirical representation of a Bangladesh parliamentary 
 * **Location**: Bangladesh
 * **Connection**: Direct public IP `132.226.135.26:25565`
 
-### 4. GothHunterJamal (GothHunterJamal)
+### 4. Safwan (GothHunterJamal)
 * **Title & Role**: Minister of Tourism, Civil Aviation, Wildlife, and Hunting (Explorer)
+* **Real Name**: Safwan
 * **In-Game Username**: `GothHunterJamal`
 * **In-Game Prefix**: `[Tourism Minister]` (Red bold)
 * **Role**: Chief Hunter and Expedition Leader
@@ -53,13 +73,15 @@ The server operates as a satirical representation of a Bangladesh parliamentary 
 * **Responsibilities**: Managing community crop fields, kelp farms, cannabis cultivation, and agricultural subsidies
 * **Connection**: Direct public IP `132.226.135.26:25565`
 
-### 6. exacyyv (exacyyv)
-* **Title & Role**: Minister of Public Works, Housing, and Science (Purtto Montri), Feature Architect
-* **In-Game Username**: `exacyyv` / `Exacyyv`
-* **In-Game Prefix**: `[Works Minister]` (Blue bold)
-* **GitHub**: `exacyyv` (Collaborator)
-* **Responsibilities**: Feature architect, small project builder, gameplay mechanics, item customization, hardware integrations (creator of the ESP32 physical sword controller)
-* **Connection**: Direct public IP `132.226.135.26:25565`
+### 6. King Abir's Girlfriend
+* **Title & Role**: Honorable First Lady of Hajaribagh
+* **In-Game Prefix**: `[First Lady]` (Light purple bold)
+* **Status**: Equal citizen status beneath King Abir alongside other members
+
+### 7. New Members and Citizens
+* **Title & Role**: Citizens of Hajaribagh
+* **In-Game Prefix**: `[Citizen]` (Gray)
+* **Status**: Equal parliamentary standing beneath the King
 
 ---
 

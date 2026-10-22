@@ -26,4 +26,9 @@ team modify public_works prefix [{"text":"[Works Minister] ","color":"blue","bol
 team modify public_works color blue
 team join public_works exacyyv
 team join public_works Exacyyv
-
+team add first_lady "First Lady"
+team modify first_lady prefix [{"text":"[First Lady] ","color":"light_purple","bold":true}]
+team modify first_lady color light_purple
+team add citizen "Citizen"
+team modify citizen prefix [{"text":"[Citizen] ","color":"gray"}]
+team modify citizen color gray
