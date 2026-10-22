@@ -70,7 +70,7 @@ This document catalogs every active modification, server datapack, and asset pac
 
 ### `salman_f_rahman`
 * **Path**: `datapacks/salman_f_rahman/`
-* **What it does**: Tracks the total volume of stone and wood blocks mined by each player. The player with the highest total holds the title of Salman F Rahman.
+* **What it does**: Tracks the total volume of gold ore mined by each player. The player with the highest total holds the title of Salman F Rahman.
 * **Leaderboard**: Displays player scores on the sidebar scoreboard. Players can refresh the display with `/trigger leaderboard`.
 * **Visual aura**: The active tycoon glows and cycles through rainbow colors on their team nameplate and player list entry.
 * **Daily dividend**: Awards 1 random ore directly into the title holder's inventory every sunrise.
