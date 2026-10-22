@@ -11,7 +11,7 @@
 * **Lead Engineer (Node A)**: King Abir (Kowsyke, abirmia205@gmail.com, United Kingdom)
 * **Co-Developer (Node B)**: exacyyv (Collaborator, Vibe-coding partner)
 * **Target Audience**: A private, cross-continental group of close friends in the UK, Canada, and Bangladesh.
-* **Core Philosophy**: A humorous, culturally resonant Bangladeshi survival multiplayer server. It blends inside jokes, political satire, hangout mechanics (cannabis smoking and brewing), and vanilla survival.
+* **Core Philosophy**: A humorous, culturally resonant Bangladeshi survival multiplayer server structured as a satirical Bangladesh Parliament (Jatio Sangsad). Named after Hajaribagh in Dhaka where Rohit ATB lives, it blends inside jokes, political satire, hangout mechanics (cannabis smoking and brewing), and vanilla survival.
 
 ---
 
@@ -143,7 +143,7 @@ ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26 "sudo journalctl -u minecraft -f"
 
 ## 7. Collaboration and Vibe-Coding Protocol
 
-Both developers (King Abir and exacyyv) collaborate on this repository using their respective AI agents:
+The project team (Prime Minister King Abir, co-developer exacyyv, and moderator Dip) collaborates on this repository using their respective AI agents:
 * **Feature Branches**: Branch off `main` for new mini-games or datapack mechanics, and merge once they are checked.
 * **Validation**: Verify all datapack JSON syntax and scoreboard commands prior to merging. Check `docs/KNOWN_ISSUES.md` before changing a subsystem.
 * **Deploying**: `scripts/deploy-to-cloud.sh` ships your working folder straight to production, so deploy from an up to date `main`.

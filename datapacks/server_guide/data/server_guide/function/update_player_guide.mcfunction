@@ -1,2 +1,2 @@
 function server_guide:give_book
-tellraw @s [{"text":"[Hajaribagh] ","color":"gold","bold":true},{"text":"All players have received the updated Server Guide (v3.2) featuring Vice Captain Ahsane!","color":"yellow"}]
+tellraw @s [{"text":"[Hajaribagh] ","color":"gold","bold":true},{"text":"All citizens have received the Parliamentary Gazette (v4.0) by order of Prime Minister King Abir!","color":"yellow"}]

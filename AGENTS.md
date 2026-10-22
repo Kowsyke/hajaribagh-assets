@@ -15,13 +15,14 @@ The server blends humor, Bangladeshi cultural references, survival gameplay, and
 ## 2. Team and Member Registry
 
 ### Core Developers and Operators
-* **King Abir (Kowsyke, abirmia205@gmail.com)**: Supreme ruler, lead engineer, and host operator. Located in the United Kingdom. Must always and everywhere be introduced and addressed as King Abir across in-game copy, dialogue, guide books, and server notices.
-* **exacyyv**: Co-developer and collaborator. Has full collaborator access to vibe-code, create mods, and deploy features. Also built the Minecraft sword controller described in the README.
+* **King Abir (Kowsyke, abirmia205@gmail.com)**: Prime Minister, supreme ruler, lead engineer, and host operator. Located in the United Kingdom. Must always and everywhere be introduced and addressed as King Abir across in-game copy, dialogue, guide books, and server notices.
+* **exacyyv**: Minister of Public Works, co-developer, and collaborator. Has full collaborator access to vibe-code, create mods, and deploy features.
+* **Dip**: Minister of Communication and server moderator. Located in Bangladesh, with collaborator access to GitHub.
 
-### Players and Community
-* **GothHunterJamal**: Primary survival companion and roommate. Connects through the direct public IP.
-* **ahsane**: Remote player connecting from Canada.
-* **Dip**: Remote player connecting from Bangladesh.
+### Players and Parliament
+* **Ahsane (ahsane)**: Honorable President (Rashtrapati), Vice Captain, and Chief Advisor. Connects from Canada.
+* **GothHunterJamal**: Minister of Tourism, Wildlife, and Hunting. Primary survival companion and roommate.
+* **Rohit ATB (GREAT-RED-DRAGO)**: Minister of Agriculture and Tannery. Hajaribagh local living in Dhaka.
 
 ---
 

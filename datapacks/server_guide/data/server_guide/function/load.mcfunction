@@ -1,11 +1,29 @@
 scoreboard objectives add has_starter_kit dummy
 scoreboard objectives add guide trigger
 scoreboard objectives add guide_version dummy
-team add royalty "Royalty"
-team modify royalty prefix [{"text":"[King] ","color":"gold","bold":true}]
-team modify royalty color gold
-team join royalty Kowsyke
-team add vice_captain "Vice Captain"
-team modify vice_captain prefix [{"text":"[Vice Captain] ","color":"aqua","bold":true}]
-team modify vice_captain color aqua
-team join vice_captain ahsane
+team add pm "Prime Minister"
+team modify pm prefix [{"text":"[Prime Minister] ","color":"gold","bold":true}]
+team modify pm color gold
+team join pm Kowsyke
+team add president "President"
+team modify president prefix [{"text":"[President] ","color":"aqua","bold":true}]
+team modify president color aqua
+team join president ahsane
+team add communication "Minister of Communication"
+team modify communication prefix [{"text":"[Minister Dip] ","color":"green","bold":true}]
+team modify communication color green
+team join communication Dip
+team add tourism "Minister of Tourism"
+team modify tourism prefix [{"text":"[Tourism Minister] ","color":"red","bold":true}]
+team modify tourism color red
+team join tourism GothHunterJamal
+team add agriculture "Minister of Agriculture"
+team modify agriculture prefix [{"text":"[Agriculture Minister] ","color":"yellow","bold":true}]
+team modify agriculture color yellow
+team join agriculture GREAT-RED-DRAGO
+team add public_works "Minister of Public Works"
+team modify public_works prefix [{"text":"[Works Minister] ","color":"blue","bold":true}]
+team modify public_works color blue
+team join public_works exacyyv
+team join public_works Exacyyv
+
