@@ -68,6 +68,15 @@ This document catalogs every active modification, server datapack, and asset pac
 * **On-demand access**: Any player can run `/trigger guide` at any time to receive a replacement copy of the book without duplicating starter armor or tools.
 * **Files**: `pack.mcmeta`, `tags/function/load.json`, `tags/function/tick.json`, `function/load.mcfunction`, `function/tick.mcfunction`, `function/give_starter_kit.mcfunction`, `function/give_book.mcfunction`.
 
+### `salman_f_rahman`
+* **Path**: `datapacks/salman_f_rahman/`
+* **What it does**: Tracks the total volume of stone and wood blocks mined by each player. The player with the highest total holds the title of Salman F Rahman.
+* **Leaderboard**: Displays player scores on the sidebar scoreboard. Players can refresh the display with `/trigger leaderboard`.
+* **Visual aura**: The active tycoon glows and cycles through rainbow colors on their team nameplate and player list entry.
+* **Daily dividend**: Awards 1 random ore directly into the title holder's inventory every sunrise.
+* **Full inventory reminder**: If the player's inventory is full at sunrise, an alert begins a 10 second countdown. If a slot opens within 10 seconds, the ore is granted. If the inventory stays full, the ore is forfeited.
+* **Files**: `pack.mcmeta`, `data/minecraft/tags/function/load.json`, `data/minecraft/tags/function/tick.json`, `data/salman_f_rahman/loot_table/daily_ore.json`, `data/salman_f_rahman/function/*.mcfunction`.
+
 ---
 
 ## 3. Custom Paintings Asset Pack
