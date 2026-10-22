@@ -75,3 +75,15 @@ When implementing features requested by either Kowsyke or exacyyv:
 5. Pull before you start (`git pull --ff-only`). Kowsyke and exacyyv both commit to this repo, and docs can go stale quickly.
 6. Never commit secrets or passwords. Blank them in config copies first.
 7. Do not edit `Hajaribagh-Paintings.zip` without updating `resource-pack-sha1` in `configs/server.properties`. The steps are in `docs/OPERATIONS.md`.
+
+---
+
+## 6. Mandatory Feasibility and Latency Assessment Policy
+
+Before proposing or introducing any mod, datapack, or configuration update, every agent must provide an explicit feasibility evaluation. 
+
+Review [`docs/FEASIBILITY_AND_LIMITS.md`](./docs/FEASIBILITY_AND_LIMITS.md) for the full hardware envelope:
+* If a feature introduces heavy single thread tick overhead (such as 3D terrain density calculations), reject it.
+* If a mod requires client side `.jar` installations, reject it.
+* Always communicate performance tradeoffs transparently with the developers before writing code.
+
