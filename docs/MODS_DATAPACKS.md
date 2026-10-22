@@ -61,9 +61,9 @@ This document catalogs every active modification, server datapack, and asset pac
 
 ### `server_guide`
 * **Path**: `datapacks/server_guide/`
-* **What it does**: Delivers an official written book to all connecting players on their first login, containing welcome information, server hardware specifications, connection IPs, feature overview, contact emails, and the GitHub repository link.
-* **On-demand access**: Any player can run `/trigger guide` at any time to receive a replacement copy of the book.
-* **Files**: `pack.mcmeta`, `tags/function/load.json`, `tags/function/tick.json`, `function/load.mcfunction`, `function/tick.mcfunction`, `function/give_book.mcfunction`.
+* **What it does**: Equips every new player on first login with full leather armor, a stone toolset (sword, pickaxe, axe, hoe), 10 torches, 10 cooked beef steaks, an empty exploration map, and the written server guide book with base coordinates (X: 163, Z: -307).
+* **On-demand access**: Any player can run `/trigger guide` at any time to receive a replacement copy of the book without duplicating starter armor or tools.
+* **Files**: `pack.mcmeta`, `tags/function/load.json`, `tags/function/tick.json`, `function/load.mcfunction`, `function/tick.mcfunction`, `function/give_starter_kit.mcfunction`, `function/give_book.mcfunction`.
 
 ---
 
