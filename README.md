@@ -62,6 +62,7 @@ The server has been migrated from local laptop hosting to a dedicated cloud node
 ├── custompaintings/           # Source photos, metadata, and block dimensions
 ├── docs/
 │   ├── ARCHITECTURE.md        # Cloud VM specs, systemd supervision, network topology
+│   ├── FEASIBILITY_AND_LIMITS.md # Hardware limits, maximizations, and performance policy
 │   ├── HOSTING_ROADMAP.md     # Production deployment history and operational runbook
 │   ├── KNOWN_ISSUES.md        # Open questions, risks, and things to verify in game
 │   ├── MEMBERS_ROLES.md       # Comprehensive registry of all players, developers, and locations
@@ -108,8 +109,14 @@ Most datapack changes do not require a server restart. If you have operator perm
 ```
 The server will instantly compile the new functions, tags, and recipes.
 
-### D. Viewing Live Logs
-To monitor server activity, player connections, or debugging output in real time:
+### D. Viewing Live Logs and Server HUD
+To open the live telemetry and log dashboard from the host machine terminal:
+```bash
+mserver
+```
+This launches the browser HUD displaying real-time SLP ping, memory, CPU, and streaming journal logs.
+
+To monitor server logs directly inside the terminal:
 ```bash
 ./scripts/view-cloud-logs.sh
 ```
