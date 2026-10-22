@@ -8,13 +8,25 @@ This document catalogs every active modification, server datapack, and asset pac
 
 | File Name | Source | Purpose | Client needs it? | Status on 2026-10-22 |
 | :--- | :--- | :--- | :--- | :--- |
-| `fabric-api-0.162.0+26.3.jar` | [Fabric API](https://modrinth.com/mod/fabric-api) | Base hooks and event bus for Fabric | No (optional) | Two newer builds exist for 26.3: 0.163.0 and 0.164.0 |
-| `lithium-fabric-0.26.2+mc26.3.jar` | [Lithium](https://modrinth.com/mod/lithium) | Game logic, chunk, and entity tick optimization | No (optional) | Latest |
-| `ferritecore-9.0.0-fabric.jar` | [FerriteCore](https://modrinth.com/mod/ferrite-core) | Lower memory use through data deduplication | No (optional) | Latest, supports 26.3 |
-| `krypton-0.3.2.jar` | [Krypton](https://modrinth.com/mod/krypton) | Networking stack optimization | No (optional) | Latest |
-| `polymer-bundled-0.18.4+26.3.jar` | [Polymer](https://modrinth.com/mod/polymer) | Library that shows server-side content to vanilla clients | No (optional) | Latest |
-| `brewery-0.17.1+26.3.jar` | [Patbox's Brewery](https://modrinth.com/mod/brewery) | Cauldron brewing and barrel aging, built on Polymer | No (unsupported on client) | Latest |
-| `custompaintings-fabric-4.0.2+26.3.jar` | [Custom Paintings](https://modrinth.com/mod/custom-paintings-mod) by Roundaround | Painting packs, custom sizes, painting picker menu | Yes (required on client and server) | Latest |
+| `fabric-api-0.162.0+26.3.jar` | [Fabric API](https://modrinth.com/mod/fabric-api) | Base hooks and event bus for Fabric | No (optional) | Active |
+| `lithium-fabric-0.26.2+mc26.3.jar` | [Lithium](https://modrinth.com/mod/lithium) | Game logic, chunk, and entity tick optimization | No (optional) | Active |
+| `ferritecore-9.0.0-fabric.jar` | [FerriteCore](https://modrinth.com/mod/ferrite-core) | Lower memory use through data deduplication | No (optional) | Active |
+| `krypton-0.3.2.jar` | [Krypton](https://modrinth.com/mod/krypton) | Networking stack optimization | No (optional) | Active |
+| `polymer-bundled-0.18.4+26.3.jar` | [Polymer](https://modrinth.com/mod/polymer) | Protocol translation for server-side items and blocks | No (optional) | Active |
+| `brewery-0.17.1+26.3.jar` | [Patbox's Brewery](https://modrinth.com/mod/brewery) | Cauldron brewing and barrel aging via Polymer | No (unsupported on client) | Active |
+| `custompaintings-fabric-4.0.2+26.3.jar` | [Custom Paintings](https://modrinth.com/mod/custom-paintings-mod) | Painting packs and selection menu | Yes (required on client) | Active |
+| `Chunky-Fabric-1.5.3.jar` | [Chunky](https://modrinth.com/mod/chunky) | Background chunk pregeneration for zero exploration lag | No (server only) | Active, 63,001 chunks generated |
+| `spark-1.10.187-fabric.jar` | [spark](https://modrinth.com/mod/spark) | Performance profiler and tick health monitor | No (server only) | Active |
+| `netherportalfix-fabric-26.3-26.3.0.1.jar` | [NetherPortalFix](https://modrinth.com/mod/netherportalfix) | Correct portal linking for multiplayer travel | No (server only) | Active |
+| `balm-fabric-26.3-26.3.0.3.jar` | [Balm](https://modrinth.com/mod/balm) | Abstraction library required by NetherPortalFix | No (server only) | Active |
+| `doubledoors-26.3.0-7.5.jar` | [Double Doors](https://modrinth.com/mod/double-doors) | Opens matching double doors, trapdoors, and gates together | No (server only) | Active |
+| `collective-26.3.0-8.64.jar` | [Collective](https://modrinth.com/mod/collective) | Shared library required by Double Doors | No (server only) | Active |
+| `rightclickharvest-fabric-4.6.2+26.3.x.jar` | [RightClickHarvest](https://modrinth.com/mod/rightclickharvest) | Harvest and replant crops with a right click | No (server only) | Active |
+| `jamlib-fabric-2.3.1+26.3.x.jar` | [JamLib](https://modrinth.com/mod/jamlib) | Library required by RightClickHarvest | No (server only) | Active |
+| `ledger-1.3.25.jar` | [Ledger](https://modrinth.com/mod/ledger) | Block and container transaction logger with rollback | No (server only) | Active |
+| `fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar` | [Fabric Kotlin](https://modrinth.com/mod/fabric-language-kotlin) | Kotlin language adapter required by Ledger | No (server only) | Active |
+| `lootr-fabric-26.3-1.25.42.124.jar` | [Lootr](https://modrinth.com/mod/lootr) | Per-player instanced dungeon and structure loot | No (server only with Polymer) | Active |
+| `LootrPolymer-1.3.jar` | [Lootr Polymer Patch](https://modrinth.com/mod/lootr-polymer-patch) | Virtualizes Lootr containers for vanilla clients | No (server only) | Active |
 
 ### Notes per mod
 
