@@ -47,11 +47,12 @@ The server has been migrated from local laptop hosting to a dedicated cloud node
 
 ```
 .
+├── .gitattributes             # Forces LF line endings for scripts and datapack files
 ├── AGENTS.md                  # Comprehensive operational manual for AI agents
 ├── README.md                  # This manifest
 ├── datapacks/
 │   ├── cannabis_smoke/        # Right-clickable joints, smoke animations, sound effects
-│   └── ore_xray/              # Administrative inspection tools
+│   └── ore_xray/              # Host only spectator and night vision toggle for inspecting ore
 ├── configs/
 │   ├── server.properties      # Production server properties with offline mode and pack delivery
 │   ├── custompaintings.toml   # Custom paintings loader configuration
@@ -62,8 +63,10 @@ The server has been migrated from local laptop hosting to a dedicated cloud node
 ├── docs/
 │   ├── ARCHITECTURE.md        # Cloud VM specs, systemd supervision, network topology
 │   ├── HOSTING_ROADMAP.md     # Production deployment history and operational runbook
+│   ├── KNOWN_ISSUES.md        # Open questions, risks, and things to verify in game
 │   ├── MEMBERS_ROLES.md       # Comprehensive registry of all players, developers, and locations
-│   └── MODS_DATAPACKS.md      # Detailed catalog of all installed mods and datapacks
+│   ├── MODS_DATAPACKS.md      # Detailed catalog of all installed mods and datapacks
+│   └── OPERATIONS.md          # Repo to server file mapping, updating the pack and mods
 ├── scripts/
 │   ├── start-server.sh        # Production startup script with 8GB ZGC flags
 │   ├── deploy-to-cloud.sh     # Synchronization script to deploy local changes to cloud
@@ -92,6 +95,12 @@ Or manually via SSH:
 scp -i ~/.ssh/id_ed25519 -r datapacks/* ubuntu@132.226.135.26:~/minecraft-server/world/datapacks/
 ```
 
+Before your first deploy:
+* Kowsyke must add your SSH public key to `/home/ubuntu/.ssh/authorized_keys` on the VM. The scripts cannot log in without it.
+* The scripts use `~/.ssh/id_ed25519` by default. To use a different key, user, or host, set `HZ_KEY`, `HZ_USER`, or `HZ_HOST`, for example `HZ_KEY=~/.ssh/my_key ./scripts/deploy-to-cloud.sh`.
+* On Windows, run the scripts from Git Bash.
+* The script copies your working folder, committed or not. Run `git pull` first and deploy only what is on `main`.
+
 ### C. Reloading in Game
 Most datapack changes do not require a server restart. If you have operator permissions in game, simply type:
 ```
@@ -108,3 +117,32 @@ Or via SSH:
 ```bash
 ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26 "sudo journalctl -u minecraft -f"
 ```
+
+---
+
+## 6. Installed Subsystems and Features
+
+* **Custom Paintings**: Replaces the artwork of all 46 vanilla paintings with six custom images (Sheikh Hasina, President Chuppu, Sarjis Alam, a Dhaka scene, Nahid Islam and Asif Mahmud, and a Bengal meme). The images reach vanilla clients through a server resource pack that overrides the vanilla painting textures. See [`docs/MODS_DATAPACKS.md`](./docs/MODS_DATAPACKS.md) for how the pack and the `custompaintings` mod fit together.
+* **Cannabis and Joints**: Craftable right-clickable joints (1 Paper + 1 Dried Kelp = 3 Joints). Each use plays campfire crackle sounds, puffs smoke particles in front of the player for 3 seconds, and applies Regeneration II, Resistance II, Slow Falling, Saturation and Nausea.
+* **Brewery**: Patbox's Brewery mod. Cauldron cooking over a fire, barrel aging, and alcoholic drinks, delivered server-side via Polymer. Craft a Book of Brewery (1 Glass Bottle + 1 Book) to browse the recipes in game.
+* **Playit Tunnel**: The original `playit.gg` route to `cairo-temptation.tun.ply.gg:47309` still runs next to the direct IP.
+
+---
+
+## 7. Collaboration and Vibe-Coding Protocol
+
+Both developers (Kowsyke and exacyyv) collaborate on this repository using their respective AI agents:
+* **Feature Branches**: Branch off `main` for new mini-games or datapack mechanics, and merge once they are checked.
+* **Validation**: Verify all datapack JSON syntax and scoreboard commands prior to merging. Check `docs/KNOWN_ISSUES.md` before changing a subsystem.
+* **Deploying**: `scripts/deploy-to-cloud.sh` ships your working folder straight to production, so deploy from an up to date `main`.
+* **World State**: The `world/` directory lives only on the cloud VM and is intentionally decoupled from git. It has no backup yet, which is tracked in `docs/KNOWN_ISSUES.md`.
+* **Secrets**: Never commit passwords, tokens, or secrets. Files in `configs/` are copies of live files, so blank any secret value before committing.
+* **Operations**: Where each file in this repo belongs on the server, and how to ship a new painting pack or mod update, is in [`docs/OPERATIONS.md`](./docs/OPERATIONS.md).
+
+---
+
+## 8. Side Note: The Minecraft Sword
+
+exacyyv also built a real Minecraft sword. It is a wooden toy sword with an ESP32-S3 inside that pairs with a computer over Bluetooth Low Energy as an ordinary keyboard and mouse. Swing it to attack, hold the aim button and turn it to steer the camera, and use the push buttons to walk, jump, use items and change hotbar slot. It has been tested in game with all five buttons, swing detection and camera aiming.
+
+Because the game only sees normal keyboard and mouse input, it needs no mods and works with a vanilla client, which fits the Zero Client Mod Requirement above. Firmware, wiring and pin map: [exacyyv/Minecraft-Sword-Using-Esp32-S3-](https://github.com/exacyyv/Minecraft-Sword-Using-Esp32-S3-).

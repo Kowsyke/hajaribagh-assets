@@ -1,0 +1,16 @@
+# Keep LF line endings so shell scripts and datapack files work on Linux
+# even when they are checked out on Windows.
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+*.mcfunction text eol=lf
+*.json text eol=lf
+*.mcmeta text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.properties text eol=lf
+
+# Binary files
+*.zip binary
+*.png binary
+*.jpg binary

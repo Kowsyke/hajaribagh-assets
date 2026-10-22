@@ -8,18 +8,18 @@ This document is the operational context for autonomous AI coding agents (Claude
 
 Project Hajaribagh is a private, custom-modded Minecraft server engineered for a tight group of friends spread across the United Kingdom, Canada, and Bangladesh. 
 
-The server blends humor, Bangladeshi cultural references, survival gameplay, and hangout mechanics. It runs on a local node in the United Kingdom with public routing via an encrypted reverse tunnel.
+The server blends humor, Bangladeshi cultural references, survival gameplay, and hangout mechanics. It runs 24/7 on an Oracle Cloud VM in London (direct public IP, with the original Playit tunnel kept as a fallback).
 
 ---
 
 ## 2. Team and Member Registry
 
 ### Core Developers and Operators
-* **Kowsyke (abirmia205@gmail.com)**: Lead engineer and Node A host. Located in the United Kingdom.
-* **exacyyv**: Co-developer and collaborator. Has full collaborator access to vibe-code, create mods, and deploy features.
+* **Kowsyke (abirmia205@gmail.com)**: Lead engineer and server operator. Located in the United Kingdom.
+* **exacyyv**: Co-developer and collaborator. Has full collaborator access to vibe-code, create mods, and deploy features. Also built the Minecraft sword controller described in the README.
 
 ### Players and Community
-* **GothHunterJamal**: Primary survival companion and roommate. Connects via local area network (LAN) and tunnel.
+* **GothHunterJamal**: Primary survival companion and roommate. Connects through the direct public IP.
 * **ahsane**: Remote player connecting from Canada.
 * **Dip**: Remote player connecting from Bangladesh.
 
@@ -43,7 +43,7 @@ Players connect using unmodded vanilla clients, standard launchers, or offline a
 * Write directly, plainly, and specifically. Avoid marketing buzzwords and filler phrases.
 
 ### Invariant C: Performance Budget
-* Maximum heap allocation is currently 2560 MB (2.5 GB) with ZGC.
+* Maximum heap allocation is currently 8192 MB (8 GB) with ZGC on the 24 GB cloud VM (`-Xms4096M -Xmx8192M`).
 * Never install heavy 3D noise generation datapacks (like Terralith) that alter terrain equations.
 * Prioritize pre-baked jigsaw structures, lightweight datapacks, and memory optimization mods (Lithium, FerriteCore, Krypton).
 
@@ -52,13 +52,16 @@ Players connect using unmodded vanilla clients, standard launchers, or offline a
 ## 4. Current Technical Architecture
 
 * **Engine**: Minecraft 26.3 running on Fabric Loader 0.19.5.
-* **Java Virtual Machine**: OpenJDK 25 with Z Garbage Collector (`-XX:+UseZGC`).
-* **Networking**: Routed through `playit.gg` reverse tunnel to `cairo-temptation.tun.ply.gg:47309` (internal port 25565).
-* **Asset Pipeline**: Custom paintings pack quantized and bundled in `Hajaribagh-Paintings.zip`.
+* **Java Virtual Machine**: Oracle JDK 25 LTS with Z Garbage Collector (`-XX:+UseZGC`), run by systemd as `minecraft.service`.
+* **Hardware**: Oracle Cloud Always Free `VM.Standard.A1.Flex`, 4 ARM cores, 24 GB RAM, Ubuntu 24.04.
+* **Networking**: Direct public IP `132.226.135.26:25565`, plus the `playit.gg` tunnel at `cairo-temptation.tun.ply.gg:47309` as a fallback.
+* **Deploying**: `scripts/deploy-to-cloud.sh` copies `datapacks/` and `configs/` to the VM. See `docs/OPERATIONS.md`.
+* **Asset Pipeline**: Custom paintings pack quantized and bundled in `Hajaribagh-Paintings.zip`, which overrides the vanilla painting textures.
 * **Subsystems**:
-  * `datapacks/cannabis_smoke`: Right-clickable joint items, 3D animated particle plumes, campfire audio, and status effects.
+  * `datapacks/cannabis_smoke`: Right-clickable joint items, smoke particle puffs, campfire audio, and status effects.
+  * `datapacks/ore_xray`: Host only spectator and night vision toggle.
   * `configs/polymer`: Protocol translation layer for vanilla clients.
-  * `custompaintings`: Server-side painting catalog replacing vanilla painting motives.
+  * `custompaintings`: Painting pack mod. Its Modrinth page lists it as required on the client, so check `docs/KNOWN_ISSUES.md` before relying on it.
 
 ---
 
@@ -69,3 +72,6 @@ When implementing features requested by either Kowsyke or exacyyv:
 2. Ensure all commands use silent execution where appropriate (do not flood public chat with system notifications).
 3. If creating custom items, use vanilla item bases with custom model data or NBT tags.
 4. Document all changes in git commits using plain descriptions without pause dashes.
+5. Pull before you start (`git pull --ff-only`). Kowsyke and exacyyv both commit to this repo, and docs can go stale quickly.
+6. Never commit secrets or passwords. Blank them in config copies first.
+7. Do not edit `Hajaribagh-Paintings.zip` without updating `resource-pack-sha1` in `configs/server.properties`. The steps are in `docs/OPERATIONS.md`.

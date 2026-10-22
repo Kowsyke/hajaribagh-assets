@@ -23,12 +23,20 @@ This document records the evolution of the hosting infrastructure for Project Ha
 * Git repository configured as the central source of truth for both developers (Kowsyke and exacyyv).
 * Automated synchronization scripts enabled to push datapack updates and configurations directly to the live cloud node.
 
+### Phase 4: Hardening and Reliability (Planned)
+* Make the painting resource pack downloadable without a login.
+* Back up the world off the VM (Oracle boot volume backups plus a scheduled copy).
+* Check Oracle's idle reclaim rules for Always Free instances.
+* Tighten SSH access and review the whitelist.
+
+Details, reasons, and fixes for each item are in [`KNOWN_ISSUES.md`](./KNOWN_ISSUES.md). The repo to VM file mapping and update procedures are in [`OPERATIONS.md`](./OPERATIONS.md). Run `python scripts/check-server.py` for a quick health check from any computer.
+
 ---
 
 ## 2. Production Server Runbook
 
 ### Accessing the Cloud Node
-To open a secure shell session on the production server:
+Your SSH public key must be listed in `/home/ubuntu/.ssh/authorized_keys` on the VM. Ask Kowsyke to add it. To open a secure shell session on the production server:
 ```bash
 ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26
 ```

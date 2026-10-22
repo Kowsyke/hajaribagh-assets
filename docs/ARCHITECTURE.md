@@ -75,13 +75,42 @@ Both critical services are supervised by systemd on the cloud node:
 
 ---
 
-## 6. Active Mods and Subsystems
+## 6. Active Mods
 
-* `fabric-api`: Standard Fabric hooks.
-* `lithium`: Chunk and entity tick performance optimization.
-* `ferritecore`: Memory deduplication and footprint reduction.
-* `krypton`: Libdeflate network compression.
-* `polymer-bundled`: Server-side model, item, and block translation into vanilla display entities.
-* `brewery`: Cauldron fermenting, barrel aging, and drinks.
-* `custompaintings`: Server-side painting motive replacements.
-* `cannabis_smoke` datapack: Craftable joints, 3D animated smoke particles, sound effects, and status buffs.
+Mods live in `mods/` on the VM and are not stored in this repo (`*.jar` is gitignored). Six of the seven are server-side or optional on the client. The exception is `custompaintings`, which its author lists as required on both sides. See [`MODS_DATAPACKS.md`](./MODS_DATAPACKS.md) for sources and details.
+
+| Mod Name | Version | Function | Client needs it? |
+| :--- | :--- | :--- | :--- |
+| `fabric-api` | 0.162.0+26.3 | Base hooks and event bus for Fabric | No |
+| `lithium` | 0.26.2+mc26.3 | Chunk and entity tick performance optimization | No |
+| `ferritecore` | 9.0.0 | Memory deduplication and footprint reduction | No |
+| `krypton` | 0.3.2 | Libdeflate network compression | No |
+| `polymer-bundled` | 0.18.4+26.3 | Server-side model, item, and block translation into vanilla display entities | No |
+| `brewery` | 0.17.1+26.3 | Patbox's Brewery: cauldrons, aging barrels, and alcoholic beverages, built on Polymer | No |
+| `custompaintings` | 4.0.2+26.3 | Roundaround's Custom Paintings: painting packs, picker menu, custom sizes | Yes, per its Modrinth page (see `KNOWN_ISSUES.md`) |
+
+---
+
+## 7. Custom Subsystems
+
+### A. Cannabis and Smoking (`datapacks/cannabis_smoke`)
+* **Item**: `minecraft:warped_fungus_on_a_stick` with a custom name and lore. Using that item increments the `use_joint` scoreboard objective (criterion `minecraft.used:minecraft.warped_fungus_on_a_stick`), which is how right-click is detected without a client mod.
+* **Recipe**: 1 Paper + 1 Dried Kelp yields 3 Cannabis Joints.
+* **Mechanics** (all in `datapacks/cannabis_smoke/data/cannabis/function/`):
+  * `tick.mcfunction` runs every tick. If a player has `use_joint` or `smoke` at 1 or more, it runs `smoke.mcfunction` as that player.
+  * `smoke.mcfunction` resets both scores, sets `smoke_timer` to 60 ticks, plays `block.campfire.crackle` to nearby players and `entity.generic.drink` to the smoker, shows an action bar message, and applies Regeneration II (15 s), Resistance II (20 s), Slow Falling (10 s), Saturation (2 s) and Nausea (6 s).
+  * While `smoke_timer` is above 0, `puff_particles.mcfunction` spawns `campfire_cosy_smoke` and `smoke` particles about 1.6 blocks up and 0.5 blocks in front of the player, so smoke appears at face height for 3 seconds.
+  * `/trigger smoke` runs the same effects without needing a joint.
+
+### B. Custom Paintings System
+Two separate layers exist, and only the first one is known to work for vanilla clients.
+
+1. **Resource pack texture override** (`Hajaribagh-Paintings.zip`): six images are copied over all 46 vanilla painting textures in `assets/minecraft/textures/painting/`, grouped by aspect ratio. The server sends the zip to connecting clients through `resource-pack` and `resource-pack-sha1` in `server.properties`. Players see custom art on any painting they place, with no client mod. The URL must be downloadable without a login (see `KNOWN_ISSUES.md`).
+2. **Custom Paintings mod** (`custompaintings` jar plus `custompaintings/ServerPaintings/`): a painting pack with source images and a `custompaintings.json` manifest that defines six paintings with their own names and block sizes. The mod page lists the mod as required on both client and server, so players without it should not be relied on to see these entries.
+
+Images: Hasina (2x3), Chuppu (1x2), Sarjis Alam (3x2), Dhaka scene (4x3), Nahid and Asif (2x3), Bengal meme (2x2). The zip build step is not in this repo yet. See [`OPERATIONS.md`](./OPERATIONS.md).
+
+### C. Ore Inspection Toggle (`datapacks/ore_xray`)
+* `/trigger xray` is enabled only for the player named `Kowsyke`. Other players' `xray` score is reset to 0 every tick.
+* First use puts the player in spectator mode with infinite night vision, so they can pass through terrain and look at ore and caves.
+* Second use clears night vision and returns the player to survival mode, whatever mode they were in before.
