@@ -9,6 +9,7 @@ give @s stone_hoe 1
 give @s torch 10
 give @s cooked_beef 10
 give @s map[item_name="{\"text\":\"Starter Map\",\"color\":\"gold\"}"] 1
+recipe give @s *
 function server_guide:give_book
 tellraw @s [{"text":"[Hajaribagh] ","color":"green","bold":true},{"text":"Welcome to the server! You have received full leather armor, stone tools, 10 torches, 10 beef steaks, a starter map, and your guide book.","color":"yellow"}]
 tellraw @s [{"text":"[Hajaribagh Base] ","color":"gold","bold":true},{"text":"The main base, houses, and farms are located around X: 163, Z: -307 (east of spawn).","color":"aqua"}]

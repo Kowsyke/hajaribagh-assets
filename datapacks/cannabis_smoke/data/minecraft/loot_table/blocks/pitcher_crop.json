@@ -1,0 +1,133 @@
+{
+  "type": "minecraft:block",
+  "modifier": {
+    "type": "minecraft:explosion_decay"
+  },
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:match_block",
+                    "blocks": "minecraft:pitcher_crop",
+                    "state": {
+                      "age": "4"
+                    }
+                  },
+                  {
+                    "type": "minecraft:match_block",
+                    "blocks": "minecraft:pitcher_crop",
+                    "state": {
+                      "half": "lower"
+                    }
+                  }
+                ]
+              },
+              "modifier": [
+                {
+                  "type": "minecraft:set_components",
+                  "components": {
+                    "minecraft:custom_name": "{\"text\":\"Raw Cannabis Bud\",\"color\":\"dark_green\",\"bold\":true,\"italic\":false}",
+                    "minecraft:lore": [
+                      "{\"text\":\"Dry on a campfire, smoker, or furnace before rolling\",\"color\":\"gray\",\"italic\":false}"
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 2,
+                    "max": 3
+                  }
+                }
+              ],
+              "name": "minecraft:fern"
+            },
+            {
+              "type": "minecraft:item",
+              "condition": {
+                "type": "minecraft:match_block",
+                "blocks": "minecraft:pitcher_crop",
+                "state": {
+                  "half": "lower"
+                }
+              },
+              "modifier": [
+                {
+                  "type": "minecraft:set_components",
+                  "components": {
+                    "minecraft:custom_name": "{\"text\":\"Cannabis Seed\",\"color\":\"green\",\"bold\":true,\"italic\":false}",
+                    "minecraft:lore": [
+                      "{\"text\":\"Plant on hydrated farmland to grow cannabis\",\"color\":\"gray\",\"italic\":false}"
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:set_count",
+                  "count": 1
+                }
+              ],
+              "name": "minecraft:pitcher_pod"
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_block",
+            "blocks": "minecraft:pitcher_crop",
+            "state": {
+              "age": "4"
+            }
+          },
+          {
+            "type": "minecraft:match_block",
+            "blocks": "minecraft:pitcher_crop",
+            "state": {
+              "half": "lower"
+            }
+          }
+        ]
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": "{\"text\":\"Cannabis Seed\",\"color\":\"green\",\"bold\":true,\"italic\":false}",
+                "minecraft:lore": [
+                  "{\"text\":\"Plant on hydrated farmland to grow cannabis\",\"color\":\"gray\",\"italic\":false}"
+                ]
+              }
+            },
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ],
+          "name": "minecraft:pitcher_pod"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

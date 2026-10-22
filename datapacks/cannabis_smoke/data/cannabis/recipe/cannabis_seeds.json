@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:wheat_seeds",
+    "minecraft:dried_kelp"
+  ],
+  "result": {
+    "id": "minecraft:pitcher_pod",
+    "count": 2,
+    "components": {
+      "minecraft:custom_name": "{\"text\":\"Cannabis Seed\",\"color\":\"green\",\"bold\":true,\"italic\":false}",
+      "minecraft:lore": [
+        "{\"text\":\"Plant on hydrated farmland to grow cannabis\",\"color\":\"gray\",\"italic\":false}"
+      ]
+    }
+  }
+}

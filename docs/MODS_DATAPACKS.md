@@ -46,12 +46,15 @@ This document catalogs every active modification, server datapack, and asset pac
 
 ### `cannabis_smoke`
 * **Path**: `datapacks/cannabis_smoke/`
-* **Recipe**: 1 Paper + 1 Dried Kelp (shapeless) yields 3 Cannabis Joints, which are `warped_fungus_on_a_stick` items with a custom name and lore.
-* **Right-click detection**: using the item increments the `use_joint` scoreboard objective.
+* **Seeds**: Crafted (1 Wheat Seed + 1 Dried Kelp = 2 Cannabis Seeds) or foraged by breaking wild ferns in forests (25% drop rate).
+* **Cultivation**: Planted on hydrated farmland as a crop. Progresses through growth stages into tall stalks. Can be bonemealed to accelerate growth.
+* **Harvesting**: Breaking or right-clicking mature crops drops 2 to 3 Raw Cannabis Buds and 1 to 2 Cannabis Seeds.
+* **Curing**: Raw buds are dried on campfires (30s), in smokers (5s), or in furnaces (10s) to produce Cured Cannabis Buds.
+* **Rolling**: 1 Paper + 1 Cured Bud (or Dried Kelp) crafts 3 Cannabis Joints (`warped_fungus_on_a_stick` with custom name and lore).
+* **Right-click detection**: Using the joint item increments the `use_joint` scoreboard objective.
 * **Effects per use**: Regeneration II for 15 seconds, Resistance II for 20 seconds, Slow Falling for 10 seconds, Saturation for 2 seconds, and Nausea for 6 seconds.
-* **Presentation**: `block.campfire.crackle` is heard by nearby players, `entity.generic.drink` plays for the smoker, an action bar message appears, and smoke particles puff in front of the player's face for 3 seconds.
-* **No joint needed**: `/trigger smoke` runs the same effects.
-* **Items**: `give_joint.mcfunction` gives 3 joints to the player who runs it.
+* **Presentation**: Campfire crackle audio plays for nearby players, drink sound plays for the smoker, an action bar alert appears, and smoke particles puff in front of the player's face for 3 seconds.
+* **Trigger command**: `/trigger smoke` runs the same smoke animation and effects without needing a joint item in hand.
 
 ### `ore_xray`
 * **Path**: `datapacks/ore_xray/`

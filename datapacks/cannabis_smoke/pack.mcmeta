@@ -1,7 +1,6 @@
 {
   "pack": {
-    "pack_format": 82,
-    "supported_formats": [15, 100],
-    "description": "Cannabis & Smoking Mod (Server-Side, Zero Client Mods Required)"
+    "pack_format": 81,
+    "description": "Cannabis Cultivation & Smoking (Server-Side, Zero Client Mods)"
   }
 }

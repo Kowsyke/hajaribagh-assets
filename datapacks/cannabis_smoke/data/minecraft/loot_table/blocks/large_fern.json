@@ -1,0 +1,91 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_block",
+            "blocks": "minecraft:large_fern",
+            "state": {
+              "half": "lower"
+            }
+          },
+          {
+            "type": "minecraft:location_check",
+            "offsetY": 1,
+            "predicate": {
+              "block": {
+                "blocks": "minecraft:large_fern",
+                "state": {
+                  "half": "upper"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "condition": "minecraft:tool/can_shear",
+              "modifier": {
+                "type": "minecraft:set_count",
+                "count": 2
+              },
+              "name": "minecraft:fern"
+            },
+            {
+              "type": "minecraft:item",
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:survives_explosion"
+                  },
+                  {
+                    "type": "minecraft:random_chance",
+                    "chance": 0.35
+                  }
+                ]
+              },
+              "modifier": [
+                {
+                  "type": "minecraft:set_components",
+                  "components": {
+                    "minecraft:custom_name": "{\"text\":\"Cannabis Seed\",\"color\":\"green\",\"bold\":true,\"italic\":false}",
+                    "minecraft:lore": [
+                      "{\"text\":\"Plant on hydrated farmland to grow cannabis\",\"color\":\"gray\",\"italic\":false}"
+                    ]
+                  }
+                }
+              ],
+              "name": "minecraft:pitcher_pod"
+            },
+            {
+              "type": "minecraft:item",
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:survives_explosion"
+                  },
+                  {
+                    "type": "minecraft:random_chance",
+                    "chance": 0.125
+                  }
+                ]
+              },
+              "name": "minecraft:wheat_seeds"
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

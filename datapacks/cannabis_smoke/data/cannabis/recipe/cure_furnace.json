@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "ingredient": "minecraft:fern",
+  "result": {
+    "id": "minecraft:dried_kelp",
+    "components": {
+      "minecraft:custom_name": "{\"text\":\"Cured Cannabis Bud\",\"color\":\"dark_green\",\"bold\":true,\"italic\":false}",
+      "minecraft:lore": [
+        "{\"text\":\"Ready to roll with paper into joints\",\"color\":\"gray\",\"italic\":false}"
+      ]
+    }
+  }
+}
