@@ -34,7 +34,10 @@ This file details all participants, their access levels, network locations, and 
 
 ### 2. ahsane
 * **In-Game Username**: `ahsane`
-* **Role**: Explorer and Builder
+* **Title & Role**: Vice Captain, Advisor
+* **Instagram**: `@sanerar`
+* **Status**: Single, heterosexual, looking for a girlfriend
+* **Advisory**: Designated contact for community questions, political strategy, and financial guidance
 * **Location**: Canada
 * **Connection**: Direct public IP `132.226.135.26:25565` (the Playit tunnel `cairo-temptation.tun.ply.gg:47309` still works as a fallback)
 
