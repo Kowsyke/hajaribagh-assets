@@ -6,13 +6,14 @@ This file details all participants, their access levels, network locations, and 
 
 ## Developers and Node Hosts
 
-### 1. Kowsyke
+### 1. King Abir (Kowsyke)
+* **Title & Persona**: King Abir (always and everywhere introduced as King Abir across the server, in-game copy, books, and announcements)
 * **GitHub**: `Kowsyke` (abirmia205@gmail.com)
 * **In-Game Username**: `Kowsyke`
-* **Role**: Lead Administrator, Host Operator (Node A)
+* **Role**: Supreme Server Ruler, Lead Administrator, Host Operator (Node A)
 * **Location**: United Kingdom
 * **Host Environment**: Oracle Cloud Always Free VM (Ubuntu 24.04 aarch64, Oracle JDK 25), supervised by systemd, with the Playit tunnel kept as a fallback route.
-* **Responsibilities**: Infrastructure maintenance, memory profiling, core network routing, primary daemon supervisor.
+* **Responsibilities**: Sovereign leadership, infrastructure maintenance, memory profiling, core network routing, primary daemon supervisor.
 
 ### 2. exacyyv
 * **GitHub**: `exacyyv`

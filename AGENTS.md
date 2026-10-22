@@ -15,7 +15,7 @@ The server blends humor, Bangladeshi cultural references, survival gameplay, and
 ## 2. Team and Member Registry
 
 ### Core Developers and Operators
-* **Kowsyke (abirmia205@gmail.com)**: Lead engineer and server operator. Located in the United Kingdom.
+* **King Abir (Kowsyke, abirmia205@gmail.com)**: Supreme ruler, lead engineer, and host operator. Located in the United Kingdom. Must always and everywhere be introduced and addressed as King Abir across in-game copy, dialogue, guide books, and server notices.
 * **exacyyv**: Co-developer and collaborator. Has full collaborator access to vibe-code, create mods, and deploy features. Also built the Minecraft sword controller described in the README.
 
 ### Players and Community

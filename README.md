@@ -8,7 +8,7 @@
 ## 1. System Context and Narrative Concept
 
 * **Project Name**: Project Hajaribagh
-* **Lead Engineer (Node A)**: Kowsyke (abirmia205@gmail.com, United Kingdom)
+* **Lead Engineer (Node A)**: King Abir (Kowsyke, abirmia205@gmail.com, United Kingdom)
 * **Co-Developer (Node B)**: exacyyv (Collaborator, Vibe-coding partner)
 * **Target Audience**: A private, cross-continental group of close friends in the UK, Canada, and Bangladesh.
 * **Core Philosophy**: A humorous, culturally resonant Bangladeshi survival multiplayer server. It blends inside jokes, political satire, hangout mechanics (cannabis smoking and brewing), and vanilla survival.
@@ -101,7 +101,7 @@ scp -i ~/.ssh/id_ed25519 -r datapacks/* ubuntu@132.226.135.26:~/minecraft-server
 ```
 
 Before your first deploy:
-* Kowsyke must add your SSH public key to `/home/ubuntu/.ssh/authorized_keys` on the VM. The scripts cannot log in without it.
+* King Abir (Kowsyke) must add your SSH public key to `/home/ubuntu/.ssh/authorized_keys` on the VM. The scripts cannot log in without it.
 * The scripts use `~/.ssh/id_ed25519` by default. To use a different key, user, or host, set `HZ_KEY`, `HZ_USER`, or `HZ_HOST`, for example `HZ_KEY=~/.ssh/my_key ./scripts/deploy-to-cloud.sh`.
 * On Windows, run the scripts from Git Bash.
 * The script copies your working folder, committed or not. Run `git pull` first and deploy only what is on `main`.
@@ -143,7 +143,7 @@ ssh -i ~/.ssh/id_ed25519 ubuntu@132.226.135.26 "sudo journalctl -u minecraft -f"
 
 ## 7. Collaboration and Vibe-Coding Protocol
 
-Both developers (Kowsyke and exacyyv) collaborate on this repository using their respective AI agents:
+Both developers (King Abir and exacyyv) collaborate on this repository using their respective AI agents:
 * **Feature Branches**: Branch off `main` for new mini-games or datapack mechanics, and merge once they are checked.
 * **Validation**: Verify all datapack JSON syntax and scoreboard commands prior to merging. Check `docs/KNOWN_ISSUES.md` before changing a subsystem.
 * **Deploying**: `scripts/deploy-to-cloud.sh` ships your working folder straight to production, so deploy from an up to date `main`.
