@@ -15,7 +15,7 @@ scoreboard objectives add sfr_display dummy
 scoreboard objectives add taxfraud trigger
 
 team add sfr_tycoon "Salman F Rahman"
-team modify sfr_tycoon prefix [{"text":"[Salman F Rahman] ","color":"gold","bold":true}]
+team modify sfr_tycoon prefix [{"text":"✦ [Salman F Rahman] ✦ ","bold":true}]
 team modify sfr_tycoon color gold
 
 execute store result score #prev_daytime sfr_prev_time run time query day

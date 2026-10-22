@@ -16,3 +16,7 @@ execute as @a[scores={taxfraud=1..}] at @s run function salman_f_rahman:trigger_
 
 execute if score #display sfr_display matches 1.. run scoreboard players remove #display sfr_display 1
 execute if score #display sfr_display matches 0 run function salman_f_rahman:hide_scoreboard
+
+# Gamemode enforcement (only Kowsyke / Prime Minister can change gamemode)
+gamemode survival @a[name=!Kowsyke,gamemode=creative]
+gamemode survival @a[name=!Kowsyke,gamemode=spectator]

@@ -7,4 +7,3 @@ execute as @a[tag=!is_sfr] if score @s sfr_score = #max sfr_score if score #max 
 
 execute as @a[tag=is_sfr,team=!sfr_tycoon] run team join sfr_tycoon @s
 
-effect give @a[tag=is_sfr] minecraft:glowing 2 0 true
