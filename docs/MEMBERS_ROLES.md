@@ -96,7 +96,7 @@ All other members, including cabinet ministers, the First Lady, and incoming cit
 ## Salman F Rahman Resource Tycoon Trophy
 
 The player who has mined the most gold ore across the server holds the satirical title of **Salman F Rahman**:
-* **Live Scoreboard**: The top gold mining scores appear on the sidebar leaderboard titled `Salman F Rahman`.
+* **On Demand Scoreboard**: The leaderboard does not linger on screen. Players run `/trigger taxfraud` to display the gold mining standings on the sidebar for 5 seconds before it automatically vanishes.
 * **Rainbow Glow Appearance**: The reigning tycoon glows continuously and cycles through pulsing rainbow colors on their nameplate and tab list entry.
 * **Daily Ore Dividend**: At every game sunrise, the title holder receives 1 random ore directly in their inventory.
 * **Inventory Space Check and 10 Second Warning**: If the player's inventory is completely full when sunrise occurs, a 10 second countdown alert warns them to free up a slot. If they clear a slot within 10 seconds, the ore is delivered immediately. If all slots remain full after 10 seconds, the dividend is forfeited to the state treasury.

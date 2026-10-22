@@ -11,7 +11,8 @@ scoreboard players operation #prev_daytime sfr_prev_time = #curr_daytime sfr_tem
 
 execute as @a[scores={sfr_warn_timer=1..}] at @s run function salman_f_rahman:handle_warn_countdown
 
-scoreboard players enable @a leaderboard
-execute as @a[scores={leaderboard=1..}] at @s run scoreboard objectives setdisplay sidebar sfr_score
-execute as @a[scores={leaderboard=1..}] at @s run tellraw @s [{"text":"[Salman F Rahman] ","color":"gold","bold":true},{"text":"Leaderboard sidebar display refreshed!","color":"green"}]
-scoreboard players set @a[scores={leaderboard=1..}] leaderboard 0
+scoreboard players enable @a taxfraud
+execute as @a[scores={taxfraud=1..}] at @s run function salman_f_rahman:trigger_taxfraud
+
+execute if score #display sfr_display matches 1.. run scoreboard players remove #display sfr_display 1
+execute if score #display sfr_display matches 0 run function salman_f_rahman:hide_scoreboard
