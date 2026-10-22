@@ -40,6 +40,9 @@ The server has been migrated from local laptop hosting to a dedicated cloud node
 3. **Performance Envelope**:
    * Hardware memory ceiling on the cloud node is 8 GB for Minecraft.
    * Do not introduce 3D terrain noise generators that cause chunk generation lag. Keep world generation lightweight and structure-based.
+4. **Iron-Clad Guide Book and Repository Synchronization Rule**:
+   * Whenever any new mod, command, mechanic, or player role is introduced or modified, the in-game guide book (`datapacks/server_guide`) must be updated with the changes and its version incremented.
+   * All repository documentation (`README.md`, `AGENTS.md`, and `docs/MODS_DATAPACKS.md`) must be kept in sync and pushed to GitHub. No change is complete without this step.
 
 ---
 

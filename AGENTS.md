@@ -47,6 +47,15 @@ Players connect using unmodded vanilla clients, standard launchers, or offline a
 * Never install heavy 3D noise generation datapacks (like Terralith) that alter terrain equations.
 * Prioritize pre-baked jigsaw structures, lightweight datapacks, and memory optimization mods (Lithium, FerriteCore, Krypton).
 
+### Invariant D: Iron-Clad Guide Book and Repository Synchronization Rule
+Whenever any new mod, command, mechanic, or player role is introduced, changed, or removed on Project Hajaribagh, the working agent must:
+1. Update the in-game guide book in `datapacks/server_guide/data/server_guide/function/give_book.mcfunction` with the new features, commands, or roles.
+2. Increment the guide version in `give_book.mcfunction` and `tick.mcfunction` so returning players receive the new edition automatically upon logging in.
+3. Update the repository documentation (`README.md`, `AGENTS.md`, and `docs/MODS_DATAPACKS.md`).
+4. Deploy the updated datapack to the cloud server and run `/reload`.
+5. Commit and push all changes to the GitHub repository on `main`.
+No task is complete until both the in-game guide book and the GitHub repository are fully synchronized.
+
 ---
 
 ## 4. Current Technical Architecture
