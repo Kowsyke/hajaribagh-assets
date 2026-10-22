@@ -8,9 +8,18 @@
     "id": "minecraft:dried_kelp",
     "count": 1,
     "components": {
-      "minecraft:custom_name": "{\"text\":\"Cured Cannabis Bud\",\"color\":\"dark_green\",\"bold\":true,\"italic\":false}",
+      "minecraft:custom_name": {
+        "text": "Cured Cannabis Bud",
+        "color": "dark_green",
+        "bold": true,
+        "italic": false
+      },
       "minecraft:lore": [
-        "{\"text\":\"Ready to roll with paper into joints\",\"color\":\"gray\",\"italic\":false}"
+        {
+          "text": "Ready to roll with paper into joints",
+          "color": "gray",
+          "italic": false
+        }
       ]
     }
   }

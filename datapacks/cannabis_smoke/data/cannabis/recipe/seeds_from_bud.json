@@ -8,9 +8,18 @@
     "id": "minecraft:pitcher_pod",
     "count": 1,
     "components": {
-      "minecraft:custom_name": "{\"text\":\"Cannabis Seed\",\"color\":\"green\",\"bold\":true,\"italic\":false}",
+      "minecraft:custom_name": {
+        "text": "Cannabis Seed",
+        "color": "green",
+        "bold": true,
+        "italic": false
+      },
       "minecraft:lore": [
-        "{\"text\":\"Plant on hydrated farmland to grow cannabis\",\"color\":\"gray\",\"italic\":false}"
+        {
+          "text": "Plant on hydrated farmland to grow cannabis",
+          "color": "gray",
+          "italic": false
+        }
       ]
     }
   }

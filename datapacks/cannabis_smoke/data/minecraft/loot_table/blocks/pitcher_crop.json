@@ -34,9 +34,18 @@
                 {
                   "type": "minecraft:set_components",
                   "components": {
-                    "minecraft:custom_name": "{\"text\":\"Raw Cannabis Bud\",\"color\":\"dark_green\",\"bold\":true,\"italic\":false}",
+                    "minecraft:custom_name": {
+                      "text": "Raw Cannabis Bud",
+                      "color": "dark_green",
+                      "bold": true,
+                      "italic": false
+                    },
                     "minecraft:lore": [
-                      "{\"text\":\"Dry on a campfire, smoker, or furnace before rolling\",\"color\":\"gray\",\"italic\":false}"
+                      {
+                        "text": "Dry on a campfire, smoker, or furnace before rolling",
+                        "color": "gray",
+                        "italic": false
+                      }
                     ]
                   }
                 },
@@ -64,9 +73,18 @@
                 {
                   "type": "minecraft:set_components",
                   "components": {
-                    "minecraft:custom_name": "{\"text\":\"Cannabis Seed\",\"color\":\"green\",\"bold\":true,\"italic\":false}",
+                    "minecraft:custom_name": {
+                      "text": "Cannabis Seed",
+                      "color": "green",
+                      "bold": true,
+                      "italic": false
+                    },
                     "minecraft:lore": [
-                      "{\"text\":\"Plant on hydrated farmland to grow cannabis\",\"color\":\"gray\",\"italic\":false}"
+                      {
+                        "text": "Plant on hydrated farmland to grow cannabis",
+                        "color": "gray",
+                        "italic": false
+                      }
                     ]
                   }
                 },
@@ -109,9 +127,18 @@
             {
               "type": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": "{\"text\":\"Cannabis Seed\",\"color\":\"green\",\"bold\":true,\"italic\":false}",
+                "minecraft:custom_name": {
+                  "text": "Cannabis Seed",
+                  "color": "green",
+                  "bold": true,
+                  "italic": false
+                },
                 "minecraft:lore": [
-                  "{\"text\":\"Plant on hydrated farmland to grow cannabis\",\"color\":\"gray\",\"italic\":false}"
+                  {
+                    "text": "Plant on hydrated farmland to grow cannabis",
+                    "color": "gray",
+                    "italic": false
+                  }
                 ]
               }
             },
