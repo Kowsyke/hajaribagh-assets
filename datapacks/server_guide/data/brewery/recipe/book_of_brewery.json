@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "minecraft:book"
+  ],
+  "result": {
+    "id": "brewery:book_of_brewery",
+    "count": 1
+  }
+}
