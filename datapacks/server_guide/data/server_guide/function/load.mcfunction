@@ -1,3 +1,10 @@
+scoreboard objectives add gta_deaths deathCount
+
+scoreboard objectives add tp_base trigger
+scoreboard objectives add tp_spawn trigger
+scoreboard objectives add gtp trigger
+scoreboard objectives add minimap trigger
+scoreboard objectives add gtp_timer dummy
 scoreboard objectives add has_starter_kit dummy
 scoreboard objectives add guide trigger
 scoreboard objectives add guide_version dummy
