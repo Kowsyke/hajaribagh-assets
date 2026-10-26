@@ -45,3 +45,6 @@ scoreboard objectives add tnt_arrow trigger
 scoreboard objectives add tnt_mode dummy
 scoreboard objectives add used_bow minecraft.used:minecraft.bow
 scoreboard objectives add used_cbow minecraft.used:minecraft.crossbow
+
+scoreboard objectives add kit_platinum trigger
+scoreboard objectives add kit_dev trigger

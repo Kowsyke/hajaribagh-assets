@@ -94,3 +94,12 @@ execute as @e[type=spectral_arrow,tag=tnt_arrow,nbt={inGround:0b}] at @s if enti
 # TNT Arrow Detonation on Contact with Other Players
 execute as @e[type=arrow,tag=tnt_arrow,nbt={inGround:0b}] at @s if entity @a[distance=0.8..1.5] run function server_guide:detonate_arrow
 execute as @e[type=spectral_arrow,tag=tnt_arrow,nbt={inGround:0b}] at @s if entity @a[distance=0.8..1.5] run function server_guide:detonate_arrow
+
+# Kit Platinum and Dev Bundle Triggers
+scoreboard players enable @a kit_platinum
+execute as @a[scores={kit_platinum=1..}] at @s run function server_guide:kit_platinum
+scoreboard players set @a[scores={kit_platinum=1..}] kit_platinum 0
+
+scoreboard players enable @a[team=pm] kit_dev
+execute as @a[scores={kit_dev=1..},team=pm] at @s run function server_guide:kit_dev
+scoreboard players set @a[scores={kit_dev=1..}] kit_dev 0
