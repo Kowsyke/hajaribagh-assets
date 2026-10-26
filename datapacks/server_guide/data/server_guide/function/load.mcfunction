@@ -48,3 +48,5 @@ scoreboard objectives add used_cbow minecraft.used:minecraft.crossbow
 
 scoreboard objectives add kit_platinum trigger
 scoreboard objectives add kit_dev trigger
+scoreboard objectives add kit_shears trigger
+scoreboard objectives add kit_shield trigger

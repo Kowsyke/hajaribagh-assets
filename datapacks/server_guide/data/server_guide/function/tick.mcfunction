@@ -103,3 +103,11 @@ scoreboard players set @a[scores={kit_platinum=1..}] kit_platinum 0
 scoreboard players enable @a[team=pm] kit_dev
 execute as @a[scores={kit_dev=1..},team=pm] at @s run function server_guide:kit_dev
 scoreboard players set @a[scores={kit_dev=1..}] kit_dev 0
+
+scoreboard players enable @a kit_shears
+execute as @a[scores={kit_shears=1..}] at @s run function server_guide:give_shears
+scoreboard players set @a[scores={kit_shears=1..}] kit_shears 0
+
+scoreboard players enable @a kit_shield
+execute as @a[scores={kit_shield=1..}] at @s run function server_guide:give_shield
+scoreboard players set @a[scores={kit_shield=1..}] kit_shield 0
