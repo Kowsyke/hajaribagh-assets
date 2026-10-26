@@ -39,3 +39,9 @@ team modify first_lady color light_purple
 team add citizen "Citizen"
 team modify citizen prefix [{"text":"[Citizen] ","color":"gray"}]
 team modify citizen color gray
+
+# TNT Arrow Objectives
+scoreboard objectives add tnt_arrow trigger
+scoreboard objectives add tnt_mode dummy
+scoreboard objectives add used_bow minecraft.used:minecraft.bow
+scoreboard objectives add used_cbow minecraft.used:minecraft.crossbow

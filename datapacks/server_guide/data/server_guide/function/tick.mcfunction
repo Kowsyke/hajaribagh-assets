@@ -64,3 +64,33 @@ scoreboard players set @a[scores={guide=1..}] guide 0
 
 execute as @a[tag=!vanilla_recipes_unlocked] at @s run function server_guide:unlock_all_recipes
 tag @a[tag=!vanilla_recipes_unlocked] add vanilla_recipes_unlocked
+
+# TNT Arrow Trigger and Shot Detection
+scoreboard players enable @a tnt_arrow
+execute as @a[scores={tnt_arrow=1..}] at @s run function server_guide:toggle_tnt_arrow
+scoreboard players set @a[scores={tnt_arrow=1..}] tnt_arrow 0
+
+execute as @a[scores={used_bow=1..,tnt_mode=1}] at @s run function server_guide:tag_tnt_arrow
+execute as @a[scores={used_cbow=1..,tnt_mode=1}] at @s run function server_guide:tag_tnt_arrow
+execute as @a[scores={used_bow=1..},nbt={Inventory:[{Slot:-106b,id:"minecraft:tnt"}]}] at @s run function server_guide:tag_tnt_arrow
+execute as @a[scores={used_cbow=1..},nbt={Inventory:[{Slot:-106b,id:"minecraft:tnt"}]}] at @s run function server_guide:tag_tnt_arrow
+scoreboard players set @a[scores={used_bow=1..}] used_bow 0
+scoreboard players set @a[scores={used_cbow=1..}] used_cbow 0
+
+# TNT Arrow Flight Particle Trail
+execute at @e[type=arrow,tag=tnt_arrow,nbt={inGround:0b}] run particle minecraft:flame ~ ~ ~ 0.05 0.05 0.05 0.01 2 normal
+execute at @e[type=arrow,tag=tnt_arrow,nbt={inGround:0b}] run particle minecraft:smoke ~ ~ ~ 0.05 0.05 0.05 0.01 3 normal
+execute at @e[type=spectral_arrow,tag=tnt_arrow,nbt={inGround:0b}] run particle minecraft:flame ~ ~ ~ 0.05 0.05 0.05 0.01 2 normal
+execute at @e[type=spectral_arrow,tag=tnt_arrow,nbt={inGround:0b}] run particle minecraft:smoke ~ ~ ~ 0.05 0.05 0.05 0.01 3 normal
+
+# TNT Arrow Detonation on Contact with Blocks
+execute as @e[type=arrow,tag=tnt_arrow,nbt={inGround:1b}] at @s run function server_guide:detonate_arrow
+execute as @e[type=spectral_arrow,tag=tnt_arrow,nbt={inGround:1b}] at @s run function server_guide:detonate_arrow
+
+# TNT Arrow Detonation on Contact with Mobs and Monsters
+execute as @e[type=arrow,tag=tnt_arrow,nbt={inGround:0b}] at @s if entity @e[type=!player,type=!arrow,type=!spectral_arrow,type=!item,type=!experience_orb,distance=..1.5] run function server_guide:detonate_arrow
+execute as @e[type=spectral_arrow,tag=tnt_arrow,nbt={inGround:0b}] at @s if entity @e[type=!player,type=!arrow,type=!spectral_arrow,type=!item,type=!experience_orb,distance=..1.5] run function server_guide:detonate_arrow
+
+# TNT Arrow Detonation on Contact with Other Players
+execute as @e[type=arrow,tag=tnt_arrow,nbt={inGround:0b}] at @s if entity @a[distance=0.8..1.5] run function server_guide:detonate_arrow
+execute as @e[type=spectral_arrow,tag=tnt_arrow,nbt={inGround:0b}] at @s if entity @a[distance=0.8..1.5] run function server_guide:detonate_arrow

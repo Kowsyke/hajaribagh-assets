@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:arrow",
+    "minecraft:tnt"
+  ],
+  "result": {
+    "id": "minecraft:arrow",
+    "count": 4,
+    "components": {
+      "minecraft:custom_name": {
+        "text": "TNT Arrow",
+        "color": "red",
+        "bold": true,
+        "italic": false
+      },
+      "minecraft:lore": [
+        {
+          "text": "Explodes like TNT on contact!",
+          "color": "gold",
+          "italic": false
+        }
+      ],
+      "minecraft:enchantment_glint_override": true
+    }
+  }
+}
