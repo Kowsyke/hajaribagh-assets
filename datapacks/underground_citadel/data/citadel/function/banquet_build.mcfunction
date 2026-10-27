@@ -19,15 +19,15 @@ fill 145 50 -328 145 50 -308 yellow_carpet
 # Long Banquet Feast Tables (West: X: 137..139, East: X: 147..149)
 fill 138 50 -325 138 50 -310 dark_oak_planks
 fill 138 51 -325 138 51 -310 dark_oak_slab[type=top]
-fill 137 51 -325 137 51 -310 dark_oak_stairs[facing=east]
-fill 139 51 -325 139 51 -310 dark_oak_stairs[facing=west]
+fill 137 51 -325 137 51 -310 dark_oak_stairs[facing=east,half=bottom]
+fill 139 51 -325 139 51 -310 dark_oak_stairs[facing=west,half=bottom]
 
 fill 148 50 -325 148 50 -310 dark_oak_planks
 fill 148 51 -325 148 51 -310 dark_oak_slab[type=top]
-fill 147 51 -325 147 51 -310 dark_oak_stairs[facing=east]
-fill 149 51 -325 149 51 -310 dark_oak_stairs[facing=west]
+fill 147 51 -325 147 51 -310 dark_oak_stairs[facing=east,half=bottom]
+fill 149 51 -325 149 51 -310 dark_oak_stairs[facing=west,half=bottom]
 
-# Feast Tableware (Cakes, Candles, Pots, Chalices)
+# Feast Tableware (Cakes, Candles, Pots)
 setblock 138 52 -323 cake[bites=0]
 setblock 138 52 -320 candle[lit=true,candles=3]
 setblock 138 52 -317 decorated_pot[facing=north]
@@ -42,10 +42,11 @@ setblock 148 52 -311 cake[bites=0]
 
 # High Table Dais (North End: Z: -328..-326)
 fill 136 51 -328 150 51 -326 smooth_quartz
+fill 140 51 -326 146 51 -326 smooth_quartz_stairs[facing=south,half=bottom]
 fill 140 52 -327 146 52 -327 dark_oak_slab[type=top]
-setblock 143 52 -328 dark_oak_stairs[facing=south]
-setblock 142 52 -328 dark_oak_stairs[facing=south]
-setblock 144 52 -328 dark_oak_stairs[facing=south]
+setblock 143 52 -328 dark_oak_stairs[facing=south,half=bottom]
+setblock 142 52 -328 dark_oak_stairs[facing=south,half=bottom]
+setblock 144 52 -328 dark_oak_stairs[facing=south,half=bottom]
 
 # Dual Roaring Stone Fireplaces (East Wall X: 154, West Wall X: 132)
 # West Fireplace
@@ -70,3 +71,6 @@ setblock 143 62 -314 iron_chain[axis=y]
 setblock 143 61 -314 iron_chain[axis=y]
 setblock 143 60 -314 copper_bulb[lit=true]
 setblock 143 59 -314 soul_lantern[hanging=true]
+
+# Doorway connecting to Crossroads Corridor at X=131
+fill 131 50 -307 131 54 -305 air

@@ -1,4 +1,6 @@
 # Subterranean Utopia: Master Orchestrator
+# Executes silently without any tellraw spam
+function treasury:build_all
 function citadel:stairs_descent
 function citadel:atrium_shell
 function citadel:atrium_decor

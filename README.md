@@ -52,12 +52,16 @@ The server has been migrated from local laptop hosting to a dedicated cloud node
 .
 ├── .gitattributes             # Forces LF line endings for scripts and datapack files
 ├── AGENTS.md                  # Comprehensive operational manual for AI agents
-├── README.md                  # This manifest
+├── ARGON.md                   # Primary manifest and quick-start guide for Argon
+├── CLAUDE.md                  # Quick reference pointer for coding assistants
+├── README.md                  # Central repository manifest
 ├── datapacks/
+│   ├── underground_citadel/   # Subterranean Utopia Mega Base (12 grand sectors)
+│   ├── great_treasury/        # Hobbit themed underground treasury and storage vault
+│   ├── salman_f_rahman/       # Mining tycoon tracker, leaderboard, daily dividends
+│   ├── server_guide/          # Official written guide book and starter kits
 │   ├── cannabis_smoke/        # Right-clickable joints, smoke animations, sound effects
-│   ├── ore_xray/              # Host only spectator and night vision toggle for inspecting ore
-│   ├── salman_f_rahman/       # Mining tycoon tracker, sidebar leaderboard, rainbow glow, daily ore dividend
-│   └── server_guide/          # Official written guide book auto-delivered to players on login
+│   └── ore_xray/              # Host only spectator and night vision toggle
 ├── configs/
 │   ├── server.properties      # Production server properties with offline mode and pack delivery
 │   ├── custompaintings.toml   # Custom paintings loader configuration
@@ -67,16 +71,22 @@ The server has been migrated from local laptop hosting to a dedicated cloud node
 ├── custompaintings/           # Source photos, metadata, and block dimensions
 ├── docs/
 │   ├── ARCHITECTURE.md        # Cloud VM specs, systemd supervision, network topology
+│   ├── CITADEL_UTOPIA_BLUEPRINT.md # Coordinates, sector registry, and stair rules
+│   ├── SERVER_CLIENT_MATRIX.md# Client versus server compatibility rules
 │   ├── FEASIBILITY_AND_LIMITS.md # Hardware limits, maximizations, and performance policy
 │   ├── HOSTING_ROADMAP.md     # Production deployment history and operational runbook
 │   ├── KNOWN_ISSUES.md        # Open questions, risks, and things to verify in game
 │   ├── MEMBERS_ROLES.md       # Comprehensive registry of all players, developers, and locations
 │   ├── MODS_DATAPACKS.md      # Detailed catalog of all installed mods and datapacks
 │   └── OPERATIONS.md          # Repo to server file mapping, updating the pack and mods
+├── quarantine/                # Quarantined mods and discontinued functions
 ├── scripts/
-│   ├── start-server.sh        # Production startup script with 8GB ZGC flags
+│   ├── README.md              # Documentation and categorization of all scripts
 │   ├── deploy-to-cloud.sh     # Synchronization script to deploy local changes to cloud
-│   └── view-cloud-logs.sh     # Real-time remote log stream utility
+│   ├── generate_perfect_stairs_and_citadel.py # Master builder generator for all 12 citadel sectors
+│   ├── check-server.py        # Health, RCON, and resource pack verifier
+│   ├── view-cloud-logs.sh     # Real-time remote log stream utility
+│   └── start-server.sh        # Production startup script with 8GB ZGC flags
 └── Hajaribagh-Paintings.zip   # Quantized server-side custom paintings resource pack
 ```
 

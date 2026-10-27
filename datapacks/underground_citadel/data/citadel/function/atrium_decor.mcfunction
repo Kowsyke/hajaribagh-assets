@@ -1,19 +1,11 @@
-# Subterranean Citadel: Atrium Foliage, Lighting & Detailing
-fill 106 49 -303 108 49 -301 shroomlight
-fill 106 50 -303 108 50 -301 moss_carpet
-fill 126 49 -303 128 49 -301 shroomlight
-fill 126 50 -303 128 50 -301 moss_carpet
-fill 106 49 -281 108 49 -279 shroomlight
-fill 106 50 -281 108 50 -279 moss_carpet
-fill 126 49 -281 128 49 -279 shroomlight
-fill 126 50 -281 128 50 -279 moss_carpet
+# Subterranean Citadel: Atrium Living Ecosystem
+fill 106 51 -303 108 51 -297 moss_block
+fill 106 52 -303 108 52 -297 flowering_azalea_leaves
+fill 126 51 -303 128 51 -297 moss_block
+fill 126 52 -303 128 52 -297 flowering_azalea_leaves
 
-fill 105 51 -304 107 51 -296 moss_block
-fill 105 52 -304 107 52 -296 flowering_azalea_leaves
-fill 127 51 -304 129 51 -296 moss_block
-fill 127 52 -304 129 52 -296 flowering_azalea_leaves
-fill 105 51 -286 107 51 -278 moss_block
-fill 105 52 -286 107 52 -278 flowering_azalea_leaves
+fill 106 51 -286 108 51 -278 moss_block
+fill 106 52 -286 108 52 -278 flowering_azalea_leaves
 fill 127 51 -286 129 51 -278 moss_block
 fill 127 52 -286 129 52 -278 flowering_azalea_leaves
 
@@ -42,3 +34,7 @@ setblock 112 51 -293 potted_flowering_azalea_bush
 setblock 112 51 -289 potted_flowering_azalea_bush
 setblock 122 51 -293 potted_flowering_azalea_bush
 setblock 122 51 -289 potted_flowering_azalea_bush
+
+# Seating Benches around central pond
+fill 111 51 -293 111 51 -289 dark_oak_stairs[facing=east,half=bottom]
+fill 123 51 -293 123 51 -289 dark_oak_stairs[facing=west,half=bottom]

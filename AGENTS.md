@@ -1,6 +1,6 @@
 # Agent Guidelines: Project Hajaribagh
 
-This document is the operational context for autonomous AI coding agents (Claude, Antigravity, Codex, Cursor, etc.) working on Project Hajaribagh. Read this before modifying any file, script, or configuration.
+This document is the operational context for autonomous AI coding agents (Claude, Antigravity, Argon, Codex, Cursor, etc.) working on Project Hajaribagh. Read this before modifying any file, script, or configuration.
 
 ---
 
@@ -35,6 +35,7 @@ Any agent working on this repository must enforce the following rules:
 Players connect using unmodded vanilla clients, standard launchers, or offline accounts. 
 * Never install Fabric or Forge mods on the server that register custom client-side blocks, entities, or screens unless they are backed by Polymer.
 * If a mod forces a connecting client to have a matching `.jar` file, it will break the connection for friends in Canada and Bangladesh.
+* Review [`docs/SERVER_CLIENT_MATRIX.md`](./docs/SERVER_CLIENT_MATRIX.md) for the complete client and server compatibility breakdown.
 * All new items, mechanics, and interactive features must be implemented via:
   1. Pure server-side Minecraft datapacks (functions, loot tables, scoreboards, triggers).
   2. Polymer-compatible mods (which translate custom server items into vanilla display packets).
@@ -43,6 +44,7 @@ Players connect using unmodded vanilla clients, standard launchers, or offline a
 ### Invariant B: Punctuation and Writing Style
 * Never use an em dash, an en dash, a double hyphen, or a single hyphen as sentence punctuation in documentation, code comments, commit messages, or dialogue copy. Use periods, commas, colons, or parentheses instead.
 * Write directly, plainly, and specifically. Avoid marketing buzzwords and filler phrases.
+* Bold is reserved for labels. Do not scatter bold words across paragraphs for emphasis.
 
 ### Invariant C: Performance Budget
 * Maximum heap allocation is currently 8192 MB (8 GB) with ZGC on the 24 GB cloud VM (`-Xms4096M -Xmx8192M`).
@@ -66,36 +68,34 @@ No task is complete until both the in-game guide book and the GitHub repository 
 * **Java Virtual Machine**: Oracle JDK 25 LTS with Z Garbage Collector (`-XX:+UseZGC`), run by systemd as `minecraft.service`.
 * **Hardware**: Oracle Cloud Always Free `VM.Standard.A1.Flex`, 4 ARM cores, 24 GB RAM, Ubuntu 24.04.
 * **Networking**: Direct public IP `132.226.135.26:25565`, plus the `playit.gg` tunnel at `cairo-temptation.tun.ply.gg:47309` as a fallback.
-* **Deploying**: `scripts/deploy-to-cloud.sh` copies `datapacks/` and `configs/` to the VM. See `docs/OPERATIONS.md`.
+* **Deploying**: `./scripts/deploy-to-cloud.sh` copies `datapacks/` and `configs/` to the VM. See `docs/OPERATIONS.md`.
 * **Asset Pipeline**: Custom paintings pack quantized and bundled in `Hajaribagh-Paintings.zip`, which overrides the vanilla painting textures.
-* **Subsystems**:
+* **Active Datapacks**:
+  * `datapacks/underground_citadel`: The Subterranean Utopia Mega Base (12 sectors: Atrium, Forge, Biosphere, Portal Nexus, Athenaeum, Banquet Hall, Transit Hub, Parliament, Suites, Conduits). See [`docs/CITADEL_UTOPIA_BLUEPRINT.md`](./docs/CITADEL_UTOPIA_BLUEPRINT.md).
+  * `datapacks/great_treasury`: The Hobbit themed underground treasury and storage vault (X: 108..126, Z: -333..-301, Y: 64..72).
+  * `datapacks/salman_f_rahman`: Mining tycoon system, sidebar leaderboard, and daily dividends.
   * `datapacks/cannabis_smoke`: Right-clickable joint items, smoke particle puffs, campfire audio, and status effects.
   * `datapacks/ore_xray`: Host only spectator and night vision toggle.
   * `datapacks/server_guide`: Written guide book auto-delivered to players on login and via `/trigger guide`.
-  * `configs/polymer`: Protocol translation layer for vanilla clients.
-  * `custompaintings`: Painting pack mod. Its Modrinth page lists it as required on the client, so check `docs/KNOWN_ISSUES.md` before relying on it.
+* **Active Server Mods**:
+  * `Lithium`, `FerriteCore`, `Krypton`: Performance and physics optimization.
+  * `Geyser` and `Floodgate`: Bedrock cross-play translation layer.
+  * `Polymer`: Protocol virtualization for client-safe server items.
+  * `Bluemap`: Live isometric map viewer.
+  * `LuckPerms`: Role and permission management.
+* **Quarantined Mods**:
+  * `quarantine/guns_plus_plus`: Removed because it disrupted the vanilla client handshake.
 
 ---
 
-## 5. Development Workflow for Peer Agents
+## 5. Development Workflow for Peer Agents (Claude, Argon, Codex)
 
 When implementing features requested by either Kowsyke or exacyyv:
 1. Check existing datapacks in `datapacks/` to avoid command and scoreboard objective namespace collisions.
-2. Ensure all commands use silent execution where appropriate (do not flood public chat with system notifications).
-3. If creating custom items, use vanilla item bases with custom model data or NBT tags.
+2. Ensure all commands use silent execution where appropriate (never broadcast raw debug messages or tellraw spam to online players).
+3. If creating custom items, use vanilla item bases with custom model data or NBT components.
 4. Document all changes in git commits using plain descriptions without pause dashes.
 5. Pull before you start (`git pull --ff-only`). Kowsyke and exacyyv both commit to this repo, and docs can go stale quickly.
 6. Never commit secrets or passwords. Blank them in config copies first.
-7. Do not edit `Hajaribagh-Paintings.zip` without updating `resource-pack-sha1` in `configs/server.properties`. The steps are in `docs/OPERATIONS.md`.
-
----
-
-## 6. Mandatory Feasibility and Latency Assessment Policy
-
-Before proposing or introducing any mod, datapack, or configuration update, every agent must provide an explicit feasibility evaluation. 
-
-Review [`docs/FEASIBILITY_AND_LIMITS.md`](./docs/FEASIBILITY_AND_LIMITS.md) for the full hardware envelope:
-* If a feature introduces heavy single thread tick overhead (such as 3D terrain density calculations), reject it.
-* If a mod requires client side `.jar` installations, reject it.
-* Always communicate performance tradeoffs transparently with the developers before writing code.
-
+7. Test live changes using remote RCON via SSH before finishing tasks.
+8. Maintain stair geometry invariants: descending stairs facing the direction of travel, wall skirting right-side up, and chairs facing their respective tables or podiums.

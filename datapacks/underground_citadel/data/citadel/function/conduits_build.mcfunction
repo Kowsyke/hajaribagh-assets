@@ -1,4 +1,4 @@
-# Subterranean Citadel: Sector D Sub-Floor Redstone Conduits
+# Subterranean Citadel: Sector D Sub Floor Redstone Conduits
 setblock 110 50 -291 tinted_glass
 setblock 110 49 -291 comparator[facing=west]
 setblock 111 50 -291 tinted_glass

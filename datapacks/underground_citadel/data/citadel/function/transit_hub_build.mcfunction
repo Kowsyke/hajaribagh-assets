@@ -1,5 +1,6 @@
 # Subterranean Citadel: The Subterranean Hyperloop Transit Hub
 # Dimensions: X: 104..130, Z: -345..-325, Floor Y: 49..50, Ceiling Y: 58
+# Completely subterranean, ceiling Y: 58 is 6 blocks below Treasury floor Y: 64
 fill 104 49 -345 130 58 -325 air
 
 # Foundation & Concourse
@@ -10,8 +11,12 @@ fill 131 50 -346 131 58 -324 polished_blackstone
 fill 103 50 -346 131 58 -346 polished_blackstone
 fill 103 59 -346 131 59 -324 deepslate_tiles
 
-# Concourse Stairs connecting from Treasury area (Z: -325)
-fill 115 50 -325 119 54 -325 air
+# Subway Portals connecting to West and East Flank Corridors at Z=-325
+fill 106 50 -325 108 53 -325 air
+fill 126 50 -325 128 53 -325 air
+
+# Solid sealed safety buffer wall at Z=-324 facing Treasury substructure
+fill 109 50 -324 125 58 -324 deepslate_bricks
 
 # Track Trough 1 (West Line: Surface Express, X: 108..109, Y: 49)
 fill 108 49 -345 109 49 -327 polished_blackstone
@@ -28,7 +33,7 @@ fill 125 49 -345 126 49 -327 polished_blackstone
 fill 124 50 -345 124 50 -327 yellow_concrete
 fill 125 50 -345 125 50 -327 powered_rail[powered=true,shape=north_south]
 
-# Push-Button Minecart Dispensers at Boarding Gates (Z: -328)
+# Push Button Minecart Dispensers at Boarding Gates (Z: -328)
 setblock 109 51 -328 dispenser[facing=north]
 setblock 109 52 -328 stone_button[face=floor,facing=north]
 
@@ -43,6 +48,10 @@ fill 110 50 -345 110 50 -327 black_concrete
 fill 115 50 -345 115 50 -327 black_concrete
 fill 118 50 -345 118 50 -327 black_concrete
 fill 123 50 -345 123 50 -327 black_concrete
+
+# Platform Waiting Benches
+fill 112 50 -335 114 50 -335 dark_oak_stairs[facing=south,half=bottom]
+fill 120 50 -335 122 50 -335 dark_oak_stairs[facing=south,half=bottom]
 
 # Lighting via Inset Sea Lanterns and Copper Bulbs
 fill 112 50 -340 114 50 -340 sea_lantern
