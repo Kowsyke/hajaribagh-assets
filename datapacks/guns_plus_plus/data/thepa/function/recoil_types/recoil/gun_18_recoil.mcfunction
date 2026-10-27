@@ -1,5 +1,5 @@
 
 
-execute if score GLOBAL recoil matches 1 as @a[tag=gun18recoil] at @a[tag=gun18recoil] run tp @a[tag=gun18recoil] ~ ~ ~ ~ ~-12
+execute if score GLOBAL recoil matches 1 as @a[tag=gun18recoil] at @a[tag=gun18recoil] run tp @a[tag=gun18recoil] ~ ~ ~ ~ ~-1.2
 tag @a[tag=gun18recoil] remove gun18recoil
 
