@@ -1,6 +1,18 @@
 scoreboard players enable @a smoke
 execute as @a[scores={smoke=1..}] at @s run function cannabis:smoke
-execute as @a[scores={use_joint=1..}] at @s run function cannabis:smoke
+
+# Cancel cannabis smoke if holding any firearm or munition
+execute as @a[scores={use_joint=1..}] if items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] run scoreboard players set @s use_joint 0
+
+# Trigger cannabis smoke only when holding a verified Cannabis Joint
+execute as @a[scores={use_joint=1..}] unless items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] if items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[minecraft:custom_data~{cannabis_joint:1b}] at @s run function cannabis:smoke
+execute as @a[scores={use_joint=1..}] unless items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] if items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[minecraft:custom_name~{text:"Cannabis Joint"}] at @s run function cannabis:smoke
+execute as @a[scores={use_joint=1..}] unless items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] if items entity @s weapon.offhand minecraft:warped_fungus_on_a_stick[minecraft:custom_data~{cannabis_joint:1b}] at @s run function cannabis:smoke
+execute as @a[scores={use_joint=1..}] unless items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] if items entity @s weapon.offhand minecraft:warped_fungus_on_a_stick[minecraft:custom_name~{text:"Cannabis Joint"}] at @s run function cannabis:smoke
+
+# Reset use_joint score to prevent leaking clicks to other tools
+scoreboard players set @a[scores={use_joint=1..}] use_joint 0
+
 execute as @a[scores={smoke_timer=1..}] at @s run function cannabis:puff_particles
 
 # Auto-reformat any dropped cannabis items to fix glitched JSON names
@@ -13,5 +25,6 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:pitcher_pod"}}] run data modify
 execute as @e[type=item,nbt={Item:{id:"minecraft:dried_kelp"}}] run data modify entity @s Item.components."minecraft:custom_name" set value {text:"Cured Cannabis Bud",color:"dark_green",bold:true,italic:false}
 execute as @e[type=item,nbt={Item:{id:"minecraft:dried_kelp"}}] run data modify entity @s Item.components."minecraft:lore" set value [{text:"Ready to roll with paper into joints",color:"gray",italic:false}]
 
-execute as @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick"}}] run data modify entity @s Item.components."minecraft:custom_name" set value {text:"Cannabis Joint",color:"green",bold:true,italic:false}
-execute as @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick"}}] run data modify entity @s Item.components."minecraft:lore" set value [{text:"Right-click to take a fat puff",color:"gray",italic:true},{text:"Pass it to your friends",color:"dark_green",italic:true}]
+execute as @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick"}}] unless data entity @s Item.components."minecraft:custom_data".gz_data run data modify entity @s Item.components."minecraft:custom_data".cannabis_joint set value 1b
+execute as @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick"}}] unless data entity @s Item.components."minecraft:custom_data".gz_data run data modify entity @s Item.components."minecraft:custom_name" set value {text:"Cannabis Joint",color:"green",bold:true,italic:false}
+execute as @e[type=item,nbt={Item:{id:"minecraft:warped_fungus_on_a_stick"}}] unless data entity @s Item.components."minecraft:custom_data".gz_data run data modify entity @s Item.components."minecraft:lore" set value [{text:"Right-click to take a fat puff",color:"gray",italic:true},{text:"Pass it to your friends",color:"dark_green",italic:true}]

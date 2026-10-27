@@ -1,1 +1,1 @@
-give @s minecraft:warped_fungus_on_a_stick[custom_name={text:"Cannabis Joint",color:"green",bold:true,italic:false},lore=[{text:"Right-click to take a fat puff",color:"gray",italic:true},{text:"Pass it to your friends",color:"dark_green",italic:true}]] 3
+give @s minecraft:warped_fungus_on_a_stick[custom_data={cannabis_joint:1b},custom_name={text:"Cannabis Joint",color:"green",bold:true,italic:false},lore=[{text:"Right-click to take a fat puff",color:"gray",italic:true},{text:"Pass it to your friends",color:"dark_green",italic:true}]] 3
