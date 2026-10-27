@@ -46,19 +46,6 @@ give @s potion[potion_contents={potion:"minecraft:strong_regeneration"},max_stac
 give @s firework_rocket[fireworks={flight_duration:3},custom_name='{"text":"✦ Sovereign Flight Rocket ✦","color":"light_purple","bold":true,"italic":false}',lore=['{"text":"Duration 3 high velocity flight propulsion","color":"gray","italic":false}']] 64
 give @s arrow[custom_name='{"text":"✦ Presidential Sovereign Arrow ✦","color":"white","bold":true,"italic":false}',lore=['{"text":"Precision ammunition for the Royal Longbow","color":"gray","italic":false}']] 64
 
-# Firearms Arsenal
-function thepa:give/awp
-function thepa:give/combat_shotgun
-function thepa:give/ak_47
-function thepa:give/rpg
-function thepa:give/suppressor
-function thepa:give/lasersight
-give @s minecraft:clock[minecraft:item_model="minecraft:ammo/sniper_ammo",minecraft:custom_data={"gz_data":{"bullet_type":11b}},minecraft:item_name={"translate":"thepa.item.name.bullet_11","color":"white","italic":false},minecraft:custom_name={"text":"Heavy Rounds (AWP)","color":"gold","italic":false}] 64
-give @s minecraft:clock[minecraft:item_model="minecraft:ammo/shotgun_shells",minecraft:custom_data={"gz_data":{"bullet_type":2b}},minecraft:item_name={"translate":"thepa.item.name.bullet_2","color":"white","italic":false},minecraft:custom_name={"text":"Shells (Combat Shotgun)","color":"gold","italic":false}] 64
-give @s minecraft:clock[minecraft:item_model="minecraft:ammo/medium_ammo",minecraft:custom_data={"gz_data":{"bullet_type":6b}},minecraft:item_name={"translate":"thepa.item.name.bullet_6","color":"white","italic":false},minecraft:custom_name={"text":"Medium Rounds (AK-47)","color":"gold","italic":false}] 64
-give @s minecraft:clock[minecraft:item_model="minecraft:ammo/rocket_ammo",minecraft:custom_data={"gz_data":{"bullet_type":31b}},minecraft:item_name={"translate":"thepa.item.name.bullet_31","color":"white","italic":false},minecraft:custom_name={"text":"Rockets (RPG)","color":"gold","italic":false}] 32
-tag @s add inf_reload
-
 # Confirmation
 playsound minecraft:ui.toast.challenge_complete player @s ~ ~ ~ 1 1
-tellraw @s [{"text":"[Presidential Dev Kit] ","color":"aqua","bold":true},{"text":"Equipped Diamond-Trimmed Netherite God Armor, Anti-Warden supplies, and Heavy Firearms.","color":"green"}]
+tellraw @s [{"text":"[Presidential Dev Kit] ","color":"aqua","bold":true},{"text":"Equipped Diamond-Trimmed Netherite God Armor and Anti-Warden supplies.","color":"green"}]

@@ -123,39 +123,5 @@ scoreboard players enable @a[name=!Kowsyke] kit_elytra
 execute as @a[scores={kit_elytra=1..},name=!Kowsyke] at @s run function server_guide:give_elytra
 scoreboard players set @a[scores={kit_elytra=1..}] kit_elytra 0
 
-# Royal Firearms Arsenal Triggers (Restricted to Kowsyke, ahsane, and GothHunterJamal)
-scoreboard players enable @a[name=Kowsyke] kit_guns
-scoreboard players enable @a[name=ahsane] kit_guns
-scoreboard players enable @a[name=GothHunterJamal] kit_guns
-
-execute as @a[scores={kit_guns=1..},name=Kowsyke] at @s run function server_guide:give_gun_arsenal
-execute as @a[scores={kit_guns=1..},name=ahsane] at @s run function server_guide:give_gun_arsenal
-execute as @a[scores={kit_guns=1..},name=GothHunterJamal] at @s run function server_guide:give_gun_arsenal
-scoreboard players set @a[scores={kit_guns=1..}] kit_guns 0
-
-# Gun Recoil & Ammo Preferences Triggers
-scoreboard players enable @a[name=Kowsyke] gun_recoil
-scoreboard players enable @a[name=ahsane] gun_recoil
-scoreboard players enable @a[name=GothHunterJamal] gun_recoil
-
-execute as @a[scores={gun_recoil=1..}] at @s run function server_guide:toggle_recoil
-scoreboard players set @a[scores={gun_recoil=1..}] gun_recoil 0
-
-scoreboard players enable @a[name=Kowsyke] gun_ammo
-scoreboard players enable @a[name=ahsane] gun_ammo
-scoreboard players enable @a[name=GothHunterJamal] gun_ammo
-
-execute as @a[scores={gun_ammo=1..}] at @s run function server_guide:toggle_inf_ammo
-scoreboard players set @a[scores={gun_ammo=1..}] gun_ammo 0
-
-# Royal Firearms Enforcement (Confiscate firearms from unauthorized citizens)
-execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] if items entity @s container.* *[minecraft:custom_data~{gz_data:{}}] run function server_guide:confiscate_guns
-execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] if items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] run function server_guide:confiscate_guns
-
-# Strip firearms from any non-player mobs
-execute as @e[type=!player] if items entity @s weapon.mainhand *[minecraft:custom_data~{gz_data:{}}] run item replace entity @s weapon.mainhand with minecraft:air
-execute as @e[type=!player] if items entity @s weapon.offhand *[minecraft:custom_data~{gz_data:{}}] run item replace entity @s weapon.offhand with minecraft:air
-
 # Remove any stray phantom mobs
 kill @e[type=phantom]
-

@@ -52,20 +52,6 @@ scoreboard objectives add kit_shears trigger
 scoreboard objectives add kit_shield trigger
 scoreboard objectives add kit_boots trigger
 scoreboard objectives add kit_elytra trigger
-scoreboard objectives add kit_guns trigger
-scoreboard objectives add gun_recoil trigger
-scoreboard objectives add gun_ammo trigger
-
-# Firearms Default Settings
-scoreboard players set GLOBAL bloom 1
-scoreboard players set GLOBAL recoil 0
-scoreboard players set GLOBAL camera 0
-scoreboard players set GLOBAL spray 0
-scoreboard players set GLOBAL breaksBlocks 0
-scoreboard players set GLOBAL mobWeaponFrequency 0
-scoreboard players set GLOBAL mobWeapon 0
-scoreboard players set GLOBAL legacyControls 0
-tag @a add inf_reload
 
 # Disable phantom mob spawning
 gamerule spawn_phantoms false
