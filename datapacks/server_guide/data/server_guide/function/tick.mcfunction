@@ -66,14 +66,13 @@ execute as @a[tag=!vanilla_recipes_unlocked] at @s run function server_guide:unl
 tag @a[tag=!vanilla_recipes_unlocked] add vanilla_recipes_unlocked
 
 # TNT Arrow Trigger and Shot Detection
+execute as @a unless score @s tnt_mode matches 0..1 run scoreboard players set @s tnt_mode 0
 scoreboard players enable @a tnt_arrow
 execute as @a[scores={tnt_arrow=1..}] at @s run function server_guide:toggle_tnt_arrow
 scoreboard players set @a[scores={tnt_arrow=1..}] tnt_arrow 0
 
 execute as @a[scores={used_bow=1..,tnt_mode=1}] at @s run function server_guide:tag_tnt_arrow
 execute as @a[scores={used_cbow=1..,tnt_mode=1}] at @s run function server_guide:tag_tnt_arrow
-execute as @a[scores={used_bow=1..},nbt={Inventory:[{Slot:-106b,id:"minecraft:tnt"}]}] at @s run function server_guide:tag_tnt_arrow
-execute as @a[scores={used_cbow=1..},nbt={Inventory:[{Slot:-106b,id:"minecraft:tnt"}]}] at @s run function server_guide:tag_tnt_arrow
 scoreboard players set @a[scores={used_bow=1..}] used_bow 0
 scoreboard players set @a[scores={used_cbow=1..}] used_cbow 0
 
