@@ -1,3 +1,8 @@
+# Cabinet members are immune to citizen starter kits
+execute if entity @s[name=Kowsyke] run return 1
+execute if entity @s[name=ahsane] run return 1
+execute if entity @s[name=GothHunterJamal] run return 1
+
 item replace entity @s armor.head with leather_helmet[custom_name='{"text":"✦ Citizen Cap ✦","color":"green","bold":true,"italic":false}']
 item replace entity @s armor.chest with leather_chestplate[custom_name='{"text":"✦ Citizen Tunic ✦","color":"green","bold":true,"italic":false}']
 item replace entity @s armor.legs with leather_leggings[custom_name='{"text":"✦ Citizen Pants ✦","color":"green","bold":true,"italic":false}']

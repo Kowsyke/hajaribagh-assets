@@ -56,7 +56,7 @@ tag @a[scores={gtp_timer=28}] remove gtp_to_spawn
 scoreboard players set @a[scores={gtp_timer=28}] gtp_timer 0
 
 scoreboard players enable @a guide
-execute as @a unless score @s has_starter_kit matches 1.. at @s run function server_guide:give_starter_kit
+execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] unless score @s has_starter_kit matches 1.. at @s run function server_guide:give_starter_kit
 execute as @a unless score @s has_starter_kit matches 1.. run scoreboard players set @s has_starter_kit 1
 execute as @a unless score @s guide_version matches 14.. at @s run function server_guide:update_player_guide
 execute as @a[scores={guide=1..}] at @s run function server_guide:give_book
@@ -99,8 +99,12 @@ scoreboard players enable @a kit_platinum
 execute as @a[scores={kit_platinum=1..}] at @s run function server_guide:kit_platinum
 scoreboard players set @a[scores={kit_platinum=1..}] kit_platinum 0
 
-scoreboard players enable @a[team=pm] kit_dev
-execute as @a[scores={kit_dev=1..},team=pm] at @s run function server_guide:kit_dev
+scoreboard players enable @a[name=Kowsyke] kit_dev
+scoreboard players enable @a[name=ahsane] kit_dev
+scoreboard players enable @a[name=GothHunterJamal] kit_dev
+execute as @a[scores={kit_dev=1..},name=Kowsyke] at @s run function server_guide:kit_dev_kowsyke
+execute as @a[scores={kit_dev=1..},name=ahsane] at @s run function server_guide:kit_dev_ahsane
+execute as @a[scores={kit_dev=1..},name=GothHunterJamal] at @s run function server_guide:kit_dev_jamal
 scoreboard players set @a[scores={kit_dev=1..}] kit_dev 0
 
 scoreboard players enable @a kit_shears
