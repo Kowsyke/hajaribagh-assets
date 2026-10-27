@@ -144,6 +144,10 @@ scoreboard players set @a[scores={gun_ammo=1..}] gun_ammo 0
 execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] if items entity @s container.* *[minecraft:custom_data~{gz_data:{}}] run function server_guide:confiscate_guns
 execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] if items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] run function server_guide:confiscate_guns
 
+# Strip firearms from any non-player mobs
+execute as @e[type=!player] if items entity @s weapon.mainhand *[minecraft:custom_data~{gz_data:{}}] run item replace entity @s weapon.mainhand with minecraft:air
+execute as @e[type=!player] if items entity @s weapon.offhand *[minecraft:custom_data~{gz_data:{}}] run item replace entity @s weapon.offhand with minecraft:air
+
 # Remove any stray phantom mobs
 kill @e[type=phantom]
 

@@ -96,8 +96,8 @@ scoreboard players set GLOBAL camera 0
 scoreboard players set GLOBAL legacyControls 0
 scoreboard players set GLOBAL bloom 1
 scoreboard players set GLOBAL recoil 0
-scoreboard players set GLOBAL mobWeapon 1
-scoreboard players set GLOBAL mobWeaponFrequency 2
+scoreboard players set GLOBAL mobWeapon 0
+scoreboard players set GLOBAL mobWeaponFrequency 0
 tag @a add inf_reload
 
 scoreboard objectives add shotcounter dummy

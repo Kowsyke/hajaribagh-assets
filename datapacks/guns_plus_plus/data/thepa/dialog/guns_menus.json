@@ -10,7 +10,7 @@
         {
           "id": "0",
           "display": "None",
-          "initial": false
+          "initial": true
         },
         {
           "id": "1",
@@ -20,7 +20,7 @@
         {
           "id": "2",
           "display": "1/25",
-          "initial": true
+          "initial": false
         },
         {
           "id": "3",
