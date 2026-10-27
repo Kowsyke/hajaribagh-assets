@@ -24,6 +24,7 @@ function thepa:give/smoke_grenade
 function thepa:give/suppressor
 function thepa:give/lasersight
 function thepa:give/recipe_book
+tag @s add inf_reload
 
 # Visual and Audio Confirmation
 playsound minecraft:item.armor.equip_netherite player @s ~ ~ ~ 1.5 1

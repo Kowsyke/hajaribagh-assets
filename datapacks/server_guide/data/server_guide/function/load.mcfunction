@@ -52,6 +52,8 @@ scoreboard objectives add kit_shears trigger
 scoreboard objectives add kit_shield trigger
 scoreboard objectives add kit_boots trigger
 scoreboard objectives add kit_guns trigger
+scoreboard objectives add gun_recoil trigger
+scoreboard objectives add gun_ammo trigger
 
 # Firearms Default Settings
 scoreboard players set GLOBAL bloom 1

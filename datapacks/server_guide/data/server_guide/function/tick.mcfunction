@@ -125,6 +125,21 @@ execute as @a[scores={kit_guns=1..},name=ahsane] at @s run function server_guide
 execute as @a[scores={kit_guns=1..},name=GothHunterJamal] at @s run function server_guide:give_gun_arsenal
 scoreboard players set @a[scores={kit_guns=1..}] kit_guns 0
 
+# Gun Recoil & Ammo Preferences Triggers
+scoreboard players enable @a[name=Kowsyke] gun_recoil
+scoreboard players enable @a[name=ahsane] gun_recoil
+scoreboard players enable @a[name=GothHunterJamal] gun_recoil
+
+execute as @a[scores={gun_recoil=1..}] at @s run function server_guide:toggle_recoil
+scoreboard players set @a[scores={gun_recoil=1..}] gun_recoil 0
+
+scoreboard players enable @a[name=Kowsyke] gun_ammo
+scoreboard players enable @a[name=ahsane] gun_ammo
+scoreboard players enable @a[name=GothHunterJamal] gun_ammo
+
+execute as @a[scores={gun_ammo=1..}] at @s run function server_guide:toggle_inf_ammo
+scoreboard players set @a[scores={gun_ammo=1..}] gun_ammo 0
+
 # Royal Firearms Enforcement (Confiscate firearms from unauthorized citizens)
 execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] if items entity @s container.* *[minecraft:custom_data~{gz_data:{}}] run function server_guide:confiscate_guns
 execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] if items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] run function server_guide:confiscate_guns
