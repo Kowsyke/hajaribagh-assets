@@ -1,7 +1,7 @@
 item replace entity @s armor.head with leather_helmet[custom_name='{"text":"✦ Citizen Cap ✦","color":"green","bold":true,"italic":false}']
 item replace entity @s armor.chest with leather_chestplate[custom_name='{"text":"✦ Citizen Tunic ✦","color":"green","bold":true,"italic":false}']
 item replace entity @s armor.legs with leather_leggings[custom_name='{"text":"✦ Citizen Pants ✦","color":"green","bold":true,"italic":false}']
-item replace entity @s armor.feet with leather_boots[custom_name='{"text":"✦ Citizen Boots ✦","color":"green","bold":true,"italic":false}']
+item replace entity @s armor.feet with leather_boots[enchantments={"minecraft:frost_walker":2},custom_name='{"text":"✦ Citizen Boots ✦","color":"green","bold":true,"italic":false}']
 give @s stone_sword[custom_name='{"text":"✦ Citizen Blade ✦","color":"white","bold":true,"italic":false}'] 1
 give @s stone_pickaxe[custom_name='{"text":"✦ Citizen Pickaxe ✦","color":"white","bold":true,"italic":false}'] 1
 give @s stone_axe[custom_name='{"text":"✦ Citizen Hatchet ✦","color":"white","bold":true,"italic":false}'] 1

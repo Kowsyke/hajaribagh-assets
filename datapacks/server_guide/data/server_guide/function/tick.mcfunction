@@ -111,3 +111,7 @@ scoreboard players set @a[scores={kit_shears=1..}] kit_shears 0
 scoreboard players enable @a kit_shield
 execute as @a[scores={kit_shield=1..}] at @s run function server_guide:give_shield
 scoreboard players set @a[scores={kit_shield=1..}] kit_shield 0
+
+scoreboard players enable @a kit_boots
+execute as @a[scores={kit_boots=1..}] at @s run function server_guide:give_boots
+scoreboard players set @a[scores={kit_boots=1..}] kit_boots 0

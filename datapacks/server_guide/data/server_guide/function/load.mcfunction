@@ -50,3 +50,4 @@ scoreboard objectives add kit_platinum trigger
 scoreboard objectives add kit_dev trigger
 scoreboard objectives add kit_shears trigger
 scoreboard objectives add kit_shield trigger
+scoreboard objectives add kit_boots trigger

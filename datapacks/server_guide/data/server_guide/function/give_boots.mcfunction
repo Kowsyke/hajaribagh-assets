@@ -1,0 +1,4 @@
+# Striders of Hajaribagh (God Netherite Boots with Frost Walker II)
+give @s netherite_boots[enchantments={"minecraft:protection":4,"minecraft:feather_falling":4,"minecraft:depth_strider":3,"minecraft:soul_speed":3,"minecraft:frost_walker":2,"minecraft:unbreaking":3,"minecraft:mending":1,"minecraft:thorns":3},custom_name='{"text":"✦ Striders of Hajaribagh ✦","color":"gold","bold":true,"italic":false}',lore=['{"text":"Treads softly across any terrain or liquid","color":"yellow","italic":false}']] 1
+playsound minecraft:item.armor.equip_netherite player @s ~ ~ ~ 1 1
+tellraw @s [{"text":"[Hajaribagh] ","color":"gold","bold":true},{"text":"Striders of Hajaribagh received with Frost Walker II, Depth Strider III, Soul Speed III, Feather Falling IV, Protection IV, Unbreaking III, Thorns III, and Mending.","color":"green"}]
