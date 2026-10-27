@@ -1,6 +1,6 @@
-# Enforce disabled mob weapons and zero block destruction
-scoreboard players set GLOBAL mobWeapon 0
+# Enforce zero block destruction and infinite reload
 scoreboard players set GLOBAL breaksBlocks 0
+tag @a[tag=!inf_reload] add inf_reload
 execute as @a at @s store success score @s shootingDelayChecked run scoreboard players get @s shootingdelay
 execute as @a if score @s shootingDelayChecked matches 0 run scoreboard players set @s shootingdelay 0
 

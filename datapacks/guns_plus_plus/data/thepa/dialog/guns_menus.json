@@ -46,7 +46,7 @@
       "type": "minecraft:boolean",
       "key": "recoil_choice",
       "label": "Recoil",
-      "initial": true,
+      "initial": false,
       "on_true": "1",
       "on_false": "0"
     },
@@ -54,6 +54,7 @@
       "type": "minecraft:boolean",
       "key": "camera_choice",
       "label": "Camera Movement",
+      "initial": false,
       "on_true": "1",
       "on_false": "0"
     },
@@ -61,6 +62,7 @@
       "type": "minecraft:boolean",
       "key": "spray_choice",
       "label": "Spray Patterns",
+      "initial": false,
       "on_true": "1",
       "on_false": "0"
     },
@@ -68,6 +70,7 @@
       "type": "minecraft:boolean",
       "key": "block_break",
       "label": "Projectiles Break Blocks",
+      "initial": false,
       "on_true": "1",
       "on_false": "0"
     },
@@ -75,6 +78,7 @@
       "type": "minecraft:boolean",
       "key": "add_or_remove",
       "label": "Infinite Reload (no ammo)",
+      "initial": true,
       "on_true": "add",
       "on_false": "remove"
     },

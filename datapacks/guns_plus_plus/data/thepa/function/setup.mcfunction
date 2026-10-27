@@ -91,13 +91,14 @@ title @a times 0s 3s 5s
 forceload add 0 0
 
 scoreboard players set GLOBAL breaksBlocks 0
-execute if score SPRAY scoreboardChecked matches 0 run scoreboard players set GLOBAL spray 0
-execute if score CAMERA scoreboardChecked matches 0 run scoreboard players set GLOBAL camera 0
-execute if score LEGACY_CONTROLS scoreboardChecked matches 0 run scoreboard players set GLOBAL legacyControls 0
-execute if score BLOOM scoreboardChecked matches 0 run scoreboard players set GLOBAL bloom 1
-execute if score RECOIL scoreboardChecked matches 0 run scoreboard players set GLOBAL recoil 1
-scoreboard players set GLOBAL mobWeapon 0
-scoreboard players set GLOBAL mobWeaponFrequency 0
+scoreboard players set GLOBAL spray 0
+scoreboard players set GLOBAL camera 0
+scoreboard players set GLOBAL legacyControls 0
+scoreboard players set GLOBAL bloom 1
+scoreboard players set GLOBAL recoil 0
+scoreboard players set GLOBAL mobWeapon 1
+scoreboard players set GLOBAL mobWeaponFrequency 2
+tag @a add inf_reload
 
 scoreboard objectives add shotcounter dummy
 scoreboard objectives add shotcounterdelay dummy
