@@ -119,6 +119,10 @@ scoreboard players enable @a kit_boots
 execute as @a[scores={kit_boots=1..}] at @s run function server_guide:give_boots
 scoreboard players set @a[scores={kit_boots=1..}] kit_boots 0
 
+scoreboard players enable @a[name=!Kowsyke] kit_elytra
+execute as @a[scores={kit_elytra=1..},name=!Kowsyke] at @s run function server_guide:give_elytra
+scoreboard players set @a[scores={kit_elytra=1..}] kit_elytra 0
+
 # Royal Firearms Arsenal Triggers (Restricted to Kowsyke, ahsane, and GothHunterJamal)
 scoreboard players enable @a[name=Kowsyke] kit_guns
 scoreboard players enable @a[name=ahsane] kit_guns
