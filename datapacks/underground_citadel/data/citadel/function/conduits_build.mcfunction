@@ -1,7 +1,6 @@
-# Subterranean Citadel: Sector D Sub-Floor Redstone Conduits & Inspection Traces
+# Subterranean Citadel: Sector D Sub-Floor Redstone Conduits
 
-# Floor Conduits in Central Grand Atrium Walkways (Glass inserts showing engineering below)
-# East-West Conduits at Y: 49 under tinted glass at Y: 50
+# Floor Conduits in Central Grand Atrium Walkways
 setblock 110 50 -291 tinted_glass
 setblock 110 49 -291 comparator[facing=west]
 setblock 111 50 -291 tinted_glass
@@ -16,7 +15,6 @@ setblock 123 49 -291 redstone_wire
 setblock 124 50 -291 tinted_glass
 setblock 124 49 -291 comparator[facing=east]
 
-# North-South Conduits at Y: 49 under tinted glass at Y: 50
 setblock 117 50 -302 tinted_glass
 setblock 117 49 -302 repeater[facing=south]
 setblock 117 50 -300 tinted_glass

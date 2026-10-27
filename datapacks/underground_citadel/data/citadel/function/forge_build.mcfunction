@@ -1,6 +1,6 @@
 # Subterranean Citadel: Sector A Dwarven Industrial Forge and Super Smelter
 
-# Enclosure Shell
+# 1. Clear & Shell
 fill 82 49 -301 99 49 -281 polished_basalt[axis=y]
 fill 82 50 -301 82 57 -281 polished_deepslate
 fill 99 50 -301 99 57 -281 polished_deepslate
@@ -8,14 +8,16 @@ fill 82 50 -301 99 57 -301 polished_deepslate
 fill 82 50 -281 99 57 -281 polished_deepslate
 fill 82 58 -301 99 58 -281 deepslate_tiles
 
-# Corridor to Atrium
+# 2. Grand Arched Corridor to Atrium (X: 99..104, Z: -293..-289)
+fill 99 50 -293 104 55 -289 air
 fill 99 49 -292 104 49 -290 polished_basalt[axis=x]
 fill 99 50 -292 104 50 -290 smooth_stone
 fill 99 51 -293 104 54 -293 deepslate_tile_wall
 fill 99 51 -289 104 54 -289 deepslate_tile_wall
-fill 99 55 -292 104 55 -290 polished_deepslate_stairs[facing=south,half=top]
+fill 99 55 -292 104 55 -290 copper_grate
+fill 99 56 -292 104 56 -290 sea_lantern
 
-# Forge Floor (Industrial Grate Pattern: Smooth Stone and Basalt)
+# Forge Floor (Smooth Stone with Polished Basalt borders)
 fill 83 50 -300 98 50 -282 smooth_stone
 fill 85 50 -298 96 50 -284 polished_basalt[axis=y]
 

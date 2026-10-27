@@ -1,6 +1,6 @@
 # Subterranean Citadel: Sector B Automated Hydroponics and Tree Conservatory
 
-# Shell and Foundation
+# 1. Shell and Foundation
 fill 136 49 -302 154 49 -280 stripped_cherry_wood[axis=y]
 fill 136 50 -302 136 60 -280 smooth_quartz
 fill 154 50 -302 154 60 -280 smooth_quartz
@@ -8,7 +8,8 @@ fill 136 50 -302 154 60 -302 smooth_quartz
 fill 136 50 -280 154 60 -280 smooth_quartz
 fill 136 61 -302 154 61 -280 deepslate_tiles
 
-# Corridor to Atrium
+# 2. Grand Botanical Promenade to Atrium (X: 130..136, Z: -293..-289)
+fill 130 50 -293 136 55 -289 air
 fill 130 49 -292 136 49 -290 stripped_cherry_wood[axis=x]
 fill 130 50 -292 136 50 -290 bamboo_mosaic
 fill 130 51 -293 136 54 -293 smooth_quartz_stairs[facing=south]
@@ -71,9 +72,7 @@ setblock 142 52 -291 stone_button[facing=east]
 # 3. Apiary Bee Sanctuary (South Wall, Z: -282..-284)
 # Enclosed in Tinted Glass
 fill 138 50 -284 151 50 -284 packed_mud
-# Submerged Campfires to keep bees calm
 fill 140 49 -283 148 49 -283 campfire[lit=true]
-# Carpet over campfires
 fill 140 50 -283 148 50 -283 moss_carpet
 
 # Beehives and Bee Nests full of honey
