@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [ 
+    "minecraft:player",
+    "minecraft:skeleton",
+    "minecraft:pillager",
+    "minecraft:stray",
+    "minecraft:bogged"
+  ]
+}

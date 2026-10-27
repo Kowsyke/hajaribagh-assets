@@ -1,0 +1,59 @@
+#6
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:6b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem6
+execute as @e[tag=suppressRem6,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/tommy_gun_s", 'minecraft:custom_data': {'gz_data': {'capacity': 50b, 'bullets': 0b, 'reload_time': 2b, 'id': 27b, 'debuff': -0.5d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_6_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 2s","color": "blue","italic": false}, {"text":"Uses Medium Rounds"}]}}}
+kill @e[tag=suppressRem6,type=minecraft:item]
+
+#8
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:8b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem8
+execute as @e[tag=suppressRem8,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/p90_s", 'minecraft:custom_data': {'gz_data': {'capacity': 50b, 'bullets': 0b, 'reload_time': 2.5d, 'id': 28b, 'debuff': -0.5d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_8_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 2.5s","color": "blue","italic": false}, {"text":"Uses Light Rounds"}]}}}
+kill @e[tag=suppressRem8,type=minecraft:item]
+
+#10
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:10b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem10
+execute as @e[tag=suppressRem10,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/m1garand_s", 'minecraft:custom_data': {'gz_data': {'capacity': 8b, 'bullets': 0b, 'reload_time': 1d, 'id': 29b, 'debuff': -0.2d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_10_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 1s","color": "blue","italic": false}, {"text":"Uses Medium Rounds"}]}}}
+kill @e[tag=suppressRem10,type=minecraft:item]
+
+#11
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:11b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem11
+execute as @e[tag=suppressRem11,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/awp/awp_s", 'minecraft:custom_data': {'gz_data': {'capacity': 1b, 'bullets': 0b, 'reload_time': 5d, 'id': 30b, 'debuff': -200d,'sniper':1b}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_11_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 5s","color": "blue","italic": false}, {"text":"Uses Heavy Rounds"}]}}}
+kill @e[tag=suppressRem11,type=minecraft:item]
+
+#15
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:15b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem15
+execute as @e[tag=suppressRem15,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/dualies_s", 'minecraft:custom_data': {'gz_data': {'capacity': 18b, 'bullets': 0b, 'reload_time': 3.5d, 'id': 31b, 'debuff': -0.3d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_15_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 3.5s","color": "blue","italic": false}, {"text":"Uses Bullets"}]}}}
+kill @e[tag=suppressRem15,type=minecraft:item]
+
+#16
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:16b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem16
+execute as @e[tag=suppressRem16,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/ar_15_s" , 'minecraft:custom_data': {'gz_data': {'capacity': 30b, 'bullets': 0b, 'reload_time': 4.5d, 'id': 32b, 'debuff': -0.5d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_16_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 4.5s","color": "blue","italic": false}, {"text":"Uses Medium Rounds"}]}}}
+kill @e[tag=suppressRem16,type=minecraft:item]
+
+#17
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:17b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem17
+execute as @e[tag=suppressRem17,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/44_magnum_s", 'minecraft:custom_data': {'gz_data': {'capacity': 6b, 'bullets': 0b, 'reload_time': 2d, 'id': 33b, 'debuff': -0.3d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_17_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 2s","color": "blue","italic": false}, {"text":"Uses Bullets"}]}}}
+kill @e[tag=suppressRem17,type=minecraft:item]
+
+#18
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:18b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem18
+execute as @e[tag=suppressRem18,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/glock_s", 'minecraft:custom_data': {'gz_data': {'capacity': 17b, 'bullets': 0b, 'reload_time': 2d, 'id': 34b, 'debuff': -0.3d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_18_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 2s","color": "blue","italic": false}, {"text":"Uses Bullets"}]}}}
+kill @e[tag=suppressRem18,type=minecraft:item]
+
+#20
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:20b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem20
+execute as @e[tag=suppressRem20,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/m4a4_s", 'minecraft:custom_data': {'gz_data': {'capacity': 30b, 'bullets': 0b, 'reload_time': 3.5d, 'id': 35b, 'debuff': -0.2d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_20_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 3.5s","color": "blue","italic": false}, {"text":"Uses Light Rounds"}]}}}
+kill @e[tag=suppressRem20,type=minecraft:item]
+
+#21
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:21b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem21
+execute as @e[tag=suppressRem21,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/hunting_rifle/hunting_rifle_s", 'minecraft:custom_data': {'gz_data': {'capacity': 1b, 'bullets': 0b, 'reload_time': 2.5d, 'id': 36b, 'debuff': -200d,'sniper':1b}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_21_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 2.5s","color": "blue","italic": false}, {"text":"Uses Heavy Rounds"}]}}}
+kill @e[tag=suppressRem21,type=minecraft:item]
+
+#22
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:22b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem22
+execute as @e[tag=suppressRem22,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/ssg08/ssg08_s", 'minecraft:custom_data': {'gz_data': {'capacity': 1b, 'bullets': 0b, 'reload_time': 4d, 'id': 38b, 'debuff': -200d,'sniper':1b}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_22_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 4s","color": "blue","italic": false}, {"text":"Uses Heavy Rounds"}]}}}
+kill @e[tag=suppressRem22,type=minecraft:item]
+
+#23
+execute as @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:item_model":"minecraft:misc/supressor"}}}] at @s if entity @e[type=minecraft:item,limit=1,nbt={Item:{components:{"minecraft:custom_data":{gz_data:{id:23b}}}}},distance=..1] run tag @e[type=minecraft:item,distance=..1] add suppressRem23
+execute as @e[tag=suppressRem23,limit=1] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",count:1,components:{"minecraft:item_model":"minecraft:guns/ak_47_s", 'minecraft:custom_data': {'gz_data': {'capacity': 25b, 'bullets': 0b, 'reload_time': 4d, 'id': 39b, 'debuff': -0.5d}, 'HideFlags': 32}, 'minecraft:item_name': {"translate": "thepa.item.name.gun_23_s","color": "yellow","italic": false}, 'minecraft:lore': [{"translate": "thepa.item.desc.line1","color": "gray","italic": false}, {"text": "Reload Time: 4s","color": "blue","italic": false}, {"text":"Uses Medium Rounds"}]}}}
+kill @e[tag=suppressRem23,type=minecraft:item]

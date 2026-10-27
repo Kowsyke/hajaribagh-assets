@@ -1,0 +1,96 @@
+{
+  "type": "minecraft:sequence",
+  "functions": [
+    {
+      "type": "minecraft:copy_custom_data",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "gz:temp"
+      },
+      "ops": [
+        {
+          "source": "bullets",
+          "target": "gz_data.bullets",
+          "op": "replace"
+        },
+        {
+          "source": "capacity",
+          "target": "gz_data.capacity",
+          "op": "replace"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:filtered",
+      "item_filter": {
+        "items": "minecraft:carrot_on_a_stick"
+      },
+      "on_pass": {
+        "type": "minecraft:set_item",
+        "item": "minecraft:warped_fungus_on_a_stick"
+      }
+    },
+    {
+      "type": "minecraft:set_damage",
+      "damage": {
+        "type": "minecraft:mul",
+        "inputs": [
+          {
+            "type": "minecraft:from_int",
+            "input": {
+              "type": "minecraft:score",
+              "target": "this",
+              "score": "gz_damage"
+            }
+          },
+          0.01
+        ]
+      }
+    },
+    {
+      "type": "minecraft:set_lore",
+      "lore": [
+        [
+          {
+            "translate": "thepa.item.desc.bullets",
+            "color": "white",
+            "italic": false
+          },
+          {
+            "score": {
+              "name": "@s",
+              "objective": "gz_bullets"
+            }
+          },
+          {
+            "text": "/"
+          },
+          {
+            "score": {
+              "name": "@s",
+              "objective": "gz_capacity"
+            }
+          }
+        ]
+      ],
+      "entity": "this",
+      "mode": "replace_all"
+    },
+    {
+      "type": "minecraft:set_attributes",
+      "modifiers": [
+        {
+          "attribute": "minecraft:movement_speed",
+          "id": "speed",
+          "amount": {
+            "type": "minecraft:storage",
+            "storage": "gz:temp",
+            "path": "debuff"
+          },
+          "operation": "add_multiplied_base",
+          "slot": "offhand"
+        }
+      ]
+    }
+  ]
+}

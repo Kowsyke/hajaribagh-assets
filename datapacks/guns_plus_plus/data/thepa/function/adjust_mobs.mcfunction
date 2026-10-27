@@ -1,0 +1,5 @@
+execute if score GLOBAL mobWeaponFrequency matches 0 run tellraw @s ["",{"text":"\n\n"},{"text":"Guns++ Mob Gun Spawn Adjustment\n\nCurrently At:","bold":true,"underlined":true},{"text":"  None \n","bold":false,"underlined":true,"color":"red","click_event":{"action":"run_command","command":"/function thepa:option_menu/increase_mobs1"}}]
+
+execute if score GLOBAL mobWeaponFrequency matches 1 run tellraw @s ["",{"text":"\n\n"},{"text":"Guns++ Mob Gun Spawn Adjustment\n\nCurrently At:","bold":true,"underlined":true},{"text":"  Some (1/20)\n","bold":false,"underlined":true,"color":"yellow","click_event":{"action":"run_command","command":"/function thepa:option_menu/increase_mobs2"}}]
+
+execute if score GLOBAL mobWeaponFrequency matches 2 run tellraw @s ["",{"text":"\n\n"},{"text":"Guns++ Mob Gun Spawn Adjustment\n\nCurrently At:","bold":true,"underlined":true},{"text":"  Lots (1/10)\n","bold":false,"underlined":true,"color":"green","click_event":{"action":"run_command","command":"/function thepa:option_menu/decrease_mobs"}}]

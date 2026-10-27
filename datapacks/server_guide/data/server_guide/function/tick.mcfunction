@@ -58,7 +58,7 @@ scoreboard players set @a[scores={gtp_timer=28}] gtp_timer 0
 scoreboard players enable @a guide
 execute as @a unless score @s has_starter_kit matches 1.. at @s run function server_guide:give_starter_kit
 execute as @a unless score @s has_starter_kit matches 1.. run scoreboard players set @s has_starter_kit 1
-execute as @a unless score @s guide_version matches 13.. at @s run function server_guide:update_player_guide
+execute as @a unless score @s guide_version matches 14.. at @s run function server_guide:update_player_guide
 execute as @a[scores={guide=1..}] at @s run function server_guide:give_book
 scoreboard players set @a[scores={guide=1..}] guide 0
 
@@ -115,5 +115,20 @@ scoreboard players enable @a kit_boots
 execute as @a[scores={kit_boots=1..}] at @s run function server_guide:give_boots
 scoreboard players set @a[scores={kit_boots=1..}] kit_boots 0
 
+# Royal Firearms Arsenal Triggers (Restricted to Kowsyke, ahsane, and GothHunterJamal)
+scoreboard players enable @a[name=Kowsyke] kit_guns
+scoreboard players enable @a[name=ahsane] kit_guns
+scoreboard players enable @a[name=GothHunterJamal] kit_guns
+
+execute as @a[scores={kit_guns=1..},name=Kowsyke] at @s run function server_guide:give_gun_arsenal
+execute as @a[scores={kit_guns=1..},name=ahsane] at @s run function server_guide:give_gun_arsenal
+execute as @a[scores={kit_guns=1..},name=GothHunterJamal] at @s run function server_guide:give_gun_arsenal
+scoreboard players set @a[scores={kit_guns=1..}] kit_guns 0
+
+# Royal Firearms Enforcement (Confiscate firearms from unauthorized citizens)
+execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] if items entity @s container.* *[minecraft:custom_data~{gz_data:{}}] run function server_guide:confiscate_guns
+execute as @a[name=!Kowsyke,name=!ahsane,name=!GothHunterJamal] if items entity @s weapon.* *[minecraft:custom_data~{gz_data:{}}] run function server_guide:confiscate_guns
+
 # Remove any stray phantom mobs
 kill @e[type=phantom]
+

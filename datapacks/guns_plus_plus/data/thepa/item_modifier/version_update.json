@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:filtered",
+    "item_filter": {
+      "items": [
+        "minecraft:crossbow",
+        "minecraft:bow"
+      ]
+    },
+    "on_pass": {
+      "type": "minecraft:set_item",
+      "item": "minecraft:warped_fungus_on_a_stick"
+    }
+}

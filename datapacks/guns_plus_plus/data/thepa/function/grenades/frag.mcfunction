@@ -1,0 +1,1 @@
+summon creeper ~ ~ ~ {ExplosionRadius:3b,Fuse:0,ignited:1b,Invulnerable:1b,CustomName:'{"text":"a Grenade"}'}

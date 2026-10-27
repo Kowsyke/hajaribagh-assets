@@ -1,0 +1,1 @@
+execute as @s at @s if score GLOBAL legacyControls matches 0 run function thepa:shoot/trigger

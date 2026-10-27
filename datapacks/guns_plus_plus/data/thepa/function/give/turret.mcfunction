@@ -1,0 +1,1 @@
+give @s minecraft:bat_spawn_egg[minecraft:item_name={"text":"Mounted M2 Browning","italic":false},minecraft:item_model="minecraft:misc/turret",minecraft:entity_data={id:"armor_stand",Marker:1b,Tags:["spawn_turret"],Invisible:1b}]

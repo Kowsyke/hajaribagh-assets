@@ -1,0 +1,2 @@
+kill @n[tag=energy_ball]
+summon firework_rocket ~ ~2 ~ {FireworksItem:{id:firework_rocket,components:{fireworks:{explosions:[{shape:large_ball,colors:[I;65280]},{shape:large_ball,colors:[I;65280]},{shape:large_ball,colors:[I;65280]},{shape:large_ball,colors:[I;65280]},{shape:large_ball,colors:[I;65280]}]}}}}

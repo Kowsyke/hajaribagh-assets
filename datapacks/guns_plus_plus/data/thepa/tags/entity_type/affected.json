@@ -1,0 +1,109 @@
+{
+  "replace": false,
+  "values": [ 
+    "minecraft:allay",
+    "minecraft:armadillo",
+    "minecraft:axolotl",
+
+    "minecraft:bat",
+    "minecraft:bee",
+    "minecraft:blaze",
+    "minecraft:bogged",
+    "minecraft:breeze",
+    
+    "minecraft:camel",
+    "minecraft:cat",
+    "minecraft:cave_spider",
+    "minecraft:chicken",
+    "minecraft:cod",
+    "minecraft:cow",
+    "minecraft:creaking",
+    "minecraft:creeper",
+
+    "minecraft:dolphin",
+    "minecraft:donkey",
+    "minecraft:drowned",
+    
+    "minecraft:elder_guardian",
+    "minecraft:end_crystal",
+    "minecraft:ender_dragon",
+    "minecraft:enderman",
+    "minecraft:endermite",
+    "minecraft:evoker",
+    
+    "minecraft:fox",
+    "minecraft:frog",
+    
+    "minecraft:ghast",
+    "minecraft:glow_squid",
+    "minecraft:goat",
+    "minecraft:guardian",
+    "minecraft:giant",
+    
+    "minecraft:hoglin",
+    "minecraft:horse",
+    "minecraft:husk",
+    
+    "minecraft:illusioner",
+    "minecraft:iron_golem",
+    
+    "minecraft:llama",
+    
+    "minecraft:mooshroom",
+    "minecraft:mule",
+    "minecraft:magma_cube",
+    
+    "minecraft:ocelot",
+    
+    "minecraft:panda",
+    "minecraft:parrot",
+    "minecraft:pig",
+    "minecraft:piglin",
+    "minecraft:piglin_brute",
+    "minecraft:phantom",
+    "minecraft:player",
+    "minecraft:pillager",
+    "minecraft:polar_bear",
+    "minecraft:pufferfish",
+
+    "minecraft:rabbit",
+    "minecraft:ravager",
+
+    "minecraft:skeleton",
+    "minecraft:skeleton_horse",
+    "minecraft:stray",
+    "minecraft:salmon",
+    "minecraft:sheep",
+    "minecraft:shulker",
+    "minecraft:silverfish",
+    "minecraft:slime",
+    "minecraft:sniffer",
+    "minecraft:strider",
+    "minecraft:snow_golem",
+    "minecraft:spider",
+    "minecraft:squid",
+
+    "minecraft:trader_llama",
+    "minecraft:tadpole",
+    "minecraft:tropical_fish",
+    "minecraft:turtle",
+
+    "minecraft:vex",
+    "minecraft:villager",
+    "minecraft:vindicator",
+
+    "minecraft:wandering_trader",
+    "minecraft:warden",
+    "minecraft:witch",
+    "minecraft:wolf",
+    "minecraft:wither_skeleton",
+    "minecraft:wither",
+
+    "minecraft:zombie",
+    "minecraft:zombie_horse",
+    "minecraft:zombie_villager",
+    "minecraft:zoglin",
+    "minecraft:zombified_piglin"
+
+  ]
+}

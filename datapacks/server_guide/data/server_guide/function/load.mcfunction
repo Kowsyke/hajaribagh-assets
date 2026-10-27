@@ -51,6 +51,12 @@ scoreboard objectives add kit_dev trigger
 scoreboard objectives add kit_shears trigger
 scoreboard objectives add kit_shield trigger
 scoreboard objectives add kit_boots trigger
+scoreboard objectives add kit_guns trigger
+
+# Firearms Safety Rules
+scoreboard players set GLOBAL mobWeapon 0
+scoreboard players set GLOBAL breaksBlocks 0
 
 # Disable phantom mob spawning
 gamerule spawn_phantoms false
+

@@ -1,0 +1,78 @@
+{
+  "type": "minecraft:sequence",
+  "functions":[
+  {
+    "type": "minecraft:copy_custom_data",
+    "source": {
+      "type": "minecraft:storage",
+      "source": "gz:temp"
+    },
+    "ops": [
+      {
+        "source": "bullets",
+        "target": "gz_data.bullets",
+        "op": "replace"
+      },
+      {
+        "source": "capacity",
+        "target": "gz_data.capacity",
+        "op": "replace"
+      }
+    ]
+  },
+  {
+    "type": "minecraft:set_damage",
+    "damage": 0
+  },
+  {
+    "type": "minecraft:filtered",
+    "item_filter": {
+      "items": "minecraft:warped_fungus_on_a_stick"
+    },
+    "on_pass": {
+      "type": "minecraft:set_item",
+      "item": "minecraft:carrot_on_a_stick"
+    }
+  },
+  {
+    "type": "minecraft:set_lore",
+    "lore": [
+      {
+        "translate": "thepa.item.desc.line1",
+        "color": "gray",
+        "italic": false
+      },
+      [
+        {
+          "translate": "thepa.item.desc.line2",
+          "color": "blue",
+          "italic": false
+        },
+        {
+          "score": {
+            "name": "@s",
+            "objective": "gz_reload_time"
+          }
+        },
+        {
+          "text": "s"
+        }
+      ]
+    ],
+    "entity": "this",
+    "mode": "replace_all"
+  },
+  {
+    "type": "minecraft:set_attributes",
+    "modifiers": [
+      {
+        "attribute": "minecraft:movement_speed",
+        "id": "speed",
+        "amount": 0,
+        "operation": "add_multiplied_base",
+        "slot": "offhand"
+      }
+    ]
+  }
+]
+}
