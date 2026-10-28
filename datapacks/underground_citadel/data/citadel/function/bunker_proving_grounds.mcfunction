@@ -142,8 +142,8 @@ fill 135 47 -268 136 48 -268 iron_bars
 setblock 134 47 -272 chest[facing=west]{Items:[{Slot:0b,id:"minecraft:bow",count:1},{Slot:1b,id:"minecraft:crossbow",count:1},{Slot:2b,id:"minecraft:arrow",count:64}]}
 setblock 134 47 -266 chest[facing=west]{Items:[{Slot:0b,id:"minecraft:bow",count:1},{Slot:1b,id:"minecraft:spectral_arrow",count:64},{Slot:2b,id:"minecraft:arrow",count:64}]}
 # Vanguard Weapon Storage and Relic Pedestals
-setblock 122 47 -263 chest[facing=north]{Items:[{Slot:0b,id:"minecraft:mace",count:1},{Slot:1b,id:"minecraft:netherite_sword",count:1,components:{"minecraft:enchantments":{levels:{"minecraft:sharpness":5}}}},{Slot:2b,id:"minecraft:crossbow",count:1},{Slot:3b,id:"minecraft:tipped_arrow",count:64,components:{"minecraft:potion_contents":{potion:"minecraft:strong_harming"}}}]}
-setblock 123 47 -263 chest[facing=north]{Items:[{Slot:0b,id:"minecraft:diamond_sword",count:1,components:{"minecraft:enchantments":{levels:{"minecraft:sharpness":5}}}},{Slot:1b,id:"minecraft:shield",count:1},{Slot:2b,id:"minecraft:mace",count:1}]}
+setblock 122 47 -263 chest[facing=north]{Items:[{Slot:0b,id:"minecraft:mace",count:1},{Slot:1b,id:"minecraft:netherite_sword",count:1,components:{"minecraft:enchantments":{"minecraft:sharpness":5}}},{Slot:2b,id:"minecraft:crossbow",count:1},{Slot:3b,id:"minecraft:tipped_arrow",count:64,components:{"minecraft:potion_contents":{potion:"minecraft:strong_harming"}}}]}
+setblock 123 47 -263 chest[facing=north]{Items:[{Slot:0b,id:"minecraft:diamond_sword",count:1,components:{"minecraft:enchantments":{"minecraft:sharpness":5}}},{Slot:1b,id:"minecraft:shield",count:1},{Slot:2b,id:"minecraft:mace",count:1}]}
 setblock 124 47 -263 barrel[facing=north]{Items:[{Slot:0b,id:"minecraft:wind_charge",count:64}]}
 setblock 125 47 -263 barrel[facing=north]{Items:[{Slot:0b,id:"minecraft:firework_rocket",count:64}]}
 setblock 133 47 -263 barrel[facing=north]{Items:[{Slot:0b,id:"minecraft:golden_apple",count:16}]}
