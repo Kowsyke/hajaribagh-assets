@@ -1,0 +1,30 @@
+{
+  "room": "King's Council and High Parliament",
+  "dimensions": {
+    "width": 25,
+    "depth": 27,
+    "height": 4
+  },
+  "color_code": "red_terracotta",
+  "floor_palette": ["polished_blackstone", "red_carpet", "gold_block"],
+  "wall_palette": ["polished_blackstone_bricks", "crying_obsidian", "copper_bulb"],
+  "features": [
+    {
+      "name": "Prime Minister Sovereign Throne Dais",
+      "components": ["gilded_blackstone", "polished_blackstone_stairs", "red_banner"]
+    },
+    {
+      "name": "Opposing Parliament Benches",
+      "count": 40,
+      "components": ["dark_oak_stairs", "dark_oak_slab", "stone_button"]
+    },
+    {
+      "name": "Ceremonial Golden Mace Plinth",
+      "components": ["chiseled_polished_blackstone", "lightning_rod", "gold_block"]
+    },
+    {
+      "name": "Central Aisle Avenue",
+      "components": ["red_carpet", "yellow_carpet", "sea_lantern"]
+    }
+  ]
+}

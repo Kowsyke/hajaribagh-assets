@@ -1,0 +1,29 @@
+{
+  "room": "Modern Subterranean Housing and Living Quarters",
+  "dimensions": {
+    "width": 19,
+    "depth": 27,
+    "height": 4
+  },
+  "color_code": "light_blue_terracotta",
+  "floor_palette": ["smooth_quartz", "gray_carpet"],
+  "wall_palette": ["white_concrete", "stripped_spruce_log", "tinted_glass"],
+  "features": [
+    {
+      "name": "King Abir Master Suite",
+      "components": ["red_bed", "bookshelf", "armor_stand", "lantern"]
+    },
+    {
+      "name": "Contemporary Lounge and Fireplace",
+      "components": ["smooth_quartz_stairs", "netherrack", "iron_bars", "painting"]
+    },
+    {
+      "name": "Modern Kitchen and Bar",
+      "components": ["smoker", "barrel", "cauldron", "tripwire_hook", "brewing_stand"]
+    },
+    {
+      "name": "Guest Quarters",
+      "components": ["cyan_bed", "purple_bed", "chest", "flower_pot"]
+    }
+  ]
+}

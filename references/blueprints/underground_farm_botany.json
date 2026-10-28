@@ -1,0 +1,30 @@
+{
+  "room": "Underground Farm and Botany Pod",
+  "dimensions": {
+    "width": 19,
+    "depth": 27,
+    "height": 4
+  },
+  "color_code": "lime_terracotta",
+  "floor_palette": ["farmland", "moss_block", "mud"],
+  "wall_palette": ["mossy_stone_bricks", "flowering_azalea_leaves"],
+  "features": [
+    {
+      "name": "Irrigated Terraced Crops",
+      "crops": ["wheat", "carrots", "potatoes", "beetroots"],
+      "components": ["farmland", "water", "lily_pad", "jack_o_lantern"]
+    },
+    {
+      "name": "Automated Sugarcane Harvester",
+      "components": ["sand", "piston", "observer", "redstone_wire", "hopper"]
+    },
+    {
+      "name": "Enclosed Glass Apiary",
+      "components": ["bee_nest", "campfire", "poppy", "dandelion", "glass"]
+    },
+    {
+      "name": "Agricultural Composter Station",
+      "components": ["composter", "barrel", "chest", "iron_bars"]
+    }
+  ]
+}

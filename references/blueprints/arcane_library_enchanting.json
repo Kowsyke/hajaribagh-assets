@@ -1,0 +1,29 @@
+{
+  "room": "Grand Arcane Library",
+  "dimensions": {
+    "width": 21,
+    "depth": 13,
+    "height": 4
+  },
+  "color_code": "purple_terracotta",
+  "floor_palette": ["dark_oak_planks", "spruce_planks"],
+  "wall_palette": ["bookshelf", "chiseled_bookshelf", "stripped_dark_oak_log"],
+  "features": [
+    {
+      "name": "Level 30 Enchanting Sanctum",
+      "components": ["enchanting_table", "bookshelf", "smooth_quartz_stairs"]
+    },
+    {
+      "name": "Floating Study Lecterns",
+      "components": ["lectern", "end_rod", "book"]
+    },
+    {
+      "name": "Perimeter Archive Bookshelves",
+      "components": ["chiseled_bookshelf", "lantern", "dark_oak_stairs"]
+    },
+    {
+      "name": "Archivist Reading Desk",
+      "components": ["dark_oak_trapdoor", "dark_oak_fence", "candle"]
+    }
+  ]
+}

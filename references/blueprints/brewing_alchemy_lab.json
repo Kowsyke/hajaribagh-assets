@@ -1,0 +1,30 @@
+{
+  "room": "Brewing and Alchemy Laboratory",
+  "dimensions": {
+    "width": 21,
+    "depth": 17,
+    "height": 4
+  },
+  "color_code": "magenta_terracotta",
+  "floor_palette": ["polished_andesite", "tuff_bricks"],
+  "wall_palette": ["tuff_bricks", "copper_bulb", "glass"],
+  "features": [
+    {
+      "name": "U-Shaped Brewing Bench",
+      "count": 4,
+      "components": ["brewing_stand", "cauldron", "water", "smooth_stone_slab"]
+    },
+    {
+      "name": "Nether Wart Farm",
+      "components": ["soul_sand", "nether_wart", "polished_andesite_stairs"]
+    },
+    {
+      "name": "Alchemical Storage Stash",
+      "components": ["barrel", "chest", "decorated_pot"]
+    },
+    {
+      "name": "Distillation Apparatus",
+      "components": ["lightning_rod", "glass_bottle", "hopper"]
+    }
+  ]
+}

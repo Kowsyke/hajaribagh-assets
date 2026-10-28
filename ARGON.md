@@ -34,9 +34,10 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 
 * `datapacks/`: Active server datapacks (`underground_citadel`, `great_treasury`, `salman_f_rahman`, `server_guide`, `cannabis_smoke`, `ore_xray`, `moar_bosses`, `more_mobs`, `ridedragon`).
 * `configs/`: Live configuration templates (`server.properties`, `polymer/`, `lithium.properties`, `ferritecore.mixin.properties`, `Geyser-Fabric/`, `luckperms/`).
-* `scripts/`: Operational tools, remote log viewers, RCON helpers, and the active builder generator `generate_perfect_stairs_and_citadel.py`.
+* `scripts/`: Operational tools, remote log viewers, RCON helpers, and the active builder generator `build_full_veteran_bunker.py`.
 * `scripts/generators/`: Procedural architectural generator library with 50+ modules for roofs, windows, timber frames, domes, trees, plazas, and interior partitions.
 * `references/architectural-styles/`: Curated JSON architectural style templates for medieval, gothic, modern, elven, and oriental builds.
+* `references/blueprints/`: Veteran subterranean bunker schematics and room layout specifications.
 * `.agents/skills/`: Verified Minecraft agent skills suite for building, commands, datapacks, and server administration.
 * `docs/`: Comprehensive guides:
   * `SERVER_CLIENT_MATRIX.md`: Client vs server compatibility rules.
@@ -48,21 +49,19 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 
 ---
 
-## 4. Subterranean Utopia Landmarks
+## 4. Subterranean Hivemind Bunker Landmarks
 
 * Ancient Tree Surface Entrance: `(117, 78, -330)`.
 * Sector -1: The Great Treasury: `(X: 108..126, Z: -333..-301, Y: 64..72)`.
 * Central Descent Staircase: `(X: 116..118, Z: -322..-308, Y: 64 down to 50)`.
-* Central Crossroads Landing: `(X: 114..120, Y: 50, Z: -307..-305)`.
-* Sector 0: Bio Dome Atrium and Aquarium: `(X: 104..130, Z: -304..-278, Y: 50..58)`.
-* Sector 1: Dwarven Forge and Super Smelter: `(X: 82..99, Z: -301..-281, Y: 50..58)`.
-* Sector 2: Hydroponics Biosphere and Apiary: `(X: 136..154, Z: -302..-280, Y: 50..61)`.
-* Sector 3: Celestial Portal Nexus: `(X: 106..128, Z: -302..-280, Y: 36..48)`.
-* Sector 4: Grand Athenaeum Library: `(X: 80..102, Z: -330..-306, Y: 50..62)`.
-* Sector 5: Sovereign Banquet Hall: `(X: 132..154, Z: -330..-306, Y: 50..62)`.
-* Sector 6: Hyperloop Transit Hub: `(X: 104..130, Z: -345..-325, Y: 49..58)`.
-* Sector 7: Grand High Parliament: `(X: 104..130, Z: -276..-244, Y: 50..58)`.
-* Sector 8: Sovereign Residential Suites: `(X: 92..142, Z: -268..-231, Y: 50..58)`.
+* Sector 0: Central Command Rotunda: `(X: 111..123, Z: -307..-295, Y: 46..53)`.
+* Sector 1: Tool & Equipment Armory: `(X: 74..94, Z: -307..-295, Y: 46..53)`.
+* Sector 2: Blacksmith & Smelting Workshop: `(X: 74..94, Z: -291..-275, Y: 46..53)`.
+* Sector 3: Grand Arcane Library: `(X: 140..160, Z: -307..-295, Y: 46..53)`.
+* Sector 4: Brewing & Alchemy Laboratory: `(X: 140..160, Z: -291..-275, Y: 46..53)`.
+* Sector 5: Underground Farm & Botany Pod: `(X: 96..114, Z: -291..-265, Y: 46..53)`.
+* Sector 6: Modern Subterranean Housing: `(X: 120..138, Z: -291..-265, Y: 46..53)`.
+* Sector 7: King's Council & High Parliament: `(X: 105..129, Z: -261..-235, Y: 46..53)`.
 
 ---
 

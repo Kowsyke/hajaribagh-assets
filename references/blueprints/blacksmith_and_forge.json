@@ -1,0 +1,30 @@
+{
+  "room": "Blacksmith and Smelting Workshop",
+  "dimensions": {
+    "width": 21,
+    "depth": 17,
+    "height": 4
+  },
+  "color_code": "orange_terracotta",
+  "floor_palette": ["polished_blackstone", "smooth_basalt"],
+  "wall_palette": ["deepslate_bricks", "iron_bars"],
+  "features": [
+    {
+      "name": "Super Smelter Battery",
+      "count": 16,
+      "components": ["furnace", "blast_furnace", "hopper", "chest"]
+    },
+    {
+      "name": "Molten Lava Crucible",
+      "components": ["lava", "tinted_glass", "iron_bars", "chiseled_polished_blackstone"]
+    },
+    {
+      "name": "Heavy Metal Workstation",
+      "components": ["anvil", "stonecutter", "grindstone", "cauldron"]
+    },
+    {
+      "name": "Ingot and Material Shelves",
+      "components": ["raw_iron_block", "iron_block", "barrel"]
+    }
+  ]
+}

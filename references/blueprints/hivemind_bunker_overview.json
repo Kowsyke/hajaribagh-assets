@@ -1,0 +1,51 @@
+{
+  "name": "Hivemind Veteran Underground Bunker",
+  "version": "1.0",
+  "datum": {
+    "arrival_stairs": [117, 53, -310],
+    "ground_level": 50,
+    "ceiling_cap": 53
+  },
+  "wings": {
+    "rotunda": {
+      "bounds": {"x1": 111, "z1": -307, "x2": 123, "z2": -295},
+      "shape": "octagon",
+      "purpose": "Central command hub, beacon well, and arterial junction"
+    },
+    "tool_equipment_armory": {
+      "bounds": {"x1": 85, "z1": -307, "x2": 105, "z2": -295},
+      "dimensions": [21, 13],
+      "purpose": "Tool repair, gear lockers, armor display pods, shulker unloader"
+    },
+    "blacksmith_forge": {
+      "bounds": {"x1": 85, "z1": -291, "x2": 105, "z2": -275},
+      "dimensions": [21, 17],
+      "purpose": "Super smelter battery, lava crucible, anvils, stonecutters"
+    },
+    "arcane_library": {
+      "bounds": {"x1": 129, "z1": -307, "x2": 149, "z2": -295},
+      "dimensions": [21, 13],
+      "purpose": "Level 30 enchanting altar, chiseled bookshelves, study desks"
+    },
+    "brewing_alchemy_lab": {
+      "bounds": {"x1": 129, "z1": -291, "x2": 149, "z2": -275},
+      "dimensions": [21, 17],
+      "purpose": "Brewing stands, nether wart beds, cauldrons, potion racks"
+    },
+    "underground_farm": {
+      "bounds": {"x1": 95, "z1": -291, "x2": 113, "z2": -265},
+      "dimensions": [19, 27],
+      "purpose": "Irrigated terraced crops, automated harvesters, glass apiary"
+    },
+    "modern_housing": {
+      "bounds": {"x1": 121, "z1": -291, "x2": 139, "z2": -265},
+      "dimensions": [19, 27],
+      "purpose": "Contemporary living quarters, lounge fireplace, master suites"
+    },
+    "kings_council_parliament": {
+      "bounds": {"x1": 105, "z1": -261, "x2": 129, "z2": -235},
+      "dimensions": [25, 27],
+      "purpose": "Parliament assembly hall, throne dais, ceremonial golden mace"
+    }
+  }
+}

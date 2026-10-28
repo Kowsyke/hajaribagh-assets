@@ -1,0 +1,31 @@
+{
+  "room": "Tool and Equipment Armory",
+  "dimensions": {
+    "width": 21,
+    "depth": 13,
+    "height": 4
+  },
+  "color_code": "yellow_terracotta",
+  "floor_palette": ["polished_deepslate", "deepslate_tiles"],
+  "wall_palette": ["deepslate_bricks", "polished_andesite"],
+  "features": [
+    {
+      "name": "Armor Display Pods",
+      "count": 6,
+      "components": ["smooth_stone_slab", "armor_stand", "iron_trapdoor"]
+    },
+    {
+      "name": "Tool and Weapon Smithing Bench",
+      "components": ["anvil", "smithing_table", "grindstone", "crafting_table"]
+    },
+    {
+      "name": "Shulker Box Sorting Bay",
+      "components": ["ender_chest", "barrel", "hopper", "dropper"]
+    },
+    {
+      "name": "Equipment Lockers",
+      "type": "chest_wall",
+      "arrangement": "double_chests_paired"
+    }
+  ]
+}
