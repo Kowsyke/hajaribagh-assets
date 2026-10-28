@@ -347,10 +347,10 @@ def build_decor_commands():
     cmds.append("# Sector 3: Grand Arcane Library Detailing")
     # Floating lecterns on glowing end rods with written tomes
     floating_lecterns = [
-        (144, -304, "east", "Codex of King Abir: Hivemind Citadel Genesis"),
-        (144, -298, "east", "Citadel Vault Protocols and Defense Mandates"),
-        (156, -304, "west", "Subterranean Redstone Engineering Lexicon"),
-        (156, -298, "west", "Ancient Glyphs and Arcane Enigmas"),
+        (144, -304, "east", "Hivemind Citadel Genesis"),
+        (144, -298, "east", "Citadel Vault Protocols"),
+        (156, -304, "west", "Redstone Engineering Lexicon"),
+        (156, -298, "west", "Ancient Glyphs & Arcane Enigmas"),
     ]
     for x, z, facing, title in floating_lecterns:
         cmds.append(f"setblock {x} 47 {z} end_rod[facing=up] replace")
@@ -589,7 +589,7 @@ def build_decor_commands():
     parliament_book = (
         '{id:"minecraft:written_book",count:1,components:'
         '{"minecraft:written_book_content":{author:"King Abir",'
-        'title:"Citadel Parliamentary Standing Orders",'
+        'title:"Parliament Standing Orders",'
         'pages:[\"Decrees and rules of debate for the High Parliament.\"]}}}'
     )
     cmds.append(f"data modify block 117 47 -242 Book set value {parliament_book}")

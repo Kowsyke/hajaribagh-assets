@@ -153,16 +153,16 @@ summon glow_item_frame 90 48 -287 {Tags:["citadel_decor","blacksmith_frame"],Fac
 # Sector 3: Grand Arcane Library Detailing
 setblock 144 47 -304 end_rod[facing=up] replace
 setblock 144 48 -304 lectern[facing=east,has_book=true] replace
-data modify block 144 48 -304 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Codex of King Abir: Hivemind Citadel Genesis",pages:["Registered in the royal archives of the Citadel."]}}}
+data modify block 144 48 -304 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Hivemind Citadel Genesis",pages:["Registered in the royal archives of the Citadel."]}}}
 setblock 144 47 -298 end_rod[facing=up] replace
 setblock 144 48 -298 lectern[facing=east,has_book=true] replace
-data modify block 144 48 -298 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Citadel Vault Protocols and Defense Mandates",pages:["Registered in the royal archives of the Citadel."]}}}
+data modify block 144 48 -298 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Citadel Vault Protocols",pages:["Registered in the royal archives of the Citadel."]}}}
 setblock 156 47 -304 end_rod[facing=up] replace
 setblock 156 48 -304 lectern[facing=west,has_book=true] replace
-data modify block 156 48 -304 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Subterranean Redstone Engineering Lexicon",pages:["Registered in the royal archives of the Citadel."]}}}
+data modify block 156 48 -304 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Redstone Engineering Lexicon",pages:["Registered in the royal archives of the Citadel."]}}}
 setblock 156 47 -298 end_rod[facing=up] replace
 setblock 156 48 -298 lectern[facing=west,has_book=true] replace
-data modify block 156 48 -298 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Ancient Glyphs and Arcane Enigmas",pages:["Registered in the royal archives of the Citadel."]}}}
+data modify block 156 48 -298 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Ancient Glyphs & Arcane Enigmas",pages:["Registered in the royal archives of the Citadel."]}}}
 setblock 144 47 -301 dark_oak_stairs[facing=east,half=bottom] replace
 setblock 145 47 -301 dark_oak_slab[type=bottom] replace
 setblock 156 47 -301 dark_oak_stairs[facing=west,half=bottom] replace
@@ -313,7 +313,7 @@ setblock 121 48 -248 polished_blackstone_button[face=floor] replace
 setblock 121 48 -246 polished_blackstone_button[face=floor] replace
 fill 116 47 -243 118 47 -243 dark_oak_slab[type=top] replace
 setblock 117 47 -242 lectern[facing=north,has_book=true] replace
-data modify block 117 47 -242 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Citadel Parliamentary Standing Orders",pages:["Decrees and rules of debate for the High Parliament."]}}}
+data modify block 117 47 -242 Book set value {id:"minecraft:written_book",count:1,components:{"minecraft:written_book_content":{author:"King Abir",title:"Parliament Standing Orders",pages:["Decrees and rules of debate for the High Parliament."]}}}
 setblock 116 48 -243 chest[facing=north] replace
 data modify block 116 48 -243 custom_name set value '{"text":"Government Dispatch Box","color":"gold"}'
 setblock 118 48 -243 chest[facing=north] replace

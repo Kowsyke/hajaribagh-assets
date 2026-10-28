@@ -9,10 +9,13 @@ This document details the spatial coordinates, architectural zones, stair orient
 ```
 Surface Base Entrance: (X: 117, Y: 78, Z: -330)
 Great Treasury Floor:  (X: 108..126, Y: 64..72, Z: -333..-301)
-Descent Stairwell:     (X: 116..118, Y: 64 down to 50, Z: -322..-308)
-Central Crossroads:    (X: 114..120, Y: 50, Z: -307..-305)
-Citadel Deep Core:     (Y: 50..58, Z: -304..-244, X: 80..154)
-Celestial Portal Nexus:(Y: 36..48, Z: -302..-280, X: 106..128)
+Descent Stairwell:     (X: 116..118, Y: 64 down to 46, Z: -322..-308)
+Central Command Rotunda:(X: 111..123, Y: 46..53, Z: -307..-295)
+South Sovereign Blvd:  (X: 116..118, Y: 46..53, Z: -294..-262)
+King's High Parliament:(X: 105..129, Y: 46..53, Z: -261..-235)
+Celestial Portal Nexus:(X: 107..127, Y: 44..53, Z: -233..-210)
+Deep Tier Infrastructure:(X: 74..160, Y: 36..45, Z: -306..-235)
+Hyperloop Concourse:   (X: 112..122, Y: 37..43, Z: -306..-296)
 ```
 
 ---

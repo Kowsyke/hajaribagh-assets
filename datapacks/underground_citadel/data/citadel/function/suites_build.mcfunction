@@ -37,7 +37,7 @@ setblock 102 51 -265 dark_oak_stairs[facing=north,half=bottom]
 setblock 101 52 -266 lantern[hanging=false]
 
 # Wardrobe Armor Stand
-setblock 94 51 -255 armor_stand[facing=south]
+summon armor_stand 94.5 51.0 -255.0 {Rotation:[0.0f,0.0f]}
 setblock 93 51 -255 chiseled_bookshelf[facing=east]
 
 # Ahsane Executive Library Suite (Northeast: X: 129..141, Z: -268..-252)
@@ -62,7 +62,7 @@ setblock 117 51 -234 purple_bed[facing=north,part=head]
 setblock 117 51 -235 purple_bed[facing=north,part=foot]
 
 # Trophy Mount & Armory Chests
-setblock 120 51 -234 armor_stand[facing=north]
+summon armor_stand 120.5 51.0 -234.0 {Rotation:[180.0f,0.0f]}
 setblock 121 51 -234 chest[facing=north,type=left]
 setblock 122 51 -234 chest[facing=north,type=right]
 

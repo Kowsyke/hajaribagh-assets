@@ -11,3 +11,6 @@ function citadel:bunker_parliament
 function citadel:bunker_vaults
 function citadel:bunker_decor
 function citadel:bunker_deep_tier
+function citadel:bunker_banquet_spa
+function citadel:bunker_portal_nexus
+function citadel:bunker_hyperloop

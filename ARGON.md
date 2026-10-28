@@ -52,7 +52,7 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 ## 4. Subterranean Hivemind Bunker Landmarks
 
 * Ancient Tree Surface Entrance: `(117, 78, -330)`.
-* Sector -1: The Great Treasury: `(X: 108..126, Z: -333..-301, Y: 64..72)`.
+* Sector Minus 1: The Great Treasury: `(X: 108..126, Z: -333..-301, Y: 64..72)`.
 * Central Descent Staircase: `(X: 116..118, Z: -322..-308, Y: 64 down to 50)`.
 * Sector 0: Central Command Rotunda: `(X: 111..123, Z: -307..-295, Y: 46..53)`.
 * Sector 1: Tool & Equipment Armory: `(X: 74..94, Z: -307..-295, Y: 46..53)`.
@@ -62,6 +62,15 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 * Sector 5: Underground Farm & Botany Pod: `(X: 96..114, Z: -291..-265, Y: 46..53)`.
 * Sector 6: Modern Subterranean Housing: `(X: 120..138, Z: -291..-265, Y: 46..53)`.
 * Sector 7: King's Council & High Parliament: `(X: 105..129, Z: -261..-235, Y: 46..53)`.
+* Sector 8: The Celestial Portal Nexus: `(X: 107..127, Z: -233..-210, Y: 44..53)`.
+* Sector 9: The Sovereign Banquet & Feasting Hall: `(X: 105..129, Z: -261..-235, Y: 36..45)`.
+* Sector 10: The Royal Geothermal Spa & Bathhouse: `(X: 120..138, Z: -291..-265, Y: 36..45)`.
+* Sector 11: The Subterranean Hyperloop Transit Hub: `(X: 112..122, Z: -306..-296, Y: 37..43)`.
+* Deep Infrastructure Tier 3 Facilities:
+  * Central Beacon Well and Bubble Elevators: `(X: 111..120, Z: -304..-296, Y: 36..45)`.
+  * Heavy Ore Processing Refinery: `(X: 78..90, Z: -289..-277, Y: 38..45)`.
+  * Forbidden Apocrypha Archive: `(X: 144..156, Z: -305..-297, Y: 38..45)`.
+  * Subterranean Aquaponics Grotto: `(X: 98..112, Z: -289..-267, Y: 36..45)`.
 
 ---
 
