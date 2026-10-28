@@ -17,3 +17,4 @@ function citadel:bunker_hyperloop
 function citadel:bunker_war_room
 function citadel:bunker_crypt_vault
 function citadel:bunker_storage_silo
+function citadel:bunker_cryo_relic_vault
