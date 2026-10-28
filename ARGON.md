@@ -76,4 +76,6 @@ The repository is equipped with curated, verified Minecraft skills located in `.
 6. `minecraft-worldedit-ops`: Fast asynchronous terrain modification, brushes, and schematics.
 7. `minecraft-crossplay-ops`: Geyser and Floodgate configuration and Bedrock optimization.
 8. `minecraft-permissions-admin`: LuckPerms permission hierarchy and group configuration.
+9. `minecraft-moling-builder`: Conversational building assistant based on MoLing architecture. Decomposes prompts into sequential commands, manages block replacement modes, and interfaces directly with the server via `scripts/moling_rcon.py`.
+
 

@@ -107,7 +107,7 @@ When implementing features requested by either Kowsyke or exacyyv:
 
 ## 6. Minecraft Agent Skills and In-Game Building Guide
 
-Agents have access to 8 curated skills in `.agents/skills/`:
+Agents have access to 9 curated skills in `.agents/skills/`:
 
 * `minecraft-architect-builder`: Converts high-level architectural briefs into structured Minecraft 1.21 commands and `.mcfunction` files. Adheres to depth rules, palettes, and blockstate orientations.
 * `minecraft-builder-skill`: Generates `.nbt` structures and launches Vite-based 3D previewers.
@@ -117,4 +117,6 @@ Agents have access to 8 curated skills in `.agents/skills/`:
 * `minecraft-worldedit-ops`: Large-scale terrain brushes and schematics.
 * `minecraft-crossplay-ops`: Bedrock and Geyser bridging configuration.
 * `minecraft-permissions-admin`: LuckPerms permission trees and group administration.
+* `minecraft-moling-builder`: Conversational building assistant based on MoLing architecture. Implements prompt decomposition and command execution via `scripts/moling_rcon.py`.
+
 

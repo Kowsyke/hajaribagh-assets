@@ -9,6 +9,7 @@ This directory contains utility scripts for deploying, managing, automating, and
 * `deploy-to-cloud.sh`: The primary deployment tool. Synchronizes `datapacks/` and `configs/` to the Oracle Cloud production server via SCP. Skips `server.properties` to protect live production network and world settings.
 * `view-cloud-logs.sh`: Connects to the Oracle Cloud VM over SSH and tails systemd journal logs (`journalctl -u minecraft -f`) in real time.
 * `check-server.py`: Verifies server reachability, queries status via Minecraft ping protocol, tests RCON, and checks resource pack hash validity.
+* `moling_rcon.py`: Production command bridge implementing the MoLing toolset (fill, setblock, clone, summon, execute, weather, time) directly over RCON.
 * `start-server.sh`: JVM startup script configured for Oracle JDK 25 LTS with Z Garbage Collector (`-XX:+UseZGC`, `-Xms4096M`, `-Xmx8192M`).
 
 ---
