@@ -1,12 +1,14 @@
 # Cleanup prior decorative entities
 kill @e[tag=citadel_decor]
 # Sector 0: Central Command Rotunda Detailing
-setblock 117 47 -300 dark_oak_stairs[facing=south,half=bottom]
-setblock 117 47 -302 dark_oak_stairs[facing=north,half=bottom]
-setblock 116 47 -301 dark_oak_stairs[facing=west,half=bottom]
-setblock 118 47 -301 dark_oak_stairs[facing=east,half=bottom]
-setblock 117 47 -301 copper_grate
-summon glow_item_frame 117.5 48.0 -300.97 {Tags:["citadel_decor","rotunda_compass"],Facing:2b,Item:{id:"minecraft:recovery_compass",count:1}}
+setblock 117 47 -300 dark_oak_stairs[facing=south,half=bottom] replace
+setblock 117 47 -302 dark_oak_stairs[facing=north,half=bottom] replace
+setblock 116 47 -301 dark_oak_stairs[facing=west,half=bottom] replace
+setblock 118 47 -301 dark_oak_stairs[facing=east,half=bottom] replace
+setblock 117 47 -301 air replace
+setblock 112 47 -302 barrel[facing=east] replace
+item replace block 112 47 -302 container.0 with recovery_compass 1
+item replace block 112 47 -302 container.1 with clock 1
 setblock 112 47 -301 chiseled_polished_blackstone
 setblock 112 48 -301 calibrated_sculk_sensor
 setblock 122 47 -301 chiseled_polished_blackstone
@@ -104,23 +106,24 @@ setblock 89 48 -306 chest[facing=south,type=left] replace
 setblock 90 48 -306 chest[facing=south,type=right] replace
 setblock 91 48 -306 chest[facing=south,type=left] replace
 setblock 92 48 -306 deepslate_brick_wall replace
-summon item_frame 86 48 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:netherite_pickaxe",count:1}}
-summon item_frame 87 48 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:netherite_axe",count:1}}
-summon item_frame 88 48 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:netherite_shovel",count:1}}
-summon item_frame 89 48 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:diamond_sword",count:1}}
-summon item_frame 90 48 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:trident",count:1}}
-summon item_frame 91 48 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:mace",count:1}}
-summon item_frame 86 47 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:bow",count:1}}
-summon item_frame 87 47 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:crossbow",count:1}}
-summon item_frame 88 47 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:shield",count:1}}
-summon item_frame 89 47 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:elytra",count:1}}
-summon item_frame 90 47 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:spyglass",count:1}}
-summon item_frame 91 47 -305 {Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{id:"minecraft:clock",count:1}}
-summon item_frame 80 48 -305 {Tags:["citadel_decor","armory_bench_frame"],Facing:3b,Item:{id:"minecraft:netherite_upgrade_smithing_template",count:1}}
-summon item_frame 81 48 -305 {Tags:["citadel_decor","armory_bench_frame"],Facing:3b,Item:{id:"minecraft:netherite_ingot",count:1}}
-summon item_frame 82 48 -305 {Tags:["citadel_decor","armory_bench_frame"],Facing:3b,Item:{id:"minecraft:diamond",count:1}}
-summon item_frame 83 48 -305 {Tags:["citadel_decor","armory_bench_frame"],Facing:3b,Item:{id:"minecraft:iron_ingot",count:1}}
-summon item_frame 84 48 -305 {Tags:["citadel_decor","armory_bench_frame"],Facing:3b,Item:{id:"minecraft:ender_eye",count:1}}
+item replace block 86 48 -306 container.0 with netherite_pickaxe 1
+item replace block 86 48 -306 container.1 with netherite_axe 1
+item replace block 86 48 -306 container.2 with netherite_shovel 1
+item replace block 88 48 -306 container.0 with diamond_sword 1
+item replace block 88 48 -306 container.1 with trident 1
+item replace block 88 48 -306 container.2 with mace 1
+item replace block 86 47 -306 container.0 with bow 1
+item replace block 86 47 -306 container.1 with crossbow 1
+item replace block 86 47 -306 container.2 with shield 1
+item replace block 88 47 -306 container.0 with elytra 1
+item replace block 88 47 -306 container.1 with spyglass 1
+item replace block 88 47 -306 container.2 with clock 1
+setblock 85 47 -306 chest[facing=south] replace
+item replace block 85 47 -306 container.0 with netherite_upgrade_smithing_template 2
+item replace block 85 47 -306 container.1 with netherite_ingot 8
+item replace block 85 47 -306 container.2 with diamond 16
+item replace block 85 47 -306 container.3 with iron_ingot 32
+item replace block 85 47 -306 container.4 with ender_eye 12
 # Sector 2: Blacksmith & Smelting Workshop Detailing
 setblock 89 46 -283 campfire[lit=true] replace
 setblock 89 47 -283 water_cauldron[level=3] replace
@@ -142,14 +145,14 @@ setblock 92 47 -287 iron_block replace
 setblock 92 47 -286 raw_gold_block replace
 setblock 92 47 -285 gold_block replace
 setblock 92 47 -284 raw_copper_block replace
-summon glow_item_frame 91 48 -288 {Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:iron_ingot",count:1}}
-summon glow_item_frame 91 47 -288 {Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:raw_iron",count:1}}
-summon glow_item_frame 91 47 -287 {Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:iron_block",count:1}}
-summon glow_item_frame 91 47 -286 {Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:raw_gold",count:1}}
-summon glow_item_frame 91 47 -285 {Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:gold_ingot",count:1}}
-summon glow_item_frame 91 47 -284 {Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:copper_ingot",count:1}}
-summon glow_item_frame 90 48 -289 {Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:netherite_ingot",count:1}}
-summon glow_item_frame 90 48 -287 {Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:heavy_core",count:1}}
+setblock 91 47 -288 barrel[facing=west] replace
+item replace block 91 47 -288 container.0 with iron_ingot 64
+item replace block 91 47 -288 container.1 with raw_iron 64
+item replace block 91 47 -288 container.2 with gold_ingot 64
+item replace block 91 47 -288 container.3 with raw_gold 64
+item replace block 91 47 -288 container.4 with copper_ingot 64
+item replace block 91 47 -288 container.5 with netherite_ingot 4
+item replace block 91 47 -288 container.6 with heavy_core 1
 # Sector 3: Grand Arcane Library Detailing
 setblock 144 47 -304 end_rod[facing=up] replace
 setblock 144 48 -304 lectern[facing=east,has_book=true] replace
@@ -173,12 +176,13 @@ setblock 142 48 -305 candle[candles=4,lit=true] replace
 setblock 158 48 -305 purple_candle[candles=4,lit=true] replace
 setblock 142 48 -297 candle[candles=4,lit=true] replace
 setblock 158 48 -297 purple_candle[candles=4,lit=true] replace
-summon glow_item_frame 147 48 -301 {Tags:["citadel_decor","library_frame"],Facing:5b,Item:{id:"minecraft:enchanted_book",count:1,components:{"minecraft:stored_enchantments":{"minecraft:mending":1}}}}
-summon glow_item_frame 153 48 -301 {Tags:["citadel_decor","library_frame"],Facing:4b,Item:{id:"minecraft:enchanted_book",count:1,components:{"minecraft:stored_enchantments":{"minecraft:unbreaking":1}}}}
-summon glow_item_frame 150 48 -304 {Tags:["citadel_decor","library_frame"],Facing:3b,Item:{id:"minecraft:enchanted_book",count:1,components:{"minecraft:stored_enchantments":{"minecraft:fortune":1}}}}
-summon glow_item_frame 150 48 -298 {Tags:["citadel_decor","library_frame"],Facing:2b,Item:{id:"minecraft:enchanted_book",count:1,components:{"minecraft:stored_enchantments":{"minecraft:silk_touch":1}}}}
-summon glow_item_frame 144 48 -300 {Tags:["citadel_decor","library_frame"],Facing:5b,Item:{id:"minecraft:enchanted_book",count:1,components:{"minecraft:stored_enchantments":{"minecraft:efficiency":1}}}}
-summon glow_item_frame 156 48 -300 {Tags:["citadel_decor","library_frame"],Facing:4b,Item:{id:"minecraft:enchanted_book",count:1,components:{"minecraft:stored_enchantments":{"minecraft:infinity":1}}}}
+setblock 147 47 -301 chiseled_bookshelf[facing=south] replace
+item replace block 147 47 -301 container.0 with enchanted_book[stored_enchantments={"minecraft:mending":1}]
+item replace block 147 47 -301 container.1 with enchanted_book[stored_enchantments={"minecraft:unbreaking":3}]
+item replace block 147 47 -301 container.2 with enchanted_book[stored_enchantments={"minecraft:fortune":3}]
+item replace block 147 47 -301 container.3 with enchanted_book[stored_enchantments={"minecraft:silk_touch":1}]
+item replace block 147 47 -301 container.4 with enchanted_book[stored_enchantments={"minecraft:efficiency":5}]
+item replace block 147 47 -301 container.5 with enchanted_book[stored_enchantments={"minecraft:infinity":1}]
 # Sector 4: Brewing & Alchemy Laboratory Detailing
 setblock 159 47 -283 water_cauldron[level=3] replace
 setblock 158 47 -283 water_cauldron[level=3] replace
@@ -186,11 +190,14 @@ setblock 159 48 -285 brewing_stand replace
 setblock 159 48 -284 brewing_stand replace
 setblock 159 48 -282 brewing_stand replace
 setblock 159 48 -281 brewing_stand replace
-summon glow_item_frame 159 49 -285 {Tags:["citadel_decor","brewing_frame"],Facing:4b,Item:{id:"minecraft:nether_wart",count:1}}
-summon glow_item_frame 159 49 -284 {Tags:["citadel_decor","brewing_frame"],Facing:4b,Item:{id:"minecraft:blaze_powder",count:1}}
-summon glow_item_frame 159 49 -283 {Tags:["citadel_decor","brewing_frame"],Facing:4b,Item:{id:"minecraft:ghast_tear",count:1}}
-summon glow_item_frame 159 49 -282 {Tags:["citadel_decor","brewing_frame"],Facing:4b,Item:{id:"minecraft:glistering_melon_slice",count:1}}
-summon glow_item_frame 159 49 -281 {Tags:["citadel_decor","brewing_frame"],Facing:4b,Item:{id:"minecraft:fermented_spider_eye",count:1}}
+item replace block 159 48 -285 container.4 with blaze_powder 64
+item replace block 159 48 -284 container.4 with blaze_powder 64
+setblock 158 47 -285 barrel[facing=west] replace
+item replace block 158 47 -285 container.0 with nether_wart 64
+item replace block 158 47 -285 container.1 with blaze_powder 64
+item replace block 158 47 -285 container.2 with ghast_tear 16
+item replace block 158 47 -285 container.3 with glistering_melon_slice 64
+item replace block 158 47 -285 container.4 with fermented_spider_eye 64
 # Sector 5: Underground Farm & Botany Pod Detailing
 setblock 99 46 -273 campfire[lit=true] replace
 setblock 99 48 -273 bee_nest[facing=east,honey_level=5] replace
@@ -198,9 +205,9 @@ setblock 103 46 -273 campfire[lit=true] replace
 setblock 103 48 -273 bee_nest[facing=west,honey_level=5] replace
 setblock 112 47 -268 chest[facing=west,type=right] replace
 setblock 112 47 -267 chest[facing=west,type=left] replace
-summon item_frame 111 47 -268 {Tags:["citadel_decor","farm_frame"],Facing:4b,Item:{id:"minecraft:golden_carrot",count:1}}
-summon item_frame 111 47 -267 {Tags:["citadel_decor","farm_frame"],Facing:4b,Item:{id:"minecraft:wheat",count:1}}
-summon item_frame 111 48 -267 {Tags:["citadel_decor","farm_frame"],Facing:4b,Item:{id:"minecraft:diamond_hoe",count:1}}
+item replace block 112 47 -268 container.0 with golden_carrot 64
+item replace block 112 47 -268 container.1 with wheat 64
+item replace block 112 47 -268 container.2 with diamond_hoe[unbreakable={}]
 # Sector 6: Modern Subterranean Housing Detailing
 setblock 136 47 -289 red_bed[facing=north,part=head] replace
 setblock 136 47 -288 red_bed[facing=north,part=foot] replace

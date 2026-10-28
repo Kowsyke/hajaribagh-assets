@@ -86,22 +86,11 @@ def build_war_room_commands():
     cmds.append("setblock 117 47 -313 yellow_stained_glass replace")
     cmds.append("setblock 118 47 -313 lime_stained_glass replace")
 
-    # Strategic command marker on central map capital
-    cmds.append(
-        'summon glow_item_frame 117.5 48.0 -313.97 '
-        '{Tags:["citadel_decor","war_room_entity","war_room_map_compass"],Facing:1b,Item:{id:"minecraft:recovery_compass",count:1}}'
-    )
-
     # 6. Periscope Optical Station (X: 121, Z: -317)
     # Pedestal base
     cmds.append("setblock 121 46 -317 chiseled_polished_blackstone replace")
     cmds.append("setblock 121 47 -317 waxed_copper_grate replace")
     cmds.append("setblock 121 48 -317 lightning_rod[facing=up] replace")
-    # Spyglass optic frame on wall
-    cmds.append(
-        'summon glow_item_frame 122 48 -317 '
-        '{Tags:["citadel_decor","war_room_entity","war_room_periscope"],Facing:4b,Item:{id:"minecraft:spyglass",count:1}}'
-    )
     # Reinforced vertical viewing shaft rising up to ceiling
     cmds.append("setblock 121 49 -317 iron_bars replace")
     cmds.append("setblock 121 50 -317 iron_bars replace")
@@ -114,7 +103,7 @@ def build_war_room_commands():
     cmds.append("setblock 114 46 -317 gilded_blackstone replace")
     cmds.append(
         "summon armor_stand 114.5 47.0 -316.5 "
-        '{Tags:["citadel_decor","war_room_entity","war_vanguard_nw"],ShowArms:1b,NoBasePlate:1b,Rotation:[135.0f,0.0f]}'
+        '{Tags:["citadel_decor","war_vanguard_nw"],ShowArms:1b,NoBasePlate:1b,Rotation:[135.0f,0.0f]}'
     )
     cmds.append(
         'item replace entity @e[tag=war_vanguard_nw,limit=1] armor.head with '
@@ -136,7 +125,7 @@ def build_war_room_commands():
         'item replace entity @e[tag=war_vanguard_nw,limit=1] weapon.mainhand with '
         'netherite_sword[enchantments={"minecraft:sharpness":5}]'
     )
-    cmds.append('item replace entity @e[tag=war_vanguard_nw,limit=1] weapon.offhand with shield')
+    cmds.append('item replace entity @e[tag=war_vanguard_nw,limit=1] weapon.offhand with spyglass')
 
     # Guard 2: Northeast corner (X: 120, Z: -317)
     cmds.append("setblock 120 46 -317 gilded_blackstone replace")
@@ -248,15 +237,13 @@ def build_war_room_commands():
     cmds.append("setblock 112 47 -313 chiseled_polished_blackstone replace")
     cmds.append("setblock 112 48 -313 redstone_lamp replace")
 
-    # Time and navigation displays
-    cmds.append(
-        'summon glow_item_frame 112 49 -315 '
-        '{Tags:["citadel_decor","war_room_entity","war_room_clock"],Facing:5b,Item:{id:"minecraft:clock",count:1}}'
-    )
-    cmds.append(
-        'summon glow_item_frame 112 49 -313 '
-        '{Tags:["citadel_decor","war_room_entity","war_room_compass"],Facing:5b,Item:{id:"minecraft:compass",count:1}}'
-    )
+    # Strategic Command inventory locker
+    cmds.append("setblock 113 47 -316 chest[facing=east] replace")
+    cmds.append("item replace block 113 47 -316 container.0 with recovery_compass 1")
+    cmds.append("item replace block 113 47 -316 container.1 with clock 1")
+    cmds.append("item replace block 113 47 -316 container.2 with compass 1")
+    cmds.append("item replace block 113 47 -316 container.3 with spyglass 1")
+    cmds.append("item replace block 113 47 -316 container.4 with filled_map 1")
 
     # Kingdom banners
     cmds.append("setblock 112 49 -318 red_wall_banner[facing=east] replace")

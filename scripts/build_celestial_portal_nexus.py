@@ -75,12 +75,12 @@ def build_connecting_archway():
         "fill 115 52 -236 115 52 -234 polished_deepslate_stairs[facing=east,half=top]",
         "fill 119 52 -236 119 52 -234 polished_deepslate_stairs[facing=west,half=top]",
         # Side Walls and Crying Obsidian Pilasters
-        "fill 115 46 -236 115 51 -236 polished_deepslate_bricks",
-        "fill 119 46 -236 119 51 -236 polished_deepslate_bricks",
+        "fill 115 46 -236 115 51 -236 deepslate_bricks",
+        "fill 119 46 -236 119 51 -236 deepslate_bricks",
         "fill 115 46 -235 115 51 -235 crying_obsidian",
         "fill 119 46 -235 119 51 -235 crying_obsidian",
-        "fill 115 46 -234 115 51 -234 polished_deepslate_bricks",
-        "fill 119 46 -234 119 51 -234 polished_deepslate_bricks",
+        "fill 115 46 -234 115 51 -234 deepslate_bricks",
+        "fill 119 46 -234 119 51 -234 deepslate_bricks",
         # Hallway Keystone and Illumination
         "setblock 117 53 -235 copper_bulb[lit=true,powered=false]",
         "setblock 117 52 -235 iron_chain[axis=y]",

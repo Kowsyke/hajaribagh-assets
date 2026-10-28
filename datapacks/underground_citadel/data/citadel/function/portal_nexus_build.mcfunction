@@ -4,7 +4,7 @@ fill 106 36 -302 128 48 -280 air
 
 # Foundation & Calcite Concentric Floor
 fill 105 35 -303 129 35 -279 polished_deepslate
-fill 106 36 -302 128 36 -280 polished_deepslate_bricks
+fill 106 36 -302 128 36 -280 deepslate_bricks
 fill 112 36 -296 122 36 -286 calcite
 fill 115 36 -293 119 36 -289 crying_obsidian
 fill 105 36 -303 105 48 -279 deepslate_tiles

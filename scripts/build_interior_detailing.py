@@ -32,16 +32,17 @@ def build_decor_commands():
     # Sector 0: Central Command Rotunda (X: 111..123, Z: -307..-295, Y: 46..53)
     # =========================================================================
     cmds.append("# Sector 0: Central Command Rotunda Detailing")
-    # Tactical holo compass table surrounding the central beacon well
-    cmds.append("setblock 117 47 -300 dark_oak_stairs[facing=south,half=bottom]")
-    cmds.append("setblock 117 47 -302 dark_oak_stairs[facing=north,half=bottom]")
-    cmds.append("setblock 116 47 -301 dark_oak_stairs[facing=west,half=bottom]")
-    cmds.append("setblock 118 47 -301 dark_oak_stairs[facing=east,half=bottom]")
-    cmds.append("setblock 117 47 -301 copper_grate")
-    cmds.append(
-        "summon glow_item_frame 117.5 48.0 -300.97 "
-        '{Tags:["citadel_decor","rotunda_compass"],Facing:2b,Item:{id:"minecraft:recovery_compass",count:1}}'
-    )
+    # Tactical perimeter railing surrounding the central beacon well
+    cmds.append("setblock 117 47 -300 dark_oak_stairs[facing=south,half=bottom] replace")
+    cmds.append("setblock 117 47 -302 dark_oak_stairs[facing=north,half=bottom] replace")
+    cmds.append("setblock 116 47 -301 dark_oak_stairs[facing=west,half=bottom] replace")
+    cmds.append("setblock 118 47 -301 dark_oak_stairs[facing=east,half=bottom] replace")
+    # Beacon beam clearance at center
+    cmds.append("setblock 117 47 -301 air replace")
+    # Rotunda command console terminal barrel
+    cmds.append("setblock 112 47 -302 barrel[facing=east] replace")
+    cmds.append("item replace block 112 47 -302 container.0 with recovery_compass 1")
+    cmds.append("item replace block 112 47 -302 container.1 with clock 1")
     # Redstone sensor terminals on rotunda walls
     cmds.append("setblock 112 47 -301 chiseled_polished_blackstone")
     cmds.append("setblock 112 48 -301 calibrated_sculk_sensor")
@@ -243,48 +244,26 @@ def build_decor_commands():
         cmds.append(f"setblock 91 {y} -306 chest[facing=south,type=left] replace")
         cmds.append(f"setblock 92 {y} -306 deepslate_brick_wall replace")
 
-    # Item frames displaying weapons and tools mounted directly on the chest lockers
-    upper_weapons = [
-        (86, "netherite_pickaxe"),
-        (87, "netherite_axe"),
-        (88, "netherite_shovel"),
-        (89, "diamond_sword"),
-        (90, "trident"),
-        (91, "mace"),
-    ]
-    for x, item in upper_weapons:
-        cmds.append(
-            f"summon item_frame {x} 48 -305 "
-            f'{{Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{{id:"minecraft:{item}",count:1}}}}'
-        )
-
-    lower_weapons = [
-        (86, "bow"),
-        (87, "crossbow"),
-        (88, "shield"),
-        (89, "elytra"),
-        (90, "spyglass"),
-        (91, "clock"),
-    ]
-    for x, item in lower_weapons:
-        cmds.append(
-            f"summon item_frame {x} 47 -305 "
-            f'{{Tags:["citadel_decor","armory_frame"],Facing:3b,Item:{{id:"minecraft:{item}",count:1}}}}'
-        )
-
-    # Tool smithing bench component displays
-    bench_displays = [
-        (80, "netherite_upgrade_smithing_template"),
-        (81, "netherite_ingot"),
-        (82, "diamond"),
-        (83, "iron_ingot"),
-        (84, "ender_eye"),
-    ]
-    for x, item in bench_displays:
-        cmds.append(
-            f"summon item_frame {x} 48 -305 "
-            f'{{Tags:["citadel_decor","armory_bench_frame"],Facing:3b,Item:{{id:"minecraft:{item}",count:1}}}}'
-        )
+    # Real weapons, tools, and smithing components stocked directly in chest lockers
+    cmds.append("item replace block 86 48 -306 container.0 with netherite_pickaxe 1")
+    cmds.append("item replace block 86 48 -306 container.1 with netherite_axe 1")
+    cmds.append("item replace block 86 48 -306 container.2 with netherite_shovel 1")
+    cmds.append("item replace block 88 48 -306 container.0 with diamond_sword 1")
+    cmds.append("item replace block 88 48 -306 container.1 with trident 1")
+    cmds.append("item replace block 88 48 -306 container.2 with mace 1")
+    cmds.append("item replace block 86 47 -306 container.0 with bow 1")
+    cmds.append("item replace block 86 47 -306 container.1 with crossbow 1")
+    cmds.append("item replace block 86 47 -306 container.2 with shield 1")
+    cmds.append("item replace block 88 47 -306 container.0 with elytra 1")
+    cmds.append("item replace block 88 47 -306 container.1 with spyglass 1")
+    cmds.append("item replace block 88 47 -306 container.2 with clock 1")
+    # Smithing bench supply chest
+    cmds.append("setblock 85 47 -306 chest[facing=south] replace")
+    cmds.append("item replace block 85 47 -306 container.0 with netherite_upgrade_smithing_template 2")
+    cmds.append("item replace block 85 47 -306 container.1 with netherite_ingot 8")
+    cmds.append("item replace block 85 47 -306 container.2 with diamond 16")
+    cmds.append("item replace block 85 47 -306 container.3 with iron_ingot 32")
+    cmds.append("item replace block 85 47 -306 container.4 with ender_eye 12")
 
     # =========================================================================
     # Sector 2: Blacksmith & Smelting Workshop (X: 74..94, Z: -291..-275)
@@ -317,29 +296,15 @@ def build_decor_commands():
     cmds.append("setblock 92 47 -285 gold_block replace")
     cmds.append("setblock 92 47 -284 raw_copper_block replace")
 
-    ingot_frames = [
-        (91, 48, -288, "iron_ingot"),
-        (91, 47, -288, "raw_iron"),
-        (91, 47, -287, "iron_block"),
-        (91, 47, -286, "raw_gold"),
-        (91, 47, -285, "gold_ingot"),
-        (91, 47, -284, "copper_ingot"),
-    ]
-    for x, y, z, item in ingot_frames:
-        cmds.append(
-            f"summon glow_item_frame {x} {y} {z} "
-            f'{{Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{{id:"minecraft:{item}",count:1}}}}'
-        )
-
-    # Master smithing tools displayed on wall
-    cmds.append(
-        'summon glow_item_frame 90 48 -289 '
-        '{Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:netherite_ingot",count:1}}'
-    )
-    cmds.append(
-        'summon glow_item_frame 90 48 -287 '
-        '{Tags:["citadel_decor","blacksmith_frame"],Facing:4b,Item:{id:"minecraft:heavy_core",count:1}}'
-    )
+    # Blacksmith metallurgy inventory barrel stocked with refined ingots and catalyst
+    cmds.append("setblock 91 47 -288 barrel[facing=west] replace")
+    cmds.append("item replace block 91 47 -288 container.0 with iron_ingot 64")
+    cmds.append("item replace block 91 47 -288 container.1 with raw_iron 64")
+    cmds.append("item replace block 91 47 -288 container.2 with gold_ingot 64")
+    cmds.append("item replace block 91 47 -288 container.3 with raw_gold 64")
+    cmds.append("item replace block 91 47 -288 container.4 with copper_ingot 64")
+    cmds.append("item replace block 91 47 -288 container.5 with netherite_ingot 4")
+    cmds.append("item replace block 91 47 -288 container.6 with heavy_core 1")
 
     # =========================================================================
     # Sector 3: Grand Arcane Library (X: 140..160, Z: -307..-295, Y: 46..53)
@@ -376,22 +341,14 @@ def build_decor_commands():
     cmds.append("setblock 142 48 -297 candle[candles=4,lit=true] replace")
     cmds.append("setblock 158 48 -297 purple_candle[candles=4,lit=true] replace")
 
-    # Enchanted tome displays mounted on altar pillars
-    tome_displays = [
-        (147, 48, -301, 5, "mending"),
-        (153, 48, -301, 4, "unbreaking"),
-        (150, 48, -304, 3, "fortune"),
-        (150, 48, -298, 2, "silk_touch"),
-        (144, 48, -300, 5, "efficiency"),
-        (156, 48, -300, 4, "infinity"),
-    ]
-    for x, y, z, facing_code, enchant in tome_displays:
-        cmds.append(
-            f"summon glow_item_frame {x} {y} {z} "
-            f'{{Tags:["citadel_decor","library_frame"],Facing:{facing_code}b,'
-            f'Item:{{id:"minecraft:enchanted_book",count:1,'
-            f'components:{{"minecraft:stored_enchantments":{{"minecraft:{enchant}":1}}}}}}}}'
-        )
+    # Chiseled bookshelf stocked with authentic enchanted tomes
+    cmds.append("setblock 147 47 -301 chiseled_bookshelf[facing=south] replace")
+    cmds.append('item replace block 147 47 -301 container.0 with enchanted_book[stored_enchantments={"minecraft:mending":1}]')
+    cmds.append('item replace block 147 47 -301 container.1 with enchanted_book[stored_enchantments={"minecraft:unbreaking":3}]')
+    cmds.append('item replace block 147 47 -301 container.2 with enchanted_book[stored_enchantments={"minecraft:fortune":3}]')
+    cmds.append('item replace block 147 47 -301 container.3 with enchanted_book[stored_enchantments={"minecraft:silk_touch":1}]')
+    cmds.append('item replace block 147 47 -301 container.4 with enchanted_book[stored_enchantments={"minecraft:efficiency":5}]')
+    cmds.append('item replace block 147 47 -301 container.5 with enchanted_book[stored_enchantments={"minecraft:infinity":1}]')
 
     # =========================================================================
     # Sector 4: Brewing & Alchemy Laboratory (X: 140..160, Z: -291..-275)
@@ -404,19 +361,15 @@ def build_decor_commands():
     cmds.append("setblock 159 48 -282 brewing_stand replace")
     cmds.append("setblock 159 48 -281 brewing_stand replace")
 
-    # Alchemical reagent display frames on the East wall
-    reagents = [
-        (159, 49, -285, "nether_wart"),
-        (159, 49, -284, "blaze_powder"),
-        (159, 49, -283, "ghast_tear"),
-        (159, 49, -282, "glistering_melon_slice"),
-        (159, 49, -281, "fermented_spider_eye"),
-    ]
-    for x, y, z, item in reagents:
-        cmds.append(
-            f"summon glow_item_frame {x} {y} {z} "
-            f'{{Tags:["citadel_decor","brewing_frame"],Facing:4b,Item:{{id:"minecraft:{item}",count:1}}}}'
-        )
+    # Brewing stand fuel and reagent supply barrel
+    cmds.append("item replace block 159 48 -285 container.4 with blaze_powder 64")
+    cmds.append("item replace block 159 48 -284 container.4 with blaze_powder 64")
+    cmds.append("setblock 158 47 -285 barrel[facing=west] replace")
+    cmds.append("item replace block 158 47 -285 container.0 with nether_wart 64")
+    cmds.append("item replace block 158 47 -285 container.1 with blaze_powder 64")
+    cmds.append("item replace block 158 47 -285 container.2 with ghast_tear 16")
+    cmds.append("item replace block 158 47 -285 container.3 with glistering_melon_slice 64")
+    cmds.append("item replace block 158 47 -285 container.4 with fermented_spider_eye 64")
 
     # =========================================================================
     # Sector 5: Underground Farm & Botany Pod (X: 96..114, Z: -291..-265)
@@ -430,19 +383,10 @@ def build_decor_commands():
     # Paired double chest for botanical harvest
     cmds.append("setblock 112 47 -268 chest[facing=west,type=right] replace")
     cmds.append("setblock 112 47 -267 chest[facing=west,type=left] replace")
-    cmds.append(
-        'summon item_frame 111 47 -268 '
-        '{Tags:["citadel_decor","farm_frame"],Facing:4b,Item:{id:"minecraft:golden_carrot",count:1}}'
-    )
-    cmds.append(
-        'summon item_frame 111 47 -267 '
-        '{Tags:["citadel_decor","farm_frame"],Facing:4b,Item:{id:"minecraft:wheat",count:1}}'
-    )
-    # Agricultural tool display
-    cmds.append(
-        'summon item_frame 111 48 -267 '
-        '{Tags:["citadel_decor","farm_frame"],Facing:4b,Item:{id:"minecraft:diamond_hoe",count:1}}'
-    )
+    # Stock botanical harvest double chest directly with food and agricultural tools
+    cmds.append("item replace block 112 47 -268 container.0 with golden_carrot 64")
+    cmds.append("item replace block 112 47 -268 container.1 with wheat 64")
+    cmds.append("item replace block 112 47 -268 container.2 with diamond_hoe[unbreakable={}]")
 
     # =========================================================================
     # Sector 6: Modern Subterranean Housing (X: 120..138, Z: -291..-265)
@@ -783,7 +727,7 @@ test_query('Parliament Ceremonial Guard NW', 'execute if entity @e[tag=parliamen
 test_query('Parliament Valance Banner', 'execute if block 115 51 -260 red_wall_banner[facing=south]')
 
 # Rotunda, Farm & Brewing Checks
-test_query('Rotunda Center Tactical Grate', 'execute if block 117 47 -301 copper_grate')
+test_query('Rotunda Beacon Railing South', 'execute if block 117 47 -300 dark_oak_stairs[facing=south]')
 test_query('Brewing Lab Cauldron', 'execute if block 159 47 -283 water_cauldron[level=3]')
 test_query('Farm Apiary Calm Campfire', 'execute if block 99 46 -273 campfire[lit=true]')
 test_query('Farm Paired Double Chest Right', 'execute if block 112 47 -268 chest[facing=west,type=right]')

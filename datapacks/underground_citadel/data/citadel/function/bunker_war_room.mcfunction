@@ -36,24 +36,22 @@ setblock 118 47 -314 light_blue_stained_glass replace
 setblock 116 47 -313 lime_stained_glass replace
 setblock 117 47 -313 yellow_stained_glass replace
 setblock 118 47 -313 lime_stained_glass replace
-summon glow_item_frame 117.5 48.0 -313.97 {Tags:["citadel_decor","war_room_entity","war_room_map_compass"],Facing:1b,Item:{id:"minecraft:recovery_compass",count:1}}
 setblock 121 46 -317 chiseled_polished_blackstone replace
 setblock 121 47 -317 waxed_copper_grate replace
 setblock 121 48 -317 lightning_rod[facing=up] replace
-summon glow_item_frame 122 48 -317 {Tags:["citadel_decor","war_room_entity","war_room_periscope"],Facing:4b,Item:{id:"minecraft:spyglass",count:1}}
 setblock 121 49 -317 iron_bars replace
 setblock 121 50 -317 iron_bars replace
 setblock 121 51 -317 lightning_rod[facing=down] replace
 setblock 121 52 -317 end_rod[facing=up] replace
 setblock 121 53 -317 tinted_glass replace
 setblock 114 46 -317 gilded_blackstone replace
-summon armor_stand 114.5 47.0 -316.5 {Tags:["citadel_decor","war_room_entity","war_vanguard_nw"],ShowArms:1b,NoBasePlate:1b,Rotation:[135.0f,0.0f]}
+summon armor_stand 114.5 47.0 -316.5 {Tags:["citadel_decor","war_vanguard_nw"],ShowArms:1b,NoBasePlate:1b,Rotation:[135.0f,0.0f]}
 item replace entity @e[tag=war_vanguard_nw,limit=1] armor.head with netherite_helmet[enchantments={"minecraft:protection":4,"minecraft:unbreaking":3}]
 item replace entity @e[tag=war_vanguard_nw,limit=1] armor.chest with netherite_chestplate[enchantments={"minecraft:protection":4,"minecraft:unbreaking":3}]
 item replace entity @e[tag=war_vanguard_nw,limit=1] armor.legs with netherite_leggings[enchantments={"minecraft:protection":4,"minecraft:unbreaking":3}]
 item replace entity @e[tag=war_vanguard_nw,limit=1] armor.feet with netherite_boots[enchantments={"minecraft:protection":4,"minecraft:feather_falling":4}]
 item replace entity @e[tag=war_vanguard_nw,limit=1] weapon.mainhand with netherite_sword[enchantments={"minecraft:sharpness":5}]
-item replace entity @e[tag=war_vanguard_nw,limit=1] weapon.offhand with shield
+item replace entity @e[tag=war_vanguard_nw,limit=1] weapon.offhand with spyglass
 setblock 120 46 -317 gilded_blackstone replace
 summon armor_stand 119.5 47.0 -316.5 {Tags:["citadel_decor","war_room_entity","war_vanguard_ne"],ShowArms:1b,NoBasePlate:1b,Rotation:[225.0f,0.0f]}
 item replace entity @e[tag=war_vanguard_ne,limit=1] armor.head with netherite_helmet[enchantments={"minecraft:protection":4,"minecraft:unbreaking":3}]
@@ -92,8 +90,12 @@ setblock 112 47 -314 polished_blackstone replace
 setblock 112 48 -314 comparator[facing=east] replace
 setblock 112 47 -313 chiseled_polished_blackstone replace
 setblock 112 48 -313 redstone_lamp replace
-summon glow_item_frame 112 49 -315 {Tags:["citadel_decor","war_room_entity","war_room_clock"],Facing:5b,Item:{id:"minecraft:clock",count:1}}
-summon glow_item_frame 112 49 -313 {Tags:["citadel_decor","war_room_entity","war_room_compass"],Facing:5b,Item:{id:"minecraft:compass",count:1}}
+setblock 113 47 -316 chest[facing=east] replace
+item replace block 113 47 -316 container.0 with recovery_compass 1
+item replace block 113 47 -316 container.1 with clock 1
+item replace block 113 47 -316 container.2 with compass 1
+item replace block 113 47 -316 container.3 with spyglass 1
+item replace block 113 47 -316 container.4 with filled_map 1
 setblock 112 49 -318 red_wall_banner[facing=east] replace
 setblock 112 49 -310 red_wall_banner[facing=east] replace
 setblock 122 49 -318 red_wall_banner[facing=west] replace

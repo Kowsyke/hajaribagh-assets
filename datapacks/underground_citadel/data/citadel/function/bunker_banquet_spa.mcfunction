@@ -82,21 +82,12 @@ setblock 117 39 -243 sea_pickle[pickles=1,waterlogged=false] replace
 setblock 116 39 -241 heavy_weighted_pressure_plate replace
 setblock 117 39 -241 sea_pickle[pickles=1,waterlogged=false] replace
 setblock 116 39 -240 heavy_weighted_pressure_plate replace
-setblock 117 39 -240 sea_pickle[pickles=1,waterlogged=false] replace
-summon glow_item_frame 115 38 -256 {Tags:["citadel_decor","banquet_feast_frame"],Facing:4b,Item:{id:"minecraft:golden_apple",count:1}}
-summon glow_item_frame 118 38 -256 {Tags:["citadel_decor","banquet_feast_frame"],Facing:5b,Item:{id:"minecraft:cooked_beef",count:1}}
-summon glow_item_frame 115 38 -252 {Tags:["citadel_decor","banquet_feast_frame"],Facing:4b,Item:{id:"minecraft:golden_apple",count:1}}
-summon glow_item_frame 118 38 -252 {Tags:["citadel_decor","banquet_feast_frame"],Facing:5b,Item:{id:"minecraft:cooked_beef",count:1}}
-summon glow_item_frame 115 38 -248 {Tags:["citadel_decor","banquet_feast_frame"],Facing:4b,Item:{id:"minecraft:golden_apple",count:1}}
-summon glow_item_frame 118 38 -248 {Tags:["citadel_decor","banquet_feast_frame"],Facing:5b,Item:{id:"minecraft:cooked_beef",count:1}}
-summon glow_item_frame 115 38 -244 {Tags:["citadel_decor","banquet_feast_frame"],Facing:4b,Item:{id:"minecraft:golden_apple",count:1}}
-summon glow_item_frame 118 38 -244 {Tags:["citadel_decor","banquet_feast_frame"],Facing:5b,Item:{id:"minecraft:cooked_beef",count:1}}
 fill 114 38 -238 120 38 -236 gilded_blackstone replace
 fill 115 38 -239 119 38 -239 crimson_stairs[facing=south,half=bottom] replace
 fill 116 39 -237 118 39 -237 dark_oak_slab[type=top] replace
 setblock 116 40 -237 cake[bites=0] replace
 setblock 117 40 -237 candle[candles=4,lit=true] replace
-summon glow_item_frame 118 40 -237 {Tags:["citadel_decor","banquet_dais_frame"],Facing:1b,Item:{id:"minecraft:enchanted_golden_apple",count:1}}
+setblock 118 40 -237 cake[bites=0] replace
 setblock 117 38 -236 gold_block replace
 setblock 117 39 -236 crimson_stairs[facing=north,half=bottom] replace
 setblock 116 39 -236 crimson_trapdoor[facing=east,half=bottom,open=true] replace
@@ -162,10 +153,10 @@ setblock 114 38 -260 chest[facing=south,type=left] replace
 fill 111 39 -260 114 39 -260 barrel[facing=south] replace
 fill 120 38 -260 123 38 -260 barrel[facing=south] replace
 fill 120 39 -260 123 39 -260 barrel[facing=south] replace
-summon item_frame 112 40 -260 {Tags:["citadel_decor","banquet_pantry_frame"],Facing:3b,Item:{id:"minecraft:bread",count:1}}
-summon item_frame 113 40 -260 {Tags:["citadel_decor","banquet_pantry_frame"],Facing:3b,Item:{id:"minecraft:cooked_porkchop",count:1}}
-summon item_frame 121 40 -260 {Tags:["citadel_decor","banquet_cellar_frame"],Facing:3b,Item:{id:"minecraft:potion",count:1}}
-summon item_frame 122 40 -260 {Tags:["citadel_decor","banquet_cellar_frame"],Facing:3b,Item:{id:"minecraft:golden_carrot",count:1}}
+item replace block 112 39 -260 container.0 with bread 64
+item replace block 113 39 -260 container.0 with cooked_porkchop 64
+item replace block 121 39 -260 container.0 with golden_apple 16
+item replace block 122 39 -260 container.0 with golden_carrot 64
 setblock 107 37 -255 sea_lantern replace
 setblock 127 37 -255 sea_lantern replace
 setblock 107 37 -241 sea_lantern replace
