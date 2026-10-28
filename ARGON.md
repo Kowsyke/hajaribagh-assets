@@ -69,6 +69,8 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 * Sector 12: High Security Netherite Crypt & Royal Treasury Vault: `(X: 111..123, Z: -234..-215, Y: 36..44)`.
 * Sector 13: Subterranean War Room & Strategic Cartography Command: `(X: 111..123, Z: -320..-308, Y: 46..53)`.
 * Sector 14: Automated Subterranean Storage Silo & Central Sorting System: `(X: 74..94, Z: -307..-295, Y: 36..45)`.
+* Sector 15: Alchemical Distillation Catacombs & Synthesis Vault: `(X: 140..160, Z: -291..-275, Y: 36..45)`.
+* Sector 16: Subterranean Cryo-Vault & Ancient Relic Conservatory: `(X: 111..123, Z: -320..-308, Y: 36..45)`.
 * Deep Infrastructure Tier 3 Facilities:
   * Central Beacon Well and Bubble Elevators: `(X: 111..120, Z: -304..-296, Y: 36..45)`.
   * Heavy Ore Processing Refinery: `(X: 78..90, Z: -289..-277, Y: 38..45)`.
