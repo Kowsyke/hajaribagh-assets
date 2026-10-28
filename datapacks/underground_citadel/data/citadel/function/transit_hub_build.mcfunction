@@ -1,61 +1,48 @@
-# Subterranean Citadel: The Subterranean Hyperloop Transit Hub
-# Dimensions: X: 104..130, Z: -345..-325, Floor Y: 49..50, Ceiling Y: 58
-# Completely subterranean, ceiling Y: 58 is 6 blocks below Treasury floor Y: 64
+# Subterranean Citadel: Hyperloop Transit Hub
+# Dimensions: X: 104..130, Z: -345..-325, Floor Y: 49, Ceiling Y: 58
 fill 104 49 -345 130 58 -325 air
 
-# Foundation & Concourse
+# Foundation & Concourse Quartz Floor
 fill 103 48 -346 131 48 -324 polished_deepslate
-fill 104 50 -345 130 50 -325 smooth_quartz
-fill 103 50 -346 103 58 -324 polished_blackstone
-fill 131 50 -346 131 58 -324 polished_blackstone
-fill 103 50 -346 131 58 -346 polished_blackstone
+fill 104 49 -345 130 49 -325 smooth_quartz
+fill 103 49 -346 103 58 -324 polished_blackstone
+fill 131 49 -346 131 58 -324 polished_blackstone
+fill 103 49 -346 131 58 -346 polished_blackstone
+fill 103 49 -324 131 58 -324 polished_blackstone
 fill 103 59 -346 131 59 -324 deepslate_tiles
 
-# Subway Portals connecting to West and East Flank Corridors at Z=-325
-fill 106 50 -325 108 53 -325 air
-fill 126 50 -325 128 53 -325 air
+# Hazard Warning Stripes (Yellow and Black Concrete)
+fill 109 49 -344 109 49 -328 yellow_concrete
+fill 110 49 -344 110 49 -328 black_concrete
+fill 124 49 -344 124 49 -328 yellow_concrete
+fill 125 49 -344 125 49 -328 black_concrete
 
-# Solid sealed safety buffer wall at Z=-324 facing Treasury substructure
-fill 109 50 -324 125 58 -324 deepslate_bricks
+# Track Bays with Powered Rails
+fill 107 49 -344 107 49 -328 polished_deepslate
+fill 107 50 -344 107 50 -328 powered_rail[shape=north_south]
+setblock 107 48 -336 redstone_block
+setblock 107 48 -342 redstone_block
 
-# Track Trough 1 (West Line: Surface Express, X: 108..109, Y: 49)
-fill 108 49 -345 109 49 -327 polished_blackstone
-fill 108 50 -345 108 50 -327 yellow_concrete
-fill 109 50 -345 109 50 -327 powered_rail[powered=true,shape=north_south]
+fill 127 49 -344 127 49 -328 polished_deepslate
+fill 127 50 -344 127 50 -328 powered_rail[shape=north_south]
+setblock 127 48 -336 redstone_block
+setblock 127 48 -342 redstone_block
 
-# Track Trough 2 (Center Line: Bedrock Mining Express, X: 117..118, Y: 49)
-fill 117 49 -345 118 49 -327 polished_blackstone
-fill 116 50 -345 116 50 -327 yellow_concrete
-fill 117 50 -345 117 50 -327 powered_rail[powered=true,shape=north_south]
+# Station Ticket Booth (Center: X: 115..119, Z: -340..-336)
+fill 115 50 -340 119 53 -336 glass outline
+setblock 117 50 -336 iron_door[facing=south,half=lower]
+setblock 117 51 -336 iron_door[facing=south,half=upper]
+setblock 116 50 -338 dark_oak_slab[type=top]
+setblock 116 51 -338 daylight_detector
 
-# Track Trough 3 (East Line: City Base Express, X: 125..126, Y: 49)
-fill 125 49 -345 126 49 -327 polished_blackstone
-fill 124 50 -345 124 50 -327 yellow_concrete
-fill 125 50 -345 125 50 -327 powered_rail[powered=true,shape=north_south]
+# Waiting Lounge Benches
+fill 114 50 -332 114 50 -328 polished_deepslate_stairs[facing=east,half=bottom]
+fill 120 50 -332 120 50 -328 polished_deepslate_stairs[facing=west,half=bottom]
 
-# Push Button Minecart Dispensers at Boarding Gates (Z: -328)
-setblock 109 51 -328 dispenser[facing=north]
-setblock 109 52 -328 stone_button[face=floor,facing=north]
+# Station Illuminated Ceiling Grids
+setblock 111 58 -336 sea_lantern
+setblock 117 58 -336 sea_lantern
+setblock 123 58 -336 sea_lantern
 
-setblock 117 51 -328 dispenser[facing=north]
-setblock 117 52 -328 stone_button[face=floor,facing=north]
-
-setblock 125 51 -328 dispenser[facing=north]
-setblock 125 52 -328 stone_button[face=floor,facing=north]
-
-# Hazard Warning Stripes along Platform Edges
-fill 110 50 -345 110 50 -327 black_concrete
-fill 115 50 -345 115 50 -327 black_concrete
-fill 118 50 -345 118 50 -327 black_concrete
-fill 123 50 -345 123 50 -327 black_concrete
-
-# Platform Waiting Benches
-fill 112 50 -335 114 50 -335 dark_oak_stairs[facing=south,half=bottom]
-fill 120 50 -335 122 50 -335 dark_oak_stairs[facing=south,half=bottom]
-
-# Lighting via Inset Sea Lanterns and Copper Bulbs
-fill 112 50 -340 114 50 -340 sea_lantern
-fill 120 50 -340 122 50 -340 sea_lantern
-setblock 109 55 -335 copper_bulb[lit=true]
-setblock 117 55 -335 copper_bulb[lit=true]
-setblock 125 55 -335 copper_bulb[lit=true]
+# Concourse Doorways to North Stairwell and Conduits
+fill 116 50 -325 118 54 -325 air

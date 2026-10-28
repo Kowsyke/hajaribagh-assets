@@ -1,0 +1,112 @@
+{
+  "style_id": "stilt_house",
+  "name": "Hillside Stilt House (山腰吊脚楼)",
+  "use_for": "houses on slopes, cliffsides, uneven terrain where one side must be propped up",
+  "proportions": {
+    "height_to_width_ratio": "1:1 ~ 1.5:1 (house body only, stilts excluded)",
+    "storey_height": "3-4 (interior clear)",
+    "wall_thickness": 1,
+    "stilt_height": "as terrain demands, 2-8",
+    "door_height": 2
+  },
+  "materials": {
+    "primary": ["minecraft:spruce_planks"],
+    "primary_use": "wall panels",
+    "secondary": [
+      "minecraft:spruce_log",
+      "minecraft:stripped_spruce_log"
+    ],
+    "secondary_use": "stilt legs (vertical log columns) + frame posts; stilt feet on stone pads",
+    "accent": [
+      "minecraft:dark_oak_planks",
+      "minecraft:dark_oak_stairs",
+      "minecraft:spruce_fence"
+    ],
+    "accent_use": "balcony floor/trim band, fence balcony railing",
+    "roof": [
+      "minecraft:dark_oak_stairs",
+      "minecraft:spruce_stairs",
+      "minecraft:spruce_slab"
+    ]
+  },
+  "roof": {
+    "type": "gable (人字顶), ridge PARALLEL to the slope contour",
+    "slope": "45 degrees",
+    "overhang": 1,
+    "material": "dark_oak_stairs or spruce_stairs",
+    "pattern": "patterns/gable_roof.py"
+  },
+  "windows": {
+    "pattern": "valley-facing side: generous 2x2 windows centered per bay; hill-facing side: one small 1x2",
+    "size": "2x2 (valley) / 1x2 (hill)",
+    "material": ["minecraft:glass_pane"],
+    "frame": "stripped_spruce_log lintel"
+  },
+  "details": {
+    "base_transition": "where the house meets the hill, graduate stone into the slope: stone -> tuff -> andesite -> dirt/grass over 2-3 columns",
+    "base_materials": ["minecraft:stone", "minecraft:deepslate", "minecraft:cobbled_deepslate", "minecraft:tuff", "minecraft:andesite"],
+    "stilt_bracing": "cross-brace stilt pairs with spruce_fence X or diagonal spruce_stairs when stilts taller than 4",
+    "stilt_pad": "each stilt foot sits on a stone or cobbled_deepslate pad block",
+    "balcony": "valley side gets a 1-2 deep balcony on stilts: dark_oak_planks floor, spruce_fence railing",
+    "lighting": "minecraft:lantern under balcony corners + by the door",
+    "access": "spruce_stairs or ladder from downhill ground up to the door",
+    "depth": {
+      "pilaster": {"enabled": true, "spacing": 4, "projection": 1, "material": "minecraft:spruce_log", "base_material": "minecraft:stone", "capital_material": "minecraft:dark_oak_planks", "note": "frame posts on the valley facade, aligned with the stilt rhythm"},
+      "window_trim": {"enabled": true, "projection": 1, "material": "minecraft:dark_oak_stairs", "corner_material": "minecraft:stripped_spruce_log", "sill_material": "minecraft:spruce_slab"},
+      "string_course": {"enabled": true, "material": "minecraft:dark_oak_planks", "note": "the accent trim band at floor/slab level"}
+    }
+  },
+  "lottery": {
+    "axes": {
+      "composition": {"options": [
+        {"id": "rect", "weight": 56, "source": "gc:phase10:stilt"},
+        {"id": "rect_bump", "weight": 10, "source": "gc:phase10:stilt"},
+        {"id": "L", "weight": 10, "source": "gc:phase10:stilt"},
+        {"id": "T", "weight": 2, "source": "gc:phase10:stilt"},
+        {"id": "U", "weight": 5, "source": "gc:phase10:stilt"},
+        {"id": "O", "weight": 4, "source": "gc:phase10:stilt"},
+        {"id": "cluster", "weight": 13, "source": "gc:phase10:stilt"}
+      ]},
+      "roof_material": {"options": [
+        {"id": "dark_oak_stairs", "weight": 60, "source": "prior"},
+        {"id": "spruce_stairs", "weight": 40, "source": "prior"}
+      ]},
+      "stilt_height": {"options": [
+        {"id": "stilt_low", "weight": 35, "source": "prior"},
+        {"id": "stilt_mid", "weight": 45, "source": "prior"},
+        {"id": "stilt_tall", "weight": 20, "source": "prior", "requires": {"terrain": "steep_slope"}}
+      ]},
+      "stilt_bracing": {"options": [
+        {"id": "cross_brace", "weight": 55, "source": "prior"},
+        {"id": "brace_none", "weight": 45, "source": "prior"}
+      ]},
+      "balcony": {"options": [
+        {"id": "balcony_deep", "weight": 3, "source": "prior"},
+        {"id": "balcony_shallow", "weight": 2, "source": "prior"},
+        {"id": "balcony_none", "weight": 95, "source": "prior"}
+      ]},
+      "access": {"options": [
+        {"id": "stair_access", "weight": 70, "source": "prior"},
+        {"id": "ladder_access", "weight": 30, "source": "prior"}
+      ]},
+      "footing_pad": {"options": [
+        {"id": "stone", "weight": 50, "source": "prior"},
+        {"id": "cobbled_deepslate", "weight": 50, "source": "prior"}
+      ]}
+    },
+    "rules": [
+      {"if": {"stilt_height": "stilt_mid"}, "forbid": ["brace_none"]},
+      {"if": {"stilt_height": "stilt_tall"}, "forbid": ["brace_none"]}
+    ]
+  },
+  "interview_prompts": {
+    "rooms": "屋里需要哪些房间?卧室、起居、储物各要吗?",
+    "structural": [
+      "场地坡度多陡,吊脚预计架多高?[低 2-3 格/中 4-6 格/高 7-8 格]",
+      "面向山谷一侧要不要吊脚阳台?[深阳台 2 格/浅阳台 1 格/不要]",
+      "上下入口用楼梯还是梯子?[楼梯/梯子]"
+    ],
+    "skip_if": "纯外观布景或地形几乎平坦(吊脚不足 2 格)时,吊脚高度问题跳过,按普通木屋只问房间。"
+  },
+  "size_tiers": ["小", "中"]
+}

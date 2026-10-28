@@ -1,0 +1,109 @@
+{
+  "style_id": "nordic_villa",
+  "name": "Nordic Villa (北欧别墅)",
+  "use_for": "modern-looking houses, villas, clean minimalist builds with big windows and flat roofs",
+  "proportions": {
+    "height_to_width_ratio": "0.6:1 ~ 1:1 (low horizontal massing)",
+    "storey_height": "4-5 (generous clear height is the signature)",
+    "wall_thickness": 1,
+    "typical_footprint": "9x11 ~ 15x19, L- or T-shaped massing welcome",
+    "door_height": 2
+  },
+  "materials": {
+    "primary": ["minecraft:white_concrete"],
+    "primary_use": "main wall planes, kept in large clean surfaces",
+    "secondary": [
+      "minecraft:spruce_planks",
+      "minecraft:spruce_log"
+    ],
+    "secondary_use": "one accent wall plane or entrance surround per facade (wood warmth against white)",
+    "accent": [
+      "minecraft:dark_oak_planks",
+      "minecraft:dark_oak_log",
+      "minecraft:smooth_stone"
+    ],
+    "accent_use": "roof coping, window surrounds, base plinth trim",
+    "roof": [
+      "minecraft:smooth_stone_slab",
+      "minecraft:dark_oak_planks",
+      "minecraft:smooth_stone"
+    ]
+  },
+  "roof": {
+    "type": "flat",
+    "slope": "none",
+    "overhang": 1,
+    "material": "smooth_stone_slab walking surface + dark coping band (dark_oak or smooth_stone) around the edge, ALWAYS one shade darker than walls",
+    "coping": "1-block-wide dark band at roof perimeter; optional stepped parapet"
+  },
+  "windows": {
+    "pattern": "large horizontal bands: floor-to-ceiling 2-3 high, 3-6 wide, grouped on the best-view facade; corner windows where two bands meet",
+    "size": "3-6 wide x 2-3 high",
+    "material": ["minecraft:glass_pane"],
+    "frame": "dark_oak_planks or smooth_stone surround, 1 block"
+  },
+  "details": {
+    "base": "smooth_stone or stone 1-block plinth at ground contact; recessed entry",
+    "floor": "birch_planks interior floors (light wood is the nordic signature)",
+    "floor_materials": ["minecraft:birch_planks"],
+    "lighting": "minecraft:lantern or hidden minecraft:glowstone under slab edges; sparse and warm",
+    "terrace": "birch or spruce slab terrace with dark_oak fence-less edge, 1-2 steps of smooth_stone to lawn",
+    "planting": "short grass, flowers, one birch or spruce near the corner :  landscaping is part of the style",
+    "depth": {
+      "pilaster": {"enabled": false, "spacing": 5, "projection": 1, "material": "minecraft:smooth_stone", "note": "clean planes are the point :  depth comes from the wood accent wall and window bands, not piers"},
+      "window_trim": {"enabled": true, "projection": 1, "material": "minecraft:dark_oak_planks", "corner_material": "minecraft:smooth_stone", "sill_material": "minecraft:smooth_stone_slab"},
+      "string_course": {"enabled": false, "material": "minecraft:smooth_stone", "note": "the dark roof coping band is the only horizontal accent"}
+    }
+  },
+  "lottery": {
+    "axes": {
+      "composition": {"options": [
+        {"id": "rect", "weight": 80, "source": "gc:phase10:modern"},
+        {"id": "rect_bump", "weight": 4, "source": "gc:phase10:modern"},
+        {"id": "L", "weight": 7, "source": "gc:phase10:modern"},
+        {"id": "T", "weight": 1, "source": "gc:phase10:modern"},
+        {"id": "U", "weight": 3, "source": "gc:phase10:modern"},
+        {"id": "O", "weight": 2, "source": "gc:phase10:modern"},
+        {"id": "cluster", "weight": 3, "source": "gc:phase10:modern"}
+      ]},
+      "massing_shape": {"options": [
+        {"id": "rect", "weight": 50, "source": "prior"},
+        {"id": "l_shape", "weight": 35, "source": "prior"},
+        {"id": "t_shape", "weight": 15, "source": "prior"}
+      ]},
+      "accent_wall": {"options": [
+        {"id": "spruce_planks", "weight": 60, "source": "prior"},
+        {"id": "dark_oak_planks", "weight": 25, "source": "prior"},
+        {"id": "spruce_log", "weight": 15, "source": "prior"}
+      ]},
+      "coping_material": {"options": [
+        {"id": "dark_oak_planks", "weight": 60, "source": "prior"},
+        {"id": "smooth_stone", "weight": 40, "source": "prior"}
+      ]},
+      "corner_window": {"options": [
+        {"id": "corner_window_yes", "weight": 55, "source": "prior"},
+        {"id": "corner_window_no", "weight": 45, "source": "prior"}
+      ]},
+      "parapet": {"options": [
+        {"id": "flat_coping", "weight": 70, "source": "prior"},
+        {"id": "stepped_parapet", "weight": 30, "source": "prior"}
+      ]},
+      "terrace": {"options": [
+        {"id": "terrace_yes", "weight": 70, "source": "prior"},
+        {"id": "terrace_no", "weight": 30, "source": "prior"}
+      ]}
+    },
+    "rules": []
+  },
+  "interview_prompts": {
+    "rooms": "别墅里需要哪些房间?几间卧室?开放式大客厅、书房各要吗?",
+    "structural": [
+      "体量做矩形、L 型还是 T 型?[矩形/L 型/T 型]",
+      "哪面做木饰面重点墙?[入口面/景观面/不要]",
+      "要不要转角落地窗?[要/不要]",
+      "要不要室外木平台露台?[要/不要]"
+    ],
+    "skip_if": "纯外观展示时,房间问题跳过,只确认体量形状与重点墙。"
+  },
+  "size_tiers": ["中", "大"]
+}

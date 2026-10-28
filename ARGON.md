@@ -35,6 +35,8 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 * `datapacks/`: Active server datapacks (`underground_citadel`, `great_treasury`, `salman_f_rahman`, `server_guide`, `cannabis_smoke`, `ore_xray`, `moar_bosses`, `more_mobs`, `ridedragon`).
 * `configs/`: Live configuration templates (`server.properties`, `polymer/`, `lithium.properties`, `ferritecore.mixin.properties`, `Geyser-Fabric/`, `luckperms/`).
 * `scripts/`: Operational tools, remote log viewers, RCON helpers, and the active builder generator `generate_perfect_stairs_and_citadel.py`.
+* `scripts/generators/`: Procedural architectural generator library with 50+ modules for roofs, windows, timber frames, domes, trees, plazas, and interior partitions.
+* `references/architectural-styles/`: Curated JSON architectural style templates for medieval, gothic, modern, elven, and oriental builds.
 * `.agents/skills/`: Verified Minecraft agent skills suite for building, commands, datapacks, and server administration.
 * `docs/`: Comprehensive guides:
   * `SERVER_CLIENT_MATRIX.md`: Client vs server compatibility rules.
@@ -77,5 +79,7 @@ The repository is equipped with curated, verified Minecraft skills located in `.
 7. `minecraft-crossplay-ops`: Geyser and Floodgate configuration and Bedrock optimization.
 8. `minecraft-permissions-admin`: LuckPerms permission hierarchy and group configuration.
 9. `minecraft-moling-builder`: Conversational building assistant based on MoLing architecture. Decomposes prompts into sequential commands, manages block replacement modes, and interfaces directly with the server via `scripts/moling_rcon.py`.
+10. `minecraft-interior-decorator`: Professional interior design and decoration skill for Minecraft 1.21. Specializes in furniture construction, lighting fixtures, object logic, workstation clusters, functional living spaces, ceremonial halls, and cozy atmospheric detailing.
+11. `minecraft-nature-terraformer`: Subterranean landscaping and biome terraforming skill for Minecraft 1.21. Designs organic subterranean gardens, hanging foliage, aquascaping, crystal geode caverns, stepped irrigation terraces, and custom organic vegetation.
 
 

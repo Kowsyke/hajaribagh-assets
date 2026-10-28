@@ -1,0 +1,99 @@
+{
+  "style_id": "plains_cabin",
+  "name": "Plains Cabin (平原木屋)",
+  "use_for": "small wooden houses, cabins, farmhouses, starter homes on flat grassland",
+  "proportions": {
+    "height_to_width_ratio": "1:1 ~ 1.5:1 (walls only, roof excluded)",
+    "storey_height": "3 (interior clear)",
+    "wall_thickness": 1,
+    "typical_footprint": "5x7 ~ 9x11",
+    "door_height": 2
+  },
+  "materials": {
+    "primary": ["minecraft:oak_planks"],
+    "primary_use": "wall infill panels",
+    "primary_mix": "GrabCraft wooden-houses 统计锚点: oak_log 24% / planks 系合计 ~40% / stairs+slab ~11% :  木屋是「原木框架重」风格; 墙板可 80% oak_planks / 20% spruce_planks 微掺",
+    "secondary": ["minecraft:oak_log"],
+    "secondary_use": "vertical corner posts + horizontal frame beams top/bottom of each storey (log frame = the cabin look)",
+    "accent": [
+      "minecraft:spruce_planks",
+      "minecraft:spruce_trapdoor",
+      "minecraft:oak_fence"
+    ],
+    "accent_use": "spruce_planks interior floor, trapdoor window shutters, fence porch railing",
+    "roof": [
+      "minecraft:spruce_stairs",
+      "minecraft:spruce_slab"
+    ]
+  },
+  "roof": {
+    "type": "gable (人字顶)",
+    "slope": "45 degrees",
+    "overhang": 1,
+    "material": "spruce_stairs :  distinct from oak walls",
+    "pattern": "patterns/gable_roof.py"
+  },
+  "windows": {
+    "pattern": "one 1x2 or 2x2 window centered on each long wall per storey; gable ends get one small 1x1",
+    "size": "1x2 or 2x2",
+    "material": ["minecraft:glass_pane"],
+    "frame": "spruce_trapdoor shutters on both sides"
+  },
+  "details": {
+    "base": "1 block high cobblestone footing ring under all walls (moisture skirt), ground contact mandatory",
+    "base_materials": ["minecraft:cobblestone", "minecraft:mossy_cobblestone"],
+    "chimney": "optional cobblestone 1x1 chimney rising 2-3 above ridge, campfire on top",
+    "lighting": "minecraft:lantern hanging from porch beam + one per interior corner",
+    "porch": "optional 2-deep porch on the door side: spruce_slab deck, oak_fence posts, spruce_stairs entry",
+    "depth": {
+      "pilaster": {"enabled": false, "spacing": 4, "projection": 1, "material": "minecraft:oak_log", "note": "log corner posts + frame beams already give the cabin its depth; pilasters only on blank walls longer than 9"},
+      "window_trim": {"enabled": true, "projection": 1, "material": "minecraft:spruce_stairs", "corner_material": "minecraft:spruce_log", "sill_material": "minecraft:spruce_slab"},
+      "string_course": {"enabled": false, "material": "minecraft:oak_log", "note": "the horizontal oak_log frame beams ARE the string course"}
+    }
+  },
+  "lottery": {
+    "axes": {
+      "composition": {"options": [
+        {"id": "rect", "weight": 60, "source": "gc:phase10:medieval"},
+        {"id": "rect_bump", "weight": 12, "source": "gc:phase10:medieval"},
+        {"id": "L", "weight": 9, "source": "gc:phase10:medieval"},
+        {"id": "T", "weight": 2, "source": "gc:phase10:medieval"},
+        {"id": "U", "weight": 4, "source": "gc:phase10:medieval"},
+        {"id": "O", "weight": 3, "source": "gc:phase10:medieval"},
+        {"id": "cluster", "weight": 10, "source": "gc:phase10:medieval"}
+      ]},
+      "footprint": {"options": [
+        {"id": "5x7", "weight": 35, "source": "prior"},
+        {"id": "7x9", "weight": 45, "source": "prior"},
+        {"id": "9x11", "weight": 20, "source": "prior"}
+      ]},
+      "wall_mix": {"options": [
+        {"id": "oak_pure", "weight": 45, "source": "prior"},
+        {"id": "oak_spruce_80_20", "weight": 55, "source": "prior"}
+      ]},
+      "porch": {"options": [
+        {"id": "porch_front_2deep", "weight": 55, "source": "prior"},
+        {"id": "none", "weight": 45, "source": "prior"}
+      ]},
+      "chimney": {"options": [
+        {"id": "chimney_cobble_1x1", "weight": 60, "source": "prior"},
+        {"id": "none", "weight": 40, "source": "prior"}
+      ]},
+      "window_size": {"options": [
+        {"id": "1x2", "weight": 60, "source": "prior"},
+        {"id": "2x2", "weight": 40, "source": "prior"}
+      ]}
+    },
+    "rules": []
+  },
+  "interview_prompts": {
+    "rooms": "屋里怎么分?一间大通间还是隔出卧室?要不要储物阁楼?",
+    "structural": [
+      "门侧要不要 2 格深的门廊?[要/不要]",
+      "要不要石砌烟囱(顶部篝火)?[要/不要]",
+      "占地做多大?[5x7 小/7x9 中/9x11 大]"
+    ],
+    "skip_if": "只做摆件级小空壳(5x7 纯外观)时,房间问题合并为一句用途确认。"
+  },
+  "size_tiers": ["超小", "小"]
+}

@@ -1,6 +1,6 @@
-# Subterranean Citadel: Grand Staircase Descent
+# Subterranean Citadel: Grand Staircase Descent and Crossroads
 # Starts at Treasury opening (X: 116..118, Z: -322..-320, Y: 64) descending to Citadel (Y: 50, Z: -308)
-# All descending steps face NORTH (half=bottom) so players step DOWN going south.
+# All descending steps face NORTH (half=bottom) so players step DOWN moving south.
 # Ceiling stays beneath Y: 64 from Z=-319 onwards to protect the Treasury floor.
 
 # Step Z=-322 (Y=64): Stair opening inside Treasury floor
@@ -27,7 +27,7 @@ setblock 119 62 -320 stripped_dark_oak_log[axis=y]
 setblock 115 63 -320 lantern[hanging=false]
 setblock 119 63 -320 lantern[hanging=false]
 
-# Step Z=-319 (Y=61): From here south, ceiling is Y=63, leaving Y=64 Treasury floor 100% solid
+# Step Z=-319 (Y=61): Ceiling is Y=63, leaving Y=64 Treasury floor 100% solid
 fill 115 49 -319 119 60 -319 polished_deepslate
 fill 116 61 -319 118 61 -319 spruce_stairs[facing=north,half=bottom]
 fill 116 62 -319 118 63 -319 air
@@ -125,56 +125,54 @@ fill 115 64 -309 119 64 -309 spruce_planks
 setblock 115 51 -309 stripped_dark_oak_log[axis=y]
 setblock 119 51 -309 stripped_dark_oak_log[axis=y]
 
-# Step Z=-308 (Y=50, Final Step)
+# Step Z=-308 (Y=50): Final landing step reaching Citadel ground floor
 fill 115 49 -308 119 49 -308 polished_deepslate
 fill 116 50 -308 118 50 -308 spruce_stairs[facing=north,half=bottom]
-fill 116 51 -308 118 56 -308 air
+fill 116 51 -308 118 55 -308 air
 fill 115 64 -308 119 64 -308 spruce_planks
 setblock 115 50 -308 stripped_dark_oak_log[axis=y]
 setblock 119 50 -308 stripped_dark_oak_log[axis=y]
 setblock 115 51 -308 lantern[hanging=false]
 setblock 119 51 -308 lantern[hanging=false]
 
-# Landing Crossroads Vestibule at Z=-307..-305 (Y=50)
-fill 114 49 -307 120 49 -305 polished_deepslate
-fill 116 50 -307 118 50 -305 stripped_dark_oak_wood[axis=z]
-fill 115 50 -307 115 50 -305 mud_bricks
-fill 119 50 -307 119 50 -305 mud_bricks
+# Grand Central Crossroads Rotunda (X: 114..120, Z: -307..-305, Y: 50..56)
+fill 113 49 -307 121 49 -305 polished_deepslate
+fill 114 50 -307 120 50 -305 polished_blackstone
+fill 116 50 -306 118 50 -306 gilded_blackstone
+setblock 117 50 -306 crying_obsidian
 fill 114 51 -307 120 56 -305 air
-setblock 117 49 -306 shroomlight
-setblock 117 50 -306 moss_carpet
 
-# Archway pillars entering Atrium to the south
-fill 115 51 -305 115 55 -305 stripped_dark_oak_log[axis=y]
-fill 119 51 -305 119 55 -305 stripped_dark_oak_log[axis=y]
-setblock 116 55 -305 dark_oak_stairs[facing=east,half=top]
-setblock 118 55 -305 dark_oak_stairs[facing=west,half=top]
-setblock 117 55 -305 polished_deepslate_slab[type=top]
+# Arch Pilasters and Vault Ribs
+setblock 114 51 -307 stripped_dark_oak_log[axis=y]
+setblock 114 52 -307 stripped_dark_oak_log[axis=y]
+setblock 114 53 -307 stripped_dark_oak_log[axis=y]
+setblock 114 54 -307 dark_oak_stairs[facing=east,half=top]
 
-# West Portal Corridor to Athenaeum Library (X: 102..114, Z: -307..-305)
-fill 102 49 -307 114 49 -305 polished_deepslate
-fill 102 50 -307 114 54 -305 air
-fill 102 50 -306 114 50 -306 stripped_dark_oak_wood[axis=x]
-fill 102 55 -307 114 55 -305 deepslate_tiles
-setblock 108 54 -306 lantern[hanging=true]
+setblock 120 51 -307 stripped_dark_oak_log[axis=y]
+setblock 120 52 -307 stripped_dark_oak_log[axis=y]
+setblock 120 53 -307 stripped_dark_oak_log[axis=y]
+setblock 120 54 -307 dark_oak_stairs[facing=west,half=top]
 
-# East Portal Corridor to Sovereign Banquet Hall (X: 120..132, Z: -307..-305)
-fill 120 49 -307 132 49 -305 polished_deepslate
-fill 120 50 -307 132 54 -305 air
-fill 120 50 -306 132 50 -306 stripped_dark_oak_wood[axis=x]
-fill 120 55 -307 132 55 -305 deepslate_tiles
-setblock 126 54 -306 lantern[hanging=true]
+setblock 114 51 -305 stripped_dark_oak_log[axis=y]
+setblock 114 52 -305 stripped_dark_oak_log[axis=y]
+setblock 114 53 -305 stripped_dark_oak_log[axis=y]
+setblock 114 54 -305 dark_oak_stairs[facing=east,half=top]
 
-# West Flank Transit Corridor to Hyperloop Hub (X: 106..108, Z: -325..-307)
-fill 106 49 -325 108 49 -307 polished_deepslate
-fill 106 50 -325 108 53 -307 air
-fill 106 54 -325 108 54 -307 deepslate_tiles
-setblock 107 53 -315 lantern[hanging=true]
-setblock 107 53 -322 lantern[hanging=true]
+setblock 120 51 -305 stripped_dark_oak_log[axis=y]
+setblock 120 52 -305 stripped_dark_oak_log[axis=y]
+setblock 120 53 -305 stripped_dark_oak_log[axis=y]
+setblock 120 54 -305 dark_oak_stairs[facing=west,half=top]
 
-# East Flank Transit Corridor to Hyperloop Hub (X: 126..128, Z: -325..-307)
-fill 126 49 -325 128 49 -307 polished_deepslate
-fill 126 50 -325 128 53 -307 air
-fill 126 54 -325 128 54 -307 deepslate_tiles
-setblock 127 53 -315 lantern[hanging=true]
-setblock 127 53 -322 lantern[hanging=true]
+# Central Rotunda Chandelier
+setblock 117 56 -306 iron_chain[axis=y]
+setblock 117 55 -306 copper_bulb[lit=true,powered=false]
+setblock 117 54 -306 soul_lantern[hanging=true]
+
+# Crossroads Portal Portals (West to Athenaeum, East to Banquet Hall)
+fill 103 49 -307 113 49 -305 polished_deepslate
+fill 103 50 -307 113 54 -305 air
+fill 103 55 -307 113 55 -305 deepslate_tiles
+
+fill 121 49 -307 131 49 -305 polished_deepslate
+fill 121 50 -307 131 54 -305 air
+fill 121 55 -307 131 55 -305 deepslate_tiles

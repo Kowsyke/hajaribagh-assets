@@ -1,0 +1,105 @@
+{
+  "style_id": "waterfront_dock",
+  "name": "Waterfront Dock (临水码头)",
+  "use_for": "docks, piers, jetties, boardwalks, fishing platforms, anything touching water",
+  "proportions": {
+    "deck_width": "3-5 (main pier), 2-3 (side fingers)",
+    "deck_height_above_water": "1-2 blocks",
+    "pile_spacing": "3-4 blocks along deck edges",
+    "rail_height": 1
+  },
+  "materials": {
+    "primary": ["minecraft:spruce_planks"],
+    "primary_use": "decking, always full planks as walking surface",
+    "secondary": [
+      "minecraft:stripped_spruce_log",
+      "minecraft:spruce_log"
+    ],
+    "secondary_use": "piles driven into the water/ seabed at deck edges (stripped below waterline looks weathered)",
+    "accent": [
+      "minecraft:spruce_slab",
+      "minecraft:spruce_fence",
+      "minecraft:spruce_trapdoor"
+    ],
+    "accent_use": "slab edging strips, fence railing (leave gaps at mooring points), trapdoor dock bumpers on pile tops",
+    "roof": []
+  },
+  "roof": {
+    "type": "none (open structure); optional small gable shelter over a bench using spruce_stairs",
+    "slope": "n/a",
+    "overhang": 0,
+    "material": "n/a"
+  },
+  "windows": {
+    "pattern": "n/a",
+    "size": "n/a",
+    "material": []
+  },
+  "details": {
+    "waterline": "piles extend 1-2 blocks BELOW water surface to the seabed :  never end piles mid-water",
+    "mooring": "barrel + chain + lantern cluster every 4-6 blocks along one edge",
+    "props": ["minecraft:barrel", "minecraft:iron_chain", "minecraft:lantern", "minecraft:mossy_cobblestone", "minecraft:oak_fence"],
+    "moss": "mossy_cobblestone footing where piles meet water; occasional mossy_cobblestone step down to water",
+    "lighting": "lantern on top of alternating piles, or hanging from chain between two piles",
+    "steps": "spruce_stairs from deck down to a small landing platform at water level",
+    "depth": {
+      "pilaster": {"enabled": false, "spacing": 3, "projection": 1, "material": "minecraft:spruce_log", "note": "no walls on a dock :  depth comes from piles, trapdoor bumpers and slab edging"},
+      "window_trim": {"enabled": false, "projection": 0, "material": "minecraft:spruce_trapdoor", "corner_material": "", "sill_material": ""},
+      "string_course": {"enabled": false, "material": "minecraft:spruce_slab", "note": "slab edging strip along the deck rim plays this role"}
+    }
+  },
+  "lottery": {
+    "axes": {
+      "composition": {"options": [
+        {"id": "rect", "weight": 56, "source": "gc:phase10:dock"},
+        {"id": "rect_bump", "weight": 10, "source": "gc:phase10:dock"},
+        {"id": "L", "weight": 10, "source": "gc:phase10:dock"},
+        {"id": "T", "weight": 3, "source": "gc:phase10:dock"},
+        {"id": "U", "weight": 3, "source": "gc:phase10:dock"},
+        {"id": "O", "weight": 3, "source": "gc:phase10:dock"},
+        {"id": "cluster", "weight": 15, "source": "gc:phase10:dock"}
+      ]},
+      "deck_width": {"options": [
+        {"id": "width_3", "weight": 30, "source": "prior"},
+        {"id": "width_4", "weight": 45, "source": "prior"},
+        {"id": "width_5", "weight": 25, "source": "prior"}
+      ]},
+      "deck_height": {"options": [
+        {"id": "height_1", "weight": 55, "source": "prior"},
+        {"id": "height_2", "weight": 45, "source": "prior"}
+      ]},
+      "pile_spacing": {"options": [
+        {"id": "spacing_3", "weight": 50, "source": "prior"},
+        {"id": "spacing_4", "weight": 50, "source": "prior"}
+      ]},
+      "shelter": {"options": [
+        {"id": "shelter_none", "weight": 70, "source": "prior"},
+        {"id": "gable_roof_shelter", "weight": 30, "source": "prior"}
+      ]},
+      "mooring_spacing": {"options": [
+        {"id": "mooring_4", "weight": 50, "source": "prior"},
+        {"id": "mooring_6", "weight": 50, "source": "prior"}
+      ]},
+      "railing": {"options": [
+        {"id": "railing_fence_gaps", "weight": 80, "source": "prior"},
+        {"id": "railing_none", "weight": 20, "source": "prior"}
+      ]},
+      "water_steps": {"options": [
+        {"id": "landing_steps", "weight": 60, "source": "prior"},
+        {"id": "no_steps", "weight": 40, "source": "prior"}
+      ]}
+    },
+    "rules": []
+  },
+  "interview_prompts": {
+    "rooms": "码头是纯作业平台,还是要带个带顶棚的小休息区/储物角?",
+    "structural": [
+      "主栈桥做多宽?[3 格/4 格/5 格]",
+      "要不要带顶棚的休息区?[要/不要]",
+      "要不要下到水面的台阶平台?[要/不要]",
+      "栏杆满布还是在系泊点留缺口?[留缺口/满布]"
+    ],
+    "skip_if": "纯装饰性短栈桥(长度 10 格以内)时,只确认宽度与栏杆做法。"
+  },
+  "size_tiers": ["中", "大"]
+}

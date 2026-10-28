@@ -1,6 +1,8 @@
 # Subterranean Citadel: Grand High Parliament of the Republic
+# Dimensions: X: 104..130, Z: -276..-244, Floor Y: 50, Ceiling Y: 58
 fill 104 50 -276 130 58 -244 air
 
+# Foundation & Polished Blackstone Floor
 fill 103 49 -277 131 49 -243 polished_deepslate
 fill 104 50 -276 130 50 -244 polished_blackstone
 fill 103 50 -277 103 58 -243 polished_blackstone_bricks
@@ -9,7 +11,7 @@ fill 103 50 -277 131 58 -277 polished_blackstone_bricks
 fill 103 50 -243 131 58 -243 polished_blackstone_bricks
 fill 103 59 -277 131 59 -243 deepslate_tiles
 
-# Chamber Pilasters
+# Chamber Basalt Pilasters
 fill 104 50 -272 104 58 -272 polished_basalt[axis=y]
 fill 104 50 -266 104 58 -266 polished_basalt[axis=y]
 fill 104 50 -260 104 58 -260 polished_basalt[axis=y]
@@ -29,17 +31,17 @@ fill 114 50 -276 114 55 -276 crying_obsidian
 fill 120 50 -276 120 55 -276 crying_obsidian
 fill 115 56 -276 119 56 -276 crying_obsidian
 
-# Central Green Carpet Aisle
+# Central Green & Yellow Carpet Aisle
 fill 116 50 -275 118 50 -252 green_carpet
 fill 117 50 -275 117 50 -252 yellow_carpet
 
-# Under floor ambient lights along aisle
+# Under floor ambient shroomlights along aisle
 setblock 117 48 -272 shroomlight
 setblock 117 48 -266 shroomlight
 setblock 117 48 -260 shroomlight
 setblock 117 48 -254 shroomlight
 
-# Cabinet Benches (West side: Members sit facing EAST towards aisle)
+# Cabinet Benches (West side: Facing EAST)
 fill 114 50 -272 114 50 -254 dark_oak_planks
 fill 114 51 -272 114 51 -254 dark_oak_slab[type=top]
 fill 113 50 -272 113 50 -254 dark_oak_stairs[facing=east,half=bottom]
@@ -64,7 +66,7 @@ setblock 114 52 -261 stone_button[face=floor,facing=north]
 setblock 114 52 -258 end_rod
 setblock 114 52 -257 stone_button[face=floor,facing=north]
 
-# Assembly Benches (East side: Members sit facing WEST towards aisle)
+# Assembly Benches (East side: Facing WEST)
 fill 120 50 -272 120 50 -254 dark_oak_planks
 fill 120 51 -272 120 51 -254 dark_oak_slab[type=top]
 fill 121 50 -272 121 50 -254 dark_oak_stairs[facing=west,half=bottom]
@@ -89,17 +91,13 @@ setblock 120 52 -261 stone_button[face=floor,facing=north]
 setblock 120 52 -258 end_rod
 setblock 120 52 -257 stone_button[face=floor,facing=north]
 
-# Dais and Speaker Throne (South end: Steps face NORTH so players step UP to the south)
+# Speaker Dais & Prime Minister Sovereign Throne
 fill 113 50 -251 121 50 -245 smooth_quartz
 fill 114 51 -251 120 51 -245 smooth_quartz
 fill 114 51 -251 120 51 -251 smooth_quartz_stairs[facing=north,half=bottom]
 
 fill 115 52 -249 119 52 -245 gold_block
 fill 115 52 -249 119 52 -249 smooth_quartz_stairs[facing=north,half=bottom]
-
-setblock 116 51 -251 dark_oak_slab[type=top]
-setblock 117 51 -251 dark_oak_slab[type=top]
-setblock 118 51 -251 dark_oak_slab[type=top]
 
 # Ceremonial Mace on Blackstone Plinth
 setblock 117 52 -251 polished_blackstone_brick_slab[type=bottom]
@@ -116,29 +114,20 @@ setblock 117 54 -247 dark_oak_stairs[facing=north,half=bottom]
 setblock 116 54 -247 dark_oak_trapdoor[facing=west,open=true]
 setblock 118 54 -247 dark_oak_trapdoor[facing=east,open=true]
 
-# Heraldic Wall of State behind Dais
+# Heraldic Wall of State
 fill 114 50 -244 120 57 -244 crying_obsidian
 fill 116 54 -244 118 56 -244 gold_block
 setblock 117 55 -244 bell[facing=north]
 
-# Vaulted Chandeliers
+# Triple Vaulted Chandeliers
 setblock 117 58 -269 iron_chain[axis=y]
-setblock 117 57 -269 iron_chain[axis=y]
-setblock 117 56 -269 shroomlight
-setblock 116 56 -269 dark_oak_trapdoor[facing=west,open=false,half=top]
-setblock 118 56 -269 dark_oak_trapdoor[facing=east,open=false,half=top]
-setblock 117 55 -269 soul_lantern[hanging=true]
+setblock 117 57 -269 copper_bulb[lit=true,powered=false]
+setblock 117 56 -269 soul_lantern[hanging=true]
 
 setblock 117 58 -261 iron_chain[axis=y]
-setblock 117 57 -261 iron_chain[axis=y]
-setblock 117 56 -261 shroomlight
-setblock 116 56 -261 dark_oak_trapdoor[facing=west,open=false,half=top]
-setblock 118 56 -261 dark_oak_trapdoor[facing=east,open=false,half=top]
-setblock 117 55 -261 soul_lantern[hanging=true]
+setblock 117 57 -261 copper_bulb[lit=true,powered=false]
+setblock 117 56 -261 soul_lantern[hanging=true]
 
 setblock 117 58 -250 iron_chain[axis=y]
-setblock 117 57 -250 iron_chain[axis=y]
-setblock 117 56 -250 shroomlight
-setblock 116 56 -250 dark_oak_trapdoor[facing=west,open=false,half=top]
-setblock 118 56 -250 dark_oak_trapdoor[facing=east,open=false,half=top]
-setblock 117 55 -250 soul_lantern[hanging=true]
+setblock 117 57 -250 copper_bulb[lit=true,powered=false]
+setblock 117 56 -250 soul_lantern[hanging=true]

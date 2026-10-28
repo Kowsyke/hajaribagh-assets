@@ -1,0 +1,132 @@
+{
+  "style_id": "brick_townhouse",
+  "name": "Brick Townhouse (砖石联排屋)",
+  "use_for": "brick row houses, town terraces, urban stone-brick homes, victorian-ish street fronts",
+  "palette_stats": "GrabCraft brick-houses 30 件+stone-houses 50 件统计: stone_bricks 23.5% / sandstone 13.1%(石屋) / bricks 系为主(砖屋) / stone 5.7% / oak_planks 4.4% / spruce_planks 3.6% / cobblestone_stairs 3.2% :  砖石主体+木内饰, 城镇连栋形态",
+  "proportions": {
+    "height_to_width_ratio": "1.5:1 ~ 2.5:1 :  联排=窄面宽多楼层, 竖向感",
+    "storey_height": "3-4 (interior clear)",
+    "wall_thickness": 1,
+    "typical_footprint": "面宽 5-9 × 深 9-13, 2-3 层; 联排=3-5 户连栋共享山墙",
+    "door_height": 2
+  },
+  "materials": {
+    "primary": [
+      "minecraft:bricks",
+      "minecraft:stone_bricks"
+    ],
+    "primary_use": "红砖=bricks 主墙; 石宅=stone_bricks 主墙; 联排可砖石交替分户",
+    "frame": [
+      "minecraft:stone_bricks",
+      "minecraft:smooth_stone",
+      "minecraft:quartz_block"
+    ],
+    "frame_use": "墙角隅石(quoins, 深浅交替 1x1 竖列)/窗框/层线 :  砖房的精致感全靠骨架",
+    "secondary": [
+      "minecraft:oak_planks",
+      "minecraft:spruce_planks"
+    ],
+    "secondary_use": "楼层板/内墙/店面前板",
+    "roof": [
+      "minecraft:deepslate_tile_stairs",
+      "minecraft:brick_stairs",
+      "minecraft:dark_oak_stairs"
+    ],
+    "accent": [
+      "minecraft:black_concrete",
+      "minecraft:iron_bars",
+      "minecraft:flower_pot"
+    ]
+  },
+  "roof": {
+    "type": "gable(山墙朝街, patterns/gable_roof.py)或 mansard(patterns/mansard_roof.py 孟莎顶=联排正统)",
+    "slope": "45-60 度; mansard 下陡上缓",
+    "overhang": "0-1(城市克制)",
+    "dormers": "patterns/dormer.py 1-2 个, 联排屋顶几乎必有老虎窗",
+    "chimney": "patterns/chimney.py 每户 1-2 个 1x1 brick 烟囱 :  联排天际线=烟囱阵"
+  },
+  "windows": {
+    "pattern": "严格对位: 每层同位竖列, 面宽 5=两列, 7=三列; 首层大些( storefront )",
+    "size": "1x2 或 1x3 竖窗",
+    "material": ["minecraft:glass_pane"],
+    "frame": "patterns/window_trim.py projection=1 浅色框(石英/滑石), 窗台 slab; 首层可加铁栏(iron_bars)"
+  },
+  "details": {
+    "stoop": "门前台阶 2-3 级直上入户(联排抬高首层), 或下地室半层窗",
+    "party_wall": "联栋分户线: 山墙高出屋面 1(防火山墙), 每户烟囱在分户线上",
+    "shopfront": "首层商铺变体: 大玻璃 2-3 宽+木门+招牌(挂牌)",
+    "wall_texture": "patterns/wall_weathering.py preset=brick_townhouse(砖面掺 5-10% 色差), 石宅=stone_brick_aged",
+    "interior": "patterns/interior_rooms.py 竖向分区: 首层 living/kitchen, 二层 bedroom, 顶层 study/储物",
+    "lighting": "门旁 lantern, 室内每房间",
+    "depth": {
+      "pilaster": {"enabled": true, "spacing": 4, "projection": 0, "material": "minecraft:stone_bricks", "note": "分户壁柱与分户线对齐"},
+      "window_trim": {"enabled": true, "projection": 1, "material": "minecraft:quartz_block", "sill_material": "minecraft:smooth_stone_slab"},
+      "string_course": {"enabled": true, "material": "minecraft:smooth_stone", "note": "每层线脚 1 圈: 联排层感来源"}
+    }
+  },
+  "pitfalls": [
+    "窗户不对位 :  联排窗必须竖列对齐, 错位一个就乱",
+    "面宽过宽 :  联排=窄面宽, 宽了就像公寓楼",
+    "无烟囱 :  联排屋顶没烟囱阵=没灵魂",
+    "砖面纯一色 :  必须 5-10% 色差掺旧, 纯红砖面像塑料",
+    "顶层无老虎窗 :  mansard/gable 屋顶层要住人就得开 dormer"
+  ],
+  "lottery": {
+    "axes": {
+      "composition": {"options": [
+        {"id": "rect", "weight": 60, "source": "gc:phase10:medieval"},
+        {"id": "rect_bump", "weight": 12, "source": "gc:phase10:medieval"},
+        {"id": "L", "weight": 9, "source": "gc:phase10:medieval"},
+        {"id": "T", "weight": 2, "source": "gc:phase10:medieval"},
+        {"id": "U", "weight": 4, "source": "gc:phase10:medieval"},
+        {"id": "O", "weight": 3, "source": "gc:phase10:medieval"},
+        {"id": "cluster", "weight": 10, "source": "gc:phase10:medieval"}
+      ]},
+      "roof_type": {"options": [
+        {"id": "mansard_roof", "weight": 60, "source": "prior"},
+        {"id": "gable_roof", "weight": 40, "source": "prior"}
+      ]},
+      "wall_material": {"options": [
+        {"id": "bricks", "weight": 60, "source": "gc:brick-houses:n=30"},
+        {"id": "stone_bricks", "weight": 40, "source": "gc:stone-houses:n=50"}
+      ]},
+      "weathering_preset": {"options": [
+        {"id": "brick_townhouse", "weight": 65, "source": "prior"},
+        {"id": "stone_brick_aged", "weight": 35, "source": "prior"}
+      ]},
+      "dormers": {"options": [
+        {"id": "dormer_gabled", "weight": 4, "source": "prior"},
+        {"id": "dormer_shed", "weight": 1, "source": "prior"},
+        {"id": "dormer_none", "weight": 95, "source": "prior"}
+      ]},
+      "chimney_count": {"options": [
+        {"id": "chimney_1", "weight": 50, "source": "prior"},
+        {"id": "chimney_2", "weight": 50, "source": "prior"}
+      ]},
+      "ground_floor": {"options": [
+        {"id": "residential_stoop", "weight": 75, "source": "prior"},
+        {"id": "shopfront", "weight": 25, "source": "prior", "requires": {"plot": "commercial_street"}}
+      ]},
+      "footprint_tier": {"options": [
+        {"id": "narrow_2storey", "weight": 50, "source": "gc:medieval-houses:n=299"},
+        {"id": "wide_3storey", "weight": 50, "source": "gc:medieval-houses:n=299"}
+      ]}
+    },
+    "rules": [
+      {"if": {"wall_material": "stone_bricks"}, "then": {"weathering_preset": "stone_brick_aged"}},
+      {"if": {"roof_type": "mansard_roof"}, "forbid": ["dormer_none"]}
+    ]
+  },
+  "interview_prompts": {
+    "rooms": "每户内部怎么竖向分区?首层起居+厨房、二层卧室、顶层书房/储物,这样行吗?一共几层?",
+    "structural": [
+      "建独栋还是联排?[独栋/联排 3-5 户]",
+      "屋顶用孟莎顶(mansard)还是山墙朝街的人字顶?[孟莎顶/人字顶]",
+      "首层做住宅台阶入户还是商铺门面?[住宅/商铺]",
+      "墙面用红砖还是石砖?[红砖/石砖/砖石交替分户]"
+    ],
+    "skip_if": "只做街景立面薄片(纯外观)时,房间分区问题跳过,只确认屋顶与墙面材质。"
+  },
+  "validators": ["support_check", "slab_check", "stair_corner_check", "symmetry_check", "collision_check"],
+  "size_tiers": ["小", "中"]
+}

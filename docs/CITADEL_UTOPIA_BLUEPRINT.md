@@ -71,6 +71,11 @@ Celestial Portal Nexus:(Y: 36..48, Z: -302..-280, X: 106..128)
 * Ahsane Executive Library Suite: Cyan canopy bed, private reading pod, lapis armor stand.
 * Jamal Amethyst Sanctuary Suite: Purple canopy bed, amethyst cluster displays, ward armor stand.
 
+### Sector 9: Vaulted Conduits and Arterial Corridors (Connecting all sectors)
+* Theme: Vaulted subterranean highways and transit arteries.
+* Materials: Deepslate tiles, dark oak arch ribs, polished blackstone border trim, lit copper bulbs.
+* Features: Ribbed barrel vaults, clear directional sightlines, embedded copper bulb lighting grids, sealed archways into all deep sectors.
+
 ---
 
 ## 3. Minecraft Stair Orientation Mechanics

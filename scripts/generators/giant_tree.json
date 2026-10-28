@@ -1,0 +1,272 @@
+{
+  "name": "giant_tree",
+  "description": "巨树生成器 v13: 顶梢干(leader)直贯树梢作树脊(单轴)或 WP 克隆分裂合轴骨架(spreading, 40+ 走分级尺寸课表: 次干长=剩余高 0.32-0.42/宽=主干 0.55-0.75) + 显性主枝样条 + 云片层盘/球面辐条双骨架 + **贴地爬根**(干基样条先拱出再逐级下扎入土, 长短混编方位抖动, flare=钟形基座膨大) + **干径护栏**(trunk>=canopy_radius/4, spreading 多干分担放宽 r/6, 越界拒生成) + **高宽比自由轴**(只留全局宽门 h/2r∈0.3-4.0 + 壳体叶量 20 万体量闸) + 沿枝簇生叶(tuft 基元: 云片压扁 0.65/球团近圆 0.9, tuft_scale 调簇径) + blob 去壳(壳层只剩 v∈[0.85,1] 薄皮填簇缝, 球形靠辐条簇的并集读出来; 辐条 ~45% 从主枝末端二级锚点发出) + 干形四式 + 全程圆台收分 + flood-fill 剪不连通。27 张形态卡预设。同参同 seed 同树。",
+  "when_to_use": "任何需要树超过庭院小树的场合: 景观大树(15-25)/巨树(40-80)/地标树(80-150 直接生成, 无需分件)。选形态卡 preset 再按体量档给 height/canopy_radius : 别自己调形态参数, 那是调研校准过的。seed 换形不重样。garden_tree 只管 4 格冠以下的庭院小树。",
+  "use_for": "巨树/古树/奇幻圣树/世界树地标; preset 定形态, seed 换个体; spirit_candelabra=Ori 精灵树标杆形, world_tree=地标支柱(自带 trunk=4), sky_pillar=通直巨杉(高宽比 3-4:1 时给大 height 小 canopy)",
+  "params": {
+    "origin": {
+      "type": "[x,y,z]",
+      "default": "[0,64,0]",
+      "notes": "树干基部最小角格;y = 地面层(干柱自此升起;坡地先 terraform_pad)"
+    },
+    "preset": {
+      "type": "enum",
+      "values": [
+        "ancient_oak",
+        "sky_pillar",
+        "gnarled_twist",
+        "leaning_river",
+        "banyan_court",
+        "umbrella_acacia",
+        "weeping_willow",
+        "cloud_disc",
+        "spirit_candelabra",
+        "world_tree",
+        "dead_snag",
+        "cherry_blossom",
+        "birch_grove",
+        "mangrove_swamp",
+        "pale_oak_garden",
+        "fluffy_crown",
+        "mist_crown",
+        "stubby_oak",
+        "forked_halberd",
+        "fantasy_frost",
+        "bent_giant",
+        "tilted_giant",
+        "scurve_giant",
+        "fantasy_sakura",
+        "fantasy_world",
+        "fantasy_oak",
+        "fantasy_spirit"
+      ],
+      "default": "(空)",
+      "notes": "形态卡 id;给了就按卡填 form/limbs/layers/density(/species), 显式参数仍可覆盖; 后四张是材质系卡(同骨架换树皮); fluffy_crown=蓬松档; stubby_oak=矮胖墩(新干形, 粗干矮个宽冠压地); forked_halberd=分叉戟(fork=3, 高瘦); fantasy_* 四张=幻想地标系(矮胖撑伞+大叶团+基座巨化+干纵纹, 配 decor 用)"
+    },
+    "height": {
+      "type": "int",
+      "default": 18,
+      "notes": "10-150,总高;景观 15-25 / 巨树 40-80 / 地标 80-150;树顶实际到顶(误差 ±1), 不再缩水"
+    },
+    "canopy_radius": {
+      "type": "int",
+      "default": 6,
+      "notes": "3-70,冠幅半径;高宽比是自由轴(阶段9 起 preset 合法域降级为推荐: 通直 3-4:1 / 开展 1-1.5:1 / 伞盖 <=0.8:1), 只留两道闸: 全局宽门 h/2r∈0.3-4.0 + 壳体叶量预估>20 万拒生成(r 60+ 巨冠会撞闸, 收冠或分段)"
+    },
+    "trunk": {
+      "type": "int",
+      "values": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "default": 2,
+      "notes": "基部干柱 ts×ts;粗高 ts≈h/10-h/8(比例化改造后卡面默认提到这档, world_tree 8/sky_pillar 4);全程圆台收分到 tip=round(ts*0.4), size>=3 削角成圆, 缩径处半砖台阶;主枝基宽≈枝长/6(保底 2, 上限 ts-1), 沿程渐变收细; 10-12 供刻纹路"
+    },
+    "fantasy_limbs": {
+      "type": "int",
+      "values": [1, 2],
+      "default": 1,
+      "notes": "仅 fantasy=1: 1=克制(现状)/2=夸张(主枝粗 4-6、长 0.8-1.0r、末端贴天弧线探出冠面再扎回, 枝干占比 40-50%);试点卡 fantasy_oak"
+    },
+    "species": {
+      "type": "enum",
+      "values": [
+        "oak",
+        "dark_oak",
+        "birch",
+        "spruce",
+        "jungle",
+        "acacia",
+        "cherry",
+        "mangrove",
+        "pale_oak",
+        "frost"
+      ],
+      "default": "oak",
+      "notes": "log/leaves/fence/slab 材质四件套;cherry=樱花粉叶, birch=白干, pale_oak=苍白花园, mangrove=沼泽(配大板根);frost=幻想试点(冰叶 ice/packed/blue_ice 混比 70/20/10 + birch 白木, 透光冠配 decor=lights)"
+    },
+    "seed": {
+      "type": "int",
+      "default": 0,
+      "notes": "形态+镂空+板根方位全由此定;同 seed 同树"
+    },
+    "buttress": {
+      "type": "bool",
+      "default": true,
+      "notes": "兼容旧参数: false=无根;根式由 roots 参数定(默认 crawl 贴地爬根)"
+    },
+    "roots": {
+      "type": "enum",
+      "values": [
+        "crawl",
+        "flare",
+        "buttress",
+        "gate",
+        "none"
+      ],
+      "default": "crawl",
+      "notes": "根式: crawl=贴地爬根(干基样条拱出再下扎入土, 长短混编, 老树/巨木默认) | flare=钟形基座(干基膨大~1.7ts, 温带老树)+短根 | buttress=旧板根阶梯鳍(热带板根风味) | gate=门洞露根(3-4 主根抛物线拱起, 净高≥3 可穿行, 幻想地标基座) | none=光杆"
+    },
+    "tuft_scale": {
+      "type": "float",
+      "range": "0.6-1.6",
+      "default": 1.0,
+      "notes": "叶簇径倍率: >1 蓬松大肉团(樱花/蓬松档), <1 碎叶透光(白桦感);preset 已校准, 一般别动"
+    },
+    "leaf_density": {
+      "type": "float",
+      "default": 0.6,
+      "notes": "0.1-1.0;壳层镂空率由此控(越大叶越密);preset 已校准, 一般别动"
+    },
+    "form": {
+      "type": "enum",
+      "values": [
+        "straight",
+        "curved",
+        "leaning",
+        "spiral",
+        "stubby",
+        "bend",
+        "tilt",
+        "scurve"
+      ],
+      "default": "straight",
+      "notes": "干形;leaning=偏锋风骨;curved=蛇形;spiral=绕轴螺旋+盘旋棱脊;stubby=矮胖墩;bend=单向大弯 60-70°(bend_mode=continue 香蕉干|foldback U 形回勾);tilt=整树结构性倾斜 30-45°(高岸侧抓地根加重);scurve=S 大弯(振幅 2-3×, 弯段配次级共干);preset 优先"
+    },
+    "bend_mode": {
+      "type": "enum",
+      "values": [
+        "continue",
+        "foldback"
+      ],
+      "default": "continue",
+      "notes": "仅 form=bend: continue=续弯到底(干梢趋平/下垂, 香蕉干);foldback=弯到极值折返向上(U 形回勾, 干梢重新朝上)"
+    },
+    "fork": {
+      "type": "int",
+      "values": [
+        0,
+        2,
+        3
+      ],
+      "default": 0,
+      "notes": "分叉戟(与 form 正交, forked straight 典型): 0=off; 2|3=leader 在 0.25-0.35h 分裂, 侧叉微张后近平行上冲贯入冠底, 共享整冠(顶穹团单顶); 主枝自动压到冠底缘起叉(戟身裸挺可读); preset forked_halberd"
+    },
+    "limbs": {
+      "type": "int",
+      "range": "0-6",
+      "default": 0,
+      "notes": "主枝数, 0=seed 自动 3-5"
+    },
+    "canopy_layers": {
+      "type": "int",
+      "range": "1-4",
+      "default": 2,
+      "notes": "冠层盘密度: 1=疏朗, 2-4=云片分层渐密(奇幻感核心)"
+    },
+    "taper": {
+      "type": "bool",
+      "default": true,
+      "notes": "渐进收分(前 25% 足尺, 到顶缩 1x1);关了一路等宽, 一眼假"
+    },
+    "topology": {
+      "type": "enum",
+      "values": [
+        "",
+        "spreading"
+      ],
+      "default": "(空)",
+      "notes": "骨架拓扑: 空=单轴 leader+主枝(全回归); spreading=合轴(WP 克隆分裂: 干失势裂 K 条势均力敌共干, 递归 4 级+回弯补偿+管模型宽度 d²≈Σdᵢ²+槽位方位; 40+ 走分级尺寸课表: 次干长=剩余高 0.32-0.42/宽夹取主干 0.55-0.75, 弯形干必过清干线才许失势; 卡=ancient_oak/banyan_court/fluffy_crown/cherry_blossom/fantasy_oak)"
+    },
+    "spread": {
+      "type": "enum",
+      "values": [
+        "standard",
+        "wild"
+      ],
+      "default": "standard",
+      "notes": "仅 topology=spreading 生效: standard=干 0.28-0.42H 裂 2-3; wild=0.25-0.35H 裂 3-4(夸张低裂)"
+    },
+    "no_foliage": {
+      "type": "bool",
+      "default": false,
+      "notes": "true=纯骨架(枯立木卡用, 辐条更多更下垂)"
+    },
+    "fantasy": {
+      "type": "int",
+      "values": [
+        0,
+        1
+      ],
+      "default": 0,
+      "notes": "幻想地标档(一般走 fantasy_* 卡别手开): 矮胖撑伞比例+花椰菜大叶团+弯幅x2+冠底 0.3h+基座巨化+粗干双材质纵纹; 块数 ~2-3 倍真实系"
+    },
+    "decor": {
+      "type": "string",
+      "default": "(空)",
+      "notes": "装饰钩子, 逗号组合: lights=冠内光点(shroomlight) / lanterns=枝下灯笼串(chain+lantern) / vines=冠底垂藤 / all=全上; 任何树可用, 精灵/地标/村落树必配"
+    },
+    "crown": {
+      "type": "enum",
+      "values": [
+        "layers",
+        "blob",
+        "umbrella",
+        "mist"
+      ],
+      "default": "layers",
+      "notes": "叶形函数(各配骨架拓扑): layers=云片层盘(起叉聚层档, flat 0.5) | blob=圆整球形(真实系辐条+薄壳 / 幻想宽幅=枝梢簇并集) | umbrella=伞形平顶(高位共点近水平枝, flat 0.4+伞沿下垂) | mist=蓬松雾团(侧枝加密+小簇高方差)"
+    },
+    "aesthetic": {
+      "type": "int",
+      "values": [
+        0,
+        1
+      ],
+      "default": 0,
+      "notes": "美学约束: 1=树冠 8 扇区 x 2 层覆盖强制(空洞自动补枝补簇, 不出心形/双塔怪树); 0=自由生成(野生感, 可能抽象)"
+    }
+  },
+  "pitfalls": [
+    "高宽比是自由轴(阶段9 起 preset 合法域降级为卡面推荐): 只剩两道硬闸: 全局宽门 height/canopy_diameter∈0.3-4.0 + 体量闸(壳体叶量预估 4πr²·壳厚·1.25 > 20 万拒生成, r 60+ 巨冠会撞); 被撞就调 height/canopy_radius, 别绕过",
+    "干径有硬护栏(trunk>=canopy_radius/4, spreading 合轴多干分担放宽到 r/6): 大冠必须配粗干: 被拒就加 trunk 或减 canopy_radius; 40 格球冠压 2x2 杆=棒棒糖, 护栏就是治这个",
+    "根式默认 crawl 贴地爬根(半埋, 会钻到地表下 1-2 格, 坡地先整地); flare=钟形基座适合温带老树; buttress=热带板根; 近干段粗根双宽是体量惯例",
+    "叶形二式: 奇幻/云片选 layers, 用户参考图那种圆整球选 blob(已在对应 preset 默认);顶穹团自动加盖, 树顶必须是穹面",
+    "偏锋(leaning)的冠只在顺风侧: 背风面裸干是风骨剪影不是秃;冠心偏移+根锚自动(逆风根加长)",
+    "叶形四式各配骨架: 云片=起叉聚层档, 伞形=高位共点近水平(umbrella_acacia), 雾团=侧枝加密(mist_crown), 球形=blob; 骨架自带二三级分枝(全树通用)",
+    "aesthetic=1 构图约束: 扇区空洞自动补枝补簇, 展示树/地标建议开; 追求野生感留 0",
+    "干截面 size>=3 自动削角成圆, 别期待方柱;trunk 10+ 时根长封顶, 巨干靠粗不靠长",
+    "形态由 preset+seed 决定: 想换形态换 preset, 想换个体重摇 seed, 别手调 form/limbs/layers",
+    "细梢 fence、粗枝 2 宽 log 梁、大盘辐根 2 宽是体素化惯例;整树已过 flood-fill 连通剪枝, 别删单格",
+    "叶全带 persistent=true(实测教训:裸叶放下即消失);别批量替换成默认叶",
+    "spiral/curved 干绕轴偏移, footprint 按 canopy_radius×2+弯幅 6 圈地",
+    "主枝/次主干 2→1 收细处铺 bottom 半砖台阶(0.5 格过渡, 别当赘块删);curved/spiral 干基偏移方向反向根加长(抓地锚, 与 leaning 同权)",
+    "块数参考: 22 高约 1-2 千 / 40 高约 3-6 千(blob 更实) / 100+ 地标 3-4 万;生成秒级",
+    "幻想系体量: 40 高 fantasy ~2 万 / 70 高 ~5 万 :  footprint 按 canopy×2+10 圈地, 选址给足;decor 的灯笼/垂藤会伸出冠缘 2-8 格",
+    "banyan(多干)/willow(垂枝)是近似卡: 真垂柳走 weeping_tree.py, 真榕树(气生根成柱多柱林)走 banyan_tree.py",
+    "decor 是壳感知的: 灯嵌外壳面(≥1 空气面, 扇区均布+冠底下缘配额), 灯笼垂链挂到冠底壳下(5 面露气), 垂藤从逐列最低叶起垂 :  实心冠时代的'埋灯'逻辑已废, 别回退",
+    "fantasy 膨胀(大叶团/稀簇距)只配 crown=blob 花椰菜;fantasy+umbrella 会变西兰花(实机翻车): 要幻想伞用标准簇径, 别手拼 fantasy=1+umbrella",
+    "aesthetic=1 的扇区补簇对 umbrella/mist 只补上层: 伞下/雾下空旷是设计(下层空扇区不补, 补了是悬空小盘)",
+    "ancient_oak 是合轴试点卡(topology=spreading): 干在 0.28-0.42H 裂成 2-4 条势均力敌共干是形态本体, 不是多干 bug;spread=wild 更矮裂更多叉;banyan_court/fluffy_crown/cherry_blossom/fantasy_oak 已迁移合轴(阶段9)",
+    "合轴 40+ 分级尺寸课表(阶段9): 次干长=剩余高 0.32-0.42、宽=主干 0.55-0.75(读得出粗), 枝干 0.5-0.6; 弯形干定额步数不过清干线会续长到过线(防秃杆): 40+ 合轴树比旧版更高更散是课表生效, 不是失控",
+    "叶层质感(R1-R4): 枝级分场(枝间沟壑是设计不是缺叶)+三八度噪声+壳面咬缺+垂叶绦+双色混叶(0.2 换近色次叶);壳面麻点/叶色不匀是质感不是噪点",
+    "roots=gate 门洞露根: 3-4 主根抛物线拱起(净高≥3 可穿行), 幻想地标基座用(如 fantasy_oak 配 roots=gate); 非门洞根走低爬款让出走廊",
+    "stubby/fork 两张新干形卡(v12): stubby_oak=矮胖墩(冠底 ~0.3h 压近地面是形态不是翻车); forked_halberd=分叉戟(裂口→冠底的叉身裸挺是戟身剪影, 也不是裸枝 bug)",
+    "夸张干形三卡(bent/tilted/scurve_giant): 大弯 60-70°/整斜 30-45°/S 大弯是姿态本体; bent 的弯外侧枝长内侧短、tilt 的高岸侧根加长都是刻意张力, 别当歪树修",
+    "fantasy_limbs=2 夸张档: 主枝弧线探出冠面+小簇梢是枝形可读设计, 不是裸枝;fantasy_frost 冰叶无 persistent 属性(emit 按块名判定), 别手动补",
+    "发光脉络/垂藤/灯笼等精灵装饰是 special 钩子欠债, 生成器不自动加"
+  ],
+  "validators": [
+    "support_check"
+  ],
+  "example": "python patterns/giant_tree.py --params '{\"origin\":[100,64,100],\"preset\":\"spirit_candelabra\",\"height\":60,\"canopy_radius\":16,\"trunk\":3,\"seed\":7}' --out tree.json && python patterns/giant_tree.py --params '{\"origin\":[200,64,100],\"preset\":\"world_tree\",\"height\":100,\"canopy_radius\":26,\"trunk\":5,\"seed\":99}' --out tree2.json"
+}

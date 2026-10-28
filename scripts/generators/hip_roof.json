@@ -1,0 +1,15 @@
+{
+  "name": "hip_roof",
+  "description": "Hip roof (四坡顶): all four sides slope up to a ridge line or point, built from stair rows with automatic step-in. V2: stair facing is geometrically derived per slope; corner cells carry outer_left/outer_right curve intent states (the mod may re-derive shape at placement).",
+  "when_to_use": "Buildings whose style card says roof.type = hip, or square towers where a gable would leave awkward ends. origin = wall footprint corner, y = first layer above the top wall block. DIRECTION STATES ARE DERIVED BY THE SCRIPT :  never hand-edit facing/half/shape in the output JSON; change params and re-run instead (禁止手改方向状态).",
+  "params": {
+    "origin": {"type": "[x,y,z]", "default": "[0,64,0]"},
+    "width": {"type": "int", "range": "3-31", "default": 9},
+    "depth": {"type": "int", "range": "3-31", "default": 7},
+    "height": {"type": "int", "range": "0-16", "default": 0, "notes": "0 = auto 45-degree from the shorter span"},
+    "overhang": {"type": "int", "range": "0-2", "default": 1},
+    "material": {"type": "block id", "default": "minecraft:deepslate_tile_stairs"},
+    "ridge_material": {"type": "block id", "default": "minecraft:deepslate_tile_slab"}
+  },
+  "example": "python patterns/hip_roof.py --params '{\"origin\":[100,83,100],\"width\":7,\"depth\":7,\"material\":\"minecraft:dark_oak_stairs\"}' --out roof.json"
+}

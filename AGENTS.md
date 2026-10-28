@@ -107,7 +107,7 @@ When implementing features requested by either Kowsyke or exacyyv:
 
 ## 6. Minecraft Agent Skills and In-Game Building Guide
 
-Agents have access to 9 curated skills in `.agents/skills/`:
+Agents have access to 11 curated skills in `.agents/skills/`, as well as procedural libraries in `scripts/generators/` and `references/architectural-styles/`:
 
 * `minecraft-architect-builder`: Converts high-level architectural briefs into structured Minecraft 1.21 commands and `.mcfunction` files. Adheres to depth rules, palettes, and blockstate orientations.
 * `minecraft-builder-skill`: Generates `.nbt` structures and launches Vite-based 3D previewers.
@@ -116,7 +116,11 @@ Agents have access to 9 curated skills in `.agents/skills/`:
 * `minecraft-server-admin`: Diagnostics, GC flags, and performance monitoring.
 * `minecraft-worldedit-ops`: Large-scale terrain brushes and schematics.
 * `minecraft-crossplay-ops`: Bedrock and Geyser bridging configuration.
-* `minecraft-permissions-admin`: LuckPerms permission trees and group administration.
+* `minecraft-permissions-admin`: LuckPerms permission hierarchy and group administration.
 * `minecraft-moling-builder`: Conversational building assistant based on MoLing architecture. Implements prompt decomposition and command execution via `scripts/moling_rcon.py`.
+* `minecraft-interior-decorator`: Professional interior design and decoration skill for Minecraft 1.21. Specializes in furniture construction, lighting fixtures, object logic, workstation clusters, functional living spaces, ceremonial halls, and cozy atmospheric detailing.
+* `minecraft-nature-terraformer`: Subterranean landscaping and biome terraforming skill for Minecraft 1.21. Designs organic subterranean gardens, hanging foliage, aquascaping, crystal geode caverns, stepped irrigation terraces, and custom organic vegetation.
+* `scripts/generators/`: Procedural generator library with 50+ modules for roofs, windows, timber frames, domes, trees, plazas, and interior partitions.
+* `references/architectural-styles/`: Curated JSON architectural style templates for medieval, gothic, modern, elven, and oriental builds.
 
 
