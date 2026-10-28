@@ -8,3 +8,6 @@ function citadel:bunker_brewing
 function citadel:bunker_farm
 function citadel:bunker_housing
 function citadel:bunker_parliament
+function citadel:bunker_vaults
+function citadel:bunker_decor
+function citadel:bunker_deep_tier

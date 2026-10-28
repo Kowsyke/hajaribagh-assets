@@ -22,8 +22,8 @@ fill 83 49 -284 85 49 -282 iron_bars
 setblock 89 47 -289 anvil[facing=east]
 setblock 89 47 -287 stonecutter[facing=east]
 setblock 89 47 -285 grindstone[face=floor,facing=east]
-setblock 89 47 -283 cauldron[level=3]
-setblock 89 47 -281 cauldron[level=3]
+setblock 89 47 -283 water_cauldron[level=3]
+setblock 89 47 -281 water_cauldron[level=3]
 setblock 92 47 -288 raw_iron_block
 setblock 92 48 -288 raw_iron_block
 setblock 92 47 -287 iron_block

@@ -16,7 +16,7 @@ setblock 159 48 -285 brewing_stand
 setblock 159 48 -284 brewing_stand
 setblock 159 48 -282 brewing_stand
 setblock 159 48 -281 brewing_stand
-setblock 159 47 -283 cauldron[level=3]
+setblock 159 47 -283 water_cauldron[level=3]
 setblock 158 47 -283 water
 fill 153 47 -290 158 47 -290 soul_sand
 fill 153 48 -290 158 48 -290 nether_wart[age=3]
