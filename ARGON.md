@@ -2,7 +2,7 @@
 
 Welcome Argon. This document is your primary entry point for Project Hajaribagh. Read this alongside [`AGENTS.md`](./AGENTS.md), [`docs/SERVER_CLIENT_MATRIX.md`](./docs/SERVER_CLIENT_MATRIX.md), and [`docs/CITADEL_UTOPIA_BLUEPRINT.md`](./docs/CITADEL_UTOPIA_BLUEPRINT.md).
 
----
+***
 
 ## 1. Quick Reference & Endpoints
 
@@ -13,7 +13,7 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 * Service Unit: `minecraft.service` (managed via systemctl).
 * Deploy Command: `./scripts/deploy-to-cloud.sh` from the repository root.
 
----
+***
 
 ## 2. Invariants You Must Never Violate
 
@@ -28,7 +28,7 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 5. Guide Book Sync:
    Whenever mechanics or commands change, update `datapacks/server_guide`, increment the version, and push to GitHub.
 
----
+***
 
 ## 3. Directory Layout and Architecture
 
@@ -47,7 +47,7 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
   * `MODS_DATAPACKS.md`: Complete mod and datapack catalog.
 * `quarantine/`: Quarantined mods and discontinued functions.
 
----
+***
 
 ## 4. Subterranean Hivemind Bunker Landmarks
 
@@ -66,13 +66,16 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 * Sector 9: The Sovereign Banquet & Feasting Hall: `(X: 105..129, Z: -261..-235, Y: 36..45)`.
 * Sector 10: The Royal Geothermal Spa & Bathhouse: `(X: 120..138, Z: -291..-265, Y: 36..45)`.
 * Sector 11: The Subterranean Hyperloop Transit Hub: `(X: 112..122, Z: -306..-296, Y: 37..43)`.
+* Sector 12: High Security Netherite Crypt & Royal Treasury Vault: `(X: 111..123, Z: -234..-215, Y: 36..44)`.
+* Sector 13: Subterranean War Room & Strategic Cartography Command: `(X: 111..123, Z: -320..-308, Y: 46..53)`.
+* Sector 14: Automated Subterranean Storage Silo & Central Sorting System: `(X: 74..94, Z: -307..-295, Y: 36..45)`.
 * Deep Infrastructure Tier 3 Facilities:
   * Central Beacon Well and Bubble Elevators: `(X: 111..120, Z: -304..-296, Y: 36..45)`.
   * Heavy Ore Processing Refinery: `(X: 78..90, Z: -289..-277, Y: 38..45)`.
   * Forbidden Apocrypha Archive: `(X: 144..156, Z: -305..-297, Y: 38..45)`.
   * Subterranean Aquaponics Grotto: `(X: 98..112, Z: -289..-267, Y: 36..45)`.
 
----
+***
 
 ## 5. Agent Skills Toolkit
 
