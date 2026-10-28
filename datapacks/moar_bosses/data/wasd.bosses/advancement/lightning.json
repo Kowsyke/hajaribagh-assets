@@ -1,0 +1,19 @@
+{
+  "parent": "wasd.bosses:air",
+  "display": {
+    "icon": {
+      "id": "minecraft:lightning_rod"
+    },
+    "title": "Electric Boss ",
+    "description": "\nSpawns In:\n   Badlands\n   Desert\n   Eroded Badlands\n   Savanna\n   Savanna Plateau\n",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

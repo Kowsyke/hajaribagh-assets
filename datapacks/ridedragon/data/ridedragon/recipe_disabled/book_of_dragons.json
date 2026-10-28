@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba"
+  ],
+  "key": {
+    "a": [
+      "minecraft:pale_oak_trapdoor"
+    ],
+    "b": [
+      "minecraft:writable_book"
+    ]
+  },
+  "result": {
+    "id": "minecraft:written_book",
+    "components": {
+      "minecraft:written_book_content": {
+        "pages": [
+                [
+                  {"text":"Book of Dragons 1.9","bold":true,"color":"dark_purple"},
+                  {"text":"\n\nRiding a dragon in three easy steps:\n\n1. ","bold":false,"color":"black"},
+                  {"text":"Summon the Dragon","underlined":true,"bold":false,"click_event":{"action":"run_command","command":"/trigger rd_summon"},"hover_event":{"action":"show_text","value":"... or type \"/trigger rd_summon\" in chat"}},
+                  {"text":"\n2. Click the dragon\\'s\n   neck w. empty hand\n3. ","color":"black","bold":false},
+                  {"text":"Vanish the dragon","underlined":true,"bold":false,"click_event":{"action":"run_command","command":"/trigger rd_vanish"},"hover_event":{"action":"show_text","value":"... or type \"/trigger rd_vanish\" in chat"}},
+                  {"text":"\n\nThe dragon flies faster when you hold this book.","bold":false,"color":"black"}
+                ],
+                [
+                  {"text":"\n\nYou unmount your dragon by sneaking.\n\nIf you think your new pet is too noisy you can ","bold":false},
+                  {"text":"toggle its voice","underlined":true,"bold":false,"click_event":{"action":"run_command","command":"/trigger rd_silence"},"hover_event":{"action":"show_text","value":"... or type \"/trigger rd_silence\" in chat"}},
+                  {"text":".","color":"black","bold":false,"click_event":{"action":"run_command","command":"/trigger rd_silence"},"hover_event":{"action":"show_text","value":"... or type \"/trigger rd_silence\" in chat"}}
+                ],
+                [
+                  {"text":"\n\nPlease see the ","bold":false},
+                  {"text":"help","bold":true,"underlined":true,"click_event":{"action":"run_command","command":"/trigger rd_help"}},
+                  {"text":" for further information.\n\n\nDatapack by ","bold":false,"color":"black"},
+                  {"text":"Ptefar","underlined":true,"bold":false,"click_event":{"action":"open_url","url":"https://www.youtube.com/channel/UC3ro2x7YnyNt8V1t1bUYfXA"}}
+                ]
+        ],
+        "title": "Book of Dragons 1.9",
+        "author": "ptefar"
+      },
+      "minecraft:custom_data": {
+        "DragonBook": "1"
+      }
+    },
+    "count": 1
+  }
+}

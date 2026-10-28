@@ -1,0 +1,19 @@
+{
+  "parent": "wasd.bosses:water",
+  "display": {
+    "icon": {
+      "id": "minecraft:oak_sapling"
+    },
+    "title": "Earth Boss ",
+    "description": "\nSpawns In:\n   Forest\n   Plains\n   Stony Shore\n   Swamp\n   Taiga\n   Taiga Mountains\n",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

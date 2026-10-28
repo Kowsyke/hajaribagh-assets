@@ -1,0 +1,3 @@
+#mc-build WASD content
+summon item_display ~ ~-4 ~ {CustomName:"a boulder",item_display:"head",brightness:{sky:10,block:15},Tags:["wasd.lib_entity_tick","wasd.ability","wasd.boulder"],teleport_duration:40,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]},item:{id:"minecraft:armor_stand",count:1,components:{"minecraft:item_model":"wasd:abilities/boulder"}}}
+execute positioned ~ ~-4 ~ as @e[tag=wasd.lib_entity_tick,tag=wasd.ability,tag=wasd.boulder,sort=nearest,limit=1] at @s run data modify entity @s Rotation set from entity @e[tag=wasd.earth_rotation,sort=nearest,limit=1] Rotation

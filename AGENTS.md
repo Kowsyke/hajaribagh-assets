@@ -77,6 +77,9 @@ No task is complete until both the in-game guide book and the GitHub repository 
   * `datapacks/cannabis_smoke`: Right-clickable joint items, smoke particle puffs, campfire audio, and status effects.
   * `datapacks/ore_xray`: Host only spectator and night vision toggle.
   * `datapacks/server_guide`: Written guide book auto-delivered to players on login and via `/trigger guide`.
+  * `datapacks/moar_bosses`: Custom boss encounters and combat challenges.
+  * `datapacks/more_mobs`: Additional custom mob variants.
+  * `datapacks/ridedragon`: Dragon mount mechanics and flight controls.
 * **Active Server Mods**:
   * `Lithium`, `FerriteCore`, `Krypton`: Performance and physics optimization.
   * `Geyser` and `Floodgate`: Bedrock cross-play translation layer.
@@ -99,3 +102,19 @@ When implementing features requested by either Kowsyke or exacyyv:
 6. Never commit secrets or passwords. Blank them in config copies first.
 7. Test live changes using remote RCON via SSH before finishing tasks.
 8. Maintain stair geometry invariants: descending stairs facing the direction of travel, wall skirting right-side up, and chairs facing their respective tables or podiums.
+
+---
+
+## 6. Minecraft Agent Skills and In-Game Building Guide
+
+Agents have access to 8 curated skills in `.agents/skills/`:
+
+* `minecraft-architect-builder`: Converts high-level architectural briefs into structured Minecraft 1.21 commands and `.mcfunction` files. Adheres to depth rules, palettes, and blockstate orientations.
+* `minecraft-builder-skill`: Generates `.nbt` structures and launches Vite-based 3D previewers.
+* `minecraft-commands-scripting`: Vanilla command reference, target selectors, and scoreboard logic.
+* `minecraft-datapack`: Datapack format specifications and registry tags.
+* `minecraft-server-admin`: Diagnostics, GC flags, and performance monitoring.
+* `minecraft-worldedit-ops`: Large-scale terrain brushes and schematics.
+* `minecraft-crossplay-ops`: Bedrock and Geyser bridging configuration.
+* `minecraft-permissions-admin`: LuckPerms permission trees and group administration.
+

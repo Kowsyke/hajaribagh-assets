@@ -32,9 +32,10 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 
 ## 3. Directory Layout and Architecture
 
-* `datapacks/`: Active server datapacks (`underground_citadel`, `great_treasury`, `salman_f_rahman`, `server_guide`, `cannabis_smoke`, `ore_xray`).
-* `configs/`: Live configuration templates (`server.properties`, `polymer/`, `lithium.properties`, `ferritecore.mixin.properties`).
+* `datapacks/`: Active server datapacks (`underground_citadel`, `great_treasury`, `salman_f_rahman`, `server_guide`, `cannabis_smoke`, `ore_xray`, `moar_bosses`, `more_mobs`, `ridedragon`).
+* `configs/`: Live configuration templates (`server.properties`, `polymer/`, `lithium.properties`, `ferritecore.mixin.properties`, `Geyser-Fabric/`, `luckperms/`).
 * `scripts/`: Operational tools, remote log viewers, RCON helpers, and the active builder generator `generate_perfect_stairs_and_citadel.py`.
+* `.agents/skills/`: Verified Minecraft agent skills suite for building, commands, datapacks, and server administration.
 * `docs/`: Comprehensive guides:
   * `SERVER_CLIENT_MATRIX.md`: Client vs server compatibility rules.
   * `CITADEL_UTOPIA_BLUEPRINT.md`: Subterranean Mega Base coordinates and sector breakdown.
@@ -60,3 +61,19 @@ Welcome Argon. This document is your primary entry point for Project Hajaribagh.
 * Sector 6: Hyperloop Transit Hub: `(X: 104..130, Z: -345..-325, Y: 49..58)`.
 * Sector 7: Grand High Parliament: `(X: 104..130, Z: -276..-244, Y: 50..58)`.
 * Sector 8: Sovereign Residential Suites: `(X: 92..142, Z: -268..-231, Y: 50..58)`.
+
+---
+
+## 5. Agent Skills Toolkit
+
+The repository is equipped with curated, verified Minecraft skills located in `.agents/skills/`:
+
+1. `minecraft-architect-builder`: Master architectural builder for Minecraft 1.21. Generates block palettes, depth layers, mathematical geometry (ellipses, catenary vaults, domes, spiral stairs), and correct blockstate orientations from natural language prompts.
+2. `minecraft-builder-skill`: Programmatic NBT structure generation using Lodestone and Three.js 3D web previewing.
+3. `minecraft-commands-scripting`: Vanilla 1.21 commands, target selectors, execute chains, scoreboards, and NBT path manipulation.
+4. `minecraft-datapack`: Datapack structure, tick/load functions, tags, recipes, and loot table management.
+5. `minecraft-server-admin`: Fabric server operations, GC tuning, crash diagnosis, and lag prevention.
+6. `minecraft-worldedit-ops`: Fast asynchronous terrain modification, brushes, and schematics.
+7. `minecraft-crossplay-ops`: Geyser and Floodgate configuration and Bedrock optimization.
+8. `minecraft-permissions-admin`: LuckPerms permission hierarchy and group configuration.
+

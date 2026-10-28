@@ -1,0 +1,19 @@
+{
+  "parent": "wasd.bosses:fire",
+  "display": {
+    "icon": {
+      "id": "minecraft:feather"
+    },
+    "title": "Air Boss             ",
+    "description": "\nSpawns Above y=130 In:\n   Frozen Peaks\n   Jagged Peaks\n   Meadow\n   Snowy Slopes\n   Stony Peaks\n   Grove\n",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

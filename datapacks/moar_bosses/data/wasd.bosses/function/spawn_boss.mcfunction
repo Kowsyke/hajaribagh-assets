@@ -1,0 +1,9 @@
+#mc-build WASD content
+execute unless entity @e[tag=wasd.boss,distance=..0.1] if score fire w.bosses_setting matches 1.. unless entity @s[y=-64,dy=64] unless entity @s[y=130,dy=200] if dimension minecraft:the_nether at @s run function wasd.bosses:check_biome/fire
+execute unless entity @e[tag=wasd.boss,distance=..0.1] if score water w.bosses_setting matches 1.. unless entity @s[y=-64,dy=64] unless entity @s[y=130,dy=200] at @s run function wasd.bosses:check_biome/water
+execute unless entity @e[tag=wasd.boss,distance=..0.1] if score electric w.bosses_setting matches 1.. unless entity @s[y=-64,dy=64] unless entity @s[y=130,dy=200] at @s run function wasd.bosses:check_biome/electric
+execute unless entity @e[tag=wasd.boss,distance=..0.1] if score earth w.bosses_setting matches 1.. unless entity @s[y=-64,dy=64] unless entity @s[y=130,dy=200] at @s run function wasd.bosses:check_biome/earth
+execute unless entity @e[tag=wasd.boss,distance=..0.1] if score metal w.bosses_setting matches 1.. if entity @s[y=-64,dy=64] unless entity @s[y=130,dy=200] at @s run function wasd.bosses:check_biome/metal
+execute unless entity @e[tag=wasd.boss,distance=..0.1] if score air w.bosses_setting matches 1.. unless entity @s[y=-64,dy=64] if entity @s[y=130,dy=200] at @s run function wasd.bosses:check_biome/air
+execute unless entity @e[tag=wasd.boss,distance=..0.1] if score chicken w.bosses_setting matches 1.. unless entity @s[y=-64,dy=64] unless entity @s[y=130,dy=200] at @s run function wasd.bosses:check_biome/chicken
+execute unless entity @e[tag=wasd.boss,distance=..0.1] run tellraw @s {"text":"No Bosses can spawn at this location","color":"dark_red"}

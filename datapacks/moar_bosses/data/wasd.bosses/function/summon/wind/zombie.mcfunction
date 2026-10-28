@@ -1,0 +1,3 @@
+#mc-build WASD content
+summon husk ~ ~ ~ {DeathLootTable:"wasd.bosses:bosses/wind",PersistenceRequired:1b,Tags:["wasd.boss","wasd.wind_boss"],CustomNameVisible:1b,Health:60f,IsBaby:0b,CustomName:{"text":"Tempest Zombie","color":"dark_red"},equipment:{mainhand:{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"wasd:wands/base_wand", "minecraft:custom_model_data":{"floats":[6370000]}}}},drop_chances:{mainhand:0.000},attributes:[{id:"minecraft:max_health",base:60},{id:"minecraft:movement_speed",base:0.1}]}
+execute as @e[tag=wasd.boss,tag=!wasd.given_random_wand,sort=nearest,limit=1] run function wasd.bosses:summon/wind/give_random_wand

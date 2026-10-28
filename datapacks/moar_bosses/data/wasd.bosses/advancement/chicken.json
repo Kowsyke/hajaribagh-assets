@@ -1,0 +1,19 @@
+{
+  "parent": "wasd.bosses:metallic",
+  "display": {
+    "icon": {
+      "id": "minecraft:egg"
+    },
+    "title": "Chicken Boss   ",
+    "description": "\nSpawns In:\n   Plains +\n   Chicken is Nearby\n",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

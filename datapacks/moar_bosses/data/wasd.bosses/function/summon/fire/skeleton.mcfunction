@@ -1,0 +1,3 @@
+#mc-build WASD content
+summon skeleton ~ ~ ~ {DeathLootTable:"wasd.bosses:bosses/fire",PersistenceRequired:1b,Tags:["wasd.boss","wasd.fire_boss"],CustomNameVisible:1b,Health:60f,CustomName:{"text":"Inferno Skeleton","color":"dark_red"},equipment:{head:{id:"minecraft:oak_button",count:1},mainhand:{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"wasd:wands/base_wand", "minecraft:custom_model_data":{"floats":[6370000]}}}},drop_chances:{mainhand:0.000,head:0.000},ArmorDropChances:[0.000F,0.000F,0.000F,0.000F],attributes:[{id:"minecraft:max_health",base:60},{id:"minecraft:movement_speed",base:0.1}]}
+execute as @e[tag=wasd.boss,tag=!wasd.given_random_wand,sort=nearest,limit=1] run function wasd.bosses:summon/fire/give_random_wand

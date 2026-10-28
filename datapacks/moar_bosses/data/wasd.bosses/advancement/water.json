@@ -1,0 +1,19 @@
+{
+  "parent": "wasd.bosses:pack",
+  "display": {
+    "icon": {
+      "id": "minecraft:heart_of_the_sea"
+    },
+    "title": "Water Boss   ",
+    "description": "\nSpawns In:\n   River\n   Beach\n   Ice Spikes\n   Snowy Plains\n   Snowy Taiga\n   All Ocean Biomes\n",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

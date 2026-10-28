@@ -1,0 +1,2 @@
+#mc-build WASD content
+summon husk ~ ~ ~ {DeathLootTable:"wasd.bosses:bosses/chicken",PersistenceRequired:1b,Tags:["wasd.boss","wasd.chicken_boss"],CustomNameVisible:1b,Health:60f,IsBaby:0b,CustomName:{"text":"KFC Chicken","color":"dark_red"},HandItems:[{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"wasd:wands/base_wand", "minecraft:custom_model_data":{"floats":[6370128]}}},{}],attributes:[{id:"minecraft:max_health",base:60},{id:"minecraft:movement_speed",base:0.1}]}

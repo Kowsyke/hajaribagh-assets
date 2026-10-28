@@ -1,7 +1,6 @@
 {
   "pack": {
-    "pack_format": 82,
-    "supported_formats": [15, 100],
+    "pack_format": 48,
     "description": "Ore Mining Wallhack Command"
   }
 }

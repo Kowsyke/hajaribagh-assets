@@ -1,0 +1,30 @@
+Thanks for Downloading.
+
+To install,
+
+1. Place this downloaded folder (the .zip these instructions are contained within) into your world's "datapacks" folder.
+
+
+2. Download the Required WASD Libraries. Ensure you have the latest version of the pack for your matching Minecraft version.
+You will only need ONE Library, no matter how many packs are installed.
+	http://wasdbuildteam.website/data-packs/wasd-libraries/
+
+
+3. Place the Library alongside this pack and any others you have into your world's "datapacks" folder.
+
+
+4. Download the Required WASD Resource Pack.
+You will only need ONE Resource Pack, no matter how many packs are installed.
+
+
+5. Place the Resource Pack into your Minecraft's "resourcepacks" folder.
+Make sure to enable the resource pack in-game.
+
+
+6. Run the command "/reload" to install the data pack. This will be confirmed with a confirmation message.
+(Note, you must be an operator with commands enabled to run the /reload command).
+Alternatively, simply close the world and rejoin it.
+
+
+If you have any issues installing, visit our discord and ask for help in the #help-desk channel.
+https://discord.gg/yqk4VfA

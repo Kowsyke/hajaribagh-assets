@@ -1,0 +1,19 @@
+{
+  "parent": "wasd.bosses:earth",
+  "display": {
+    "icon": {
+      "id": "minecraft:blaze_powder"
+    },
+    "title": "Fire Boss            ",
+    "description": "\nSpawns In:\n   Nether\n   Except Warped Forest\n",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "parent": "wasd.bosses:lightning",
+  "display": {
+    "icon": {
+      "id": "minecraft:iron_block"
+    },
+    "title": "Metallic Boss",
+    "description": "\nSpawns Below y=0\n",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

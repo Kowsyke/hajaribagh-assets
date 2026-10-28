@@ -1,0 +1,2 @@
+#mc-build WASD content
+summon skeleton ~ ~ ~ {DeathLootTable:"wasd.bosses:bosses/chicken",PersistenceRequired:1b,Tags:["wasd.boss","wasd.chicken_boss"],CustomNameVisible:1b,Health:60f,CustomName:{"text":"KFC Chicken","color":"dark_red"},HandItems:[{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"wasd:wands/base_wand", "minecraft:custom_model_data":{"floats,head:0.000":[6370128]}}},{}],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F],attributes:[{id:"minecraft:max_health",base:60},{id:"minecraft:movement_speed",base:0.1}]}

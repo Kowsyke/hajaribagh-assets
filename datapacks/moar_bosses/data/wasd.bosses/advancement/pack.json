@@ -1,0 +1,19 @@
+{
+  "parent": "wasd.lib:wasd/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:nether_star"
+    },
+    "title": "Moar Bosses",
+    "description": "Adds a bunch of magical boss types. Best with Optifine!",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

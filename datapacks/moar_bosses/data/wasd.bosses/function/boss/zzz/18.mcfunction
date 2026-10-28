@@ -1,0 +1,3 @@
+#mc-build WASD content
+summon item_display ~ ~ ~ {CustomName:"a bubble",item_display:"head",Tags:["wasd.lib_entity_tick","wasd.ability","wasd.bubble"],teleport_duration:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]},item:{id:"minecraft:armor_stand",count:1,components:{"minecraft:item_model":"wasd:abilities/bubble"}}}
+execute as @e[tag=wasd.lib_entity_tick,tag=wasd.ability,tag=wasd.bubble,sort=nearest,limit=1] run tp @s ~ ~ ~ ~ ~-12

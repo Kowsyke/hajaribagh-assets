@@ -1,0 +1,38 @@
+{
+  "id": "moremobs",
+  "pack": {
+    "pack_format": 15,
+    "supported_formats": [4,121],
+    "min_format": 4,
+    "max_format": 121,
+    "description": "Tschipcraft's More Mobs \n└ v1.5.11 ● mc1.14-26.3.9"
+  },
+  "overlays": {
+    "entries": [
+      {
+        "formats": [39,44],
+        "min_format": 39,
+        "max_format": 44,
+        "directory": "overlay_39"
+      },
+      {
+        "formats": [45,62],
+        "min_format": 45,
+        "max_format": 62,
+        "directory": "overlay_pre_63"
+      },
+      {
+        "formats": [45,110],
+        "min_format": 45,
+        "max_format": 110,
+        "directory": "overlay_pre_111"
+      },
+      {
+        "formats": [45,114],
+        "min_format": 45,
+        "max_format": 114,
+        "directory": "overlay_pre_115"
+      }
+    ]
+  }
+}
