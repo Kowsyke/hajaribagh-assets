@@ -19,3 +19,5 @@ function citadel:bunker_crypt_vault
 function citadel:bunker_storage_silo
 function citadel:bunker_cryo_relic_vault
 function citadel:bunker_alchemical_catacombs
+function citadel:bunker_arboretum
+function citadel:bunker_proving_grounds
